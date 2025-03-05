@@ -1,0 +1,62 @@
+{
+  "name": "@keystone-6/example-framework-nextjs-app-directory",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "keystone:dev": "keystone dev",
+    "keystone:build": "keystone build",
+    "keystone:start": "keystone start",
+    "next:dev": "next dev -p 3000",
+    "next:build": "next build",
+    "postinstall": "keystone postinstall",
+    "start": "next start",
+    "n:dev": "next dev -p 3000",
+    "n15:dev": "next dev --turbopack -p 3000",
+    "n:build": "next build",
+    "ks:dev": "keystone dev",
+    "ks:nextdev": "next dev .keystone/admin --port 3001",
+    "ks:build": "keystone build",
+    "ks:start": "keystone start",
+    "ks:watch": "keystone dev --no-server",
+    "lint": "next lint",
+    "dev": "turbo ks:watch ks:nextdev n:dev",
+    "dev2": "turbo ks:dev n:dev",
+    "build": "pnpm keystone build --no-ui && pnpm next build"
+  },
+  "dependencies": {
+    "@keystone-6/core": "^6.3.1",
+    "@keystone-6/document-renderer": "^1.1.2",
+    "@keystone-6/fields-document": "^9.1.1",
+    "@prisma/client": "6.3.1",
+    "graphql": "^16.8.1",
+    "graphql-request": "^5.0.0",
+    "graphql-yoga": "^3.1.0",
+    "next": "14.2.24",
+    "react": "^18",
+    "react-dom": "^18",
+    "turbo": "^2.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "prisma": "6.3.1",
+    "react": "^18",
+    "typescript": "^5.5.0"
+  },
+  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@apollo/protobufjs",
+      "@prisma/client",
+      "@prisma/engines",
+      "esbuild",
+      "prisma"
+    ]
+  },
+  "resolutions": {
+    "prisma": "6.3.1",
+    "@prisma/client": "6.3.1",
+    "next": "14.2.24"
+  }
+}
