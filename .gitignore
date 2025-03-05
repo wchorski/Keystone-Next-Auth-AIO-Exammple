@@ -21,6 +21,9 @@ node_modules
 /.next/
 /out/
 
+# turbo
+.turbo
+
 # production
 /build
 
@@ -46,3 +49,4 @@ next-env.d.ts
 
 # docker
 compose.yml
+
