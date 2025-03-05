@@ -16,12 +16,14 @@
     "ks:dev": "keystone dev",
     "ks:nextdev": "next dev .keystone/admin --port 3001",
     "ks:build": "keystone build",
+    "ks:build_no_ui": "keystone build",
     "ks:start": "keystone start",
     "ks:watch": "keystone dev --no-server",
     "lint": "next lint",
     "dev": "turbo ks:watch ks:nextdev n:dev",
     "dev2": "turbo ks:dev n:dev",
-    "build": "pnpm keystone build --no-ui && pnpm next build"
+    "build": "pnpm keystone build --no-ui && pnpm next build",
+    "tbuild": "turbo ks:build_no_ui n:build"
   },
   "dependencies": {
     "@keystone-6/core": "^6.3.1",
