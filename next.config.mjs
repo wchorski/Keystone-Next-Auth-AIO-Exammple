@@ -1,5 +1,5 @@
-const KEYSTONE_URL = process.env.KEYSTONE_URL || "http://localhost:3001"
-const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL
+const CMS_URL = process.env.CMS_URL || "http://localhost:3001"
+const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL || ""
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -25,24 +25,23 @@ const nextConfig = {
 	//   ];
 	// },
 	async rewrites() {
+		const fallback = [
+			{
+				source: "/admin",
+				destination: `${CMS_URL}/admin`,
+			},
+			{
+				source: "/admin/:admin*",
+				destination: `${CMS_URL}/admin/:admin*`,
+			},
+			...(ANALYTICS_URL
+				? [{ source: "/stts/:match*", destination: ANALYTICS_URL }]
+				: []),
+		]
+
 		return {
 			beforeFiles: [],
-			fallback: [
-				{
-					source: "/admin",
-					destination: `${KEYSTONE_URL}/admin`,
-				},
-				{
-					source: "/admin/:admin*",
-					destination: `${KEYSTONE_URL}/admin/:admin*`,
-				},
-				...(ANALYTICS_URL
-					? {
-							source: "/stts/:match*",
-							destination: ANALYTICS_URL,
-					  }
-					: {}),
-			],
+			fallback,
 			afterFiles: [],
 		}
 	},
