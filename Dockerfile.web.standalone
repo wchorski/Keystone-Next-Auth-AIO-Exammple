@@ -39,7 +39,17 @@ RUN \
     echo "Lockfile not found." && exit 1; \
   fi
 
-# RUN yarn add sharp
+RUN \
+  if [ -f yarn.lock ]; then \ 
+    yarn add sharp; \
+  elif [ -f package-lock.json ]; then\ 
+    npm install sharp; \
+  elif [ -f pnpm-lock.yaml ]; then \ 
+  pnpm add sharp; \
+  else \
+    echo "Lockfile not found." && exit 1; \
+  fi
+
 # Learn more here: https://nextjs.org/telemetry
 ENV NEXT_TELEMETRY_DISABLED 1
 

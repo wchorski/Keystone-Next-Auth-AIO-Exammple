@@ -19,6 +19,7 @@
     "ks:build_no_ui": " keystone build --no-ui",
     "ks:start": "keystone start",
     "ks:watch": "keystone dev --no-server",
+    "generate": "keystone prisma generate",
     "lint": "next lint",
     "dev": "turbo ks:watch ks:nextdev n:dev",
     "dev2": "turbo ks:dev n:dev",
