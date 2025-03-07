@@ -1,9 +1,6 @@
 ARG PRODUCTION_PLATFORM
 FROM --platform=$PRODUCTION_PLATFORM node:21-alpine AS base
 
-ARG PKG_MGMR
-ENV PKG_MGMR=${PKG_MGMR}
-
 FROM base AS builder
 WORKDIR /app
 
@@ -20,7 +17,6 @@ RUN \
   else \ 
     echo "Lockfile not found." && exit 1; \
   fi
-# RUN $PKG_MGMR install --production --frozen-lockfile
 
 RUN \
   if [ -f yarn.lock ]; then \ 
@@ -32,7 +28,6 @@ RUN \
   else \ 
     echo "Lockfile not found." && exit 1; \
   fi
-# RUN $PKG_MGMR generate
 
 RUN \
   if [ -f yarn.lock ]; then \ 
@@ -44,7 +39,6 @@ RUN \
   else \ 
     echo "Lockfile not found." && exit 1; \
   fi
-# RUN $PKG_MGMR ks:build
 
 RUN \
   if [ -f yarn.lock ]; then \ 
@@ -56,7 +50,6 @@ RUN \
   else \ 
     echo "Lockfile not found." && exit 1; \
   fi
-# RUN $PKG_MGMR next telemetry disable
 
 # Learn more here: https://nextjs.org/telemetry
 ENV NEXT_TELEMETRY_DISABLED 1
@@ -80,8 +73,9 @@ COPY --from=builder /app/node_modules ./node_modules
 # COPY --from=builder /app/node_modules/@keystone-core ./node_modules/@keystone-core
 # etc
 
-EXPOSE $CMS_PORT
-ENV NODE_ENV production
-ENV PORT $CMS_PORT
 
-CMD ["pnpm", "ks:start"]
+EXPOSE 3001
+ENV NODE_ENV production
+ENV PORT 3001
+
+CMD ["npx", "keystone", "start"]

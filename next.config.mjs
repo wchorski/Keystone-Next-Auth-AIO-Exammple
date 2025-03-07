@@ -1,5 +1,5 @@
-const CMS_URL = process.env.CMS_URL || "http://localhost:3001"
-const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL || ""
+const CMS_URL = process.env.NODE_ENV !== 'production' ? process.env.CMS_URL : 'http://cms:3001'
+const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {

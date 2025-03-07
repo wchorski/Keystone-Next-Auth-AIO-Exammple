@@ -102,6 +102,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
 
+ARG WEB_PORT
 EXPOSE $WEB_PORT
 
 ENV PORT $WEB_PORT
