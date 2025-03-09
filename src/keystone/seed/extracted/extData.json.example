@@ -1,0 +1,214 @@
+{
+  "users": [
+    {
+      "id": "cm7b6gni10004fj284e4ycv97",
+      "name": "Cole",
+      "nameLast": "",
+      "authId": "Cole@tawtaw.site",
+      "password": "$2a$13$jyz3wHM.fYO2Tp4VZQAxCOjyBp1rDcfjMuRAIxxOjojnMWxJZJ/Ke",
+      "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Maria&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
+      "phone": "",
+      "email": "Cole@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-06T23:35:21.305Z",
+      "dateModified": "2025-02-19T00:31:04.400Z",
+      "role": {
+        "name": "client",
+        "id": "cm7b6gjw80001fj284oo1ertp"
+      }
+    },
+    {
+      "id": "cm7b6go22000afj282ny9r7lm",
+      "name": "Colin",
+      "nameLast": "",
+      "authId": "Colin@tawtaw.site",
+      "password": "$2a$13$ZUiuVjKqKCdKmP3p.dMdUe0SVrSeE5ryfZ8aIvWVA0fJmuCmMfpm.",
+      "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Aidan&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
+      "phone": "",
+      "email": "Colin@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-06T23:35:21.305Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "client",
+        "id": "cm7b6gjw80001fj284oo1ertp"
+      }
+    },
+    {
+      "id": "cm7b6go220008fj28azoxuyvg",
+      "name": "Cinderella",
+      "nameLast": "",
+      "authId": "Cinderella@tawtaw.site",
+      "password": "$2a$13$f35HRgwwIoPZ9Xj9awpoqON5jevLvY7SULFNU80V4JQsHx4ztf8pm",
+      "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Vivian&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
+      "phone": "",
+      "email": "Cinderella@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-06T23:35:21.305Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "client",
+        "id": "cm7b6gjw80001fj284oo1ertp"
+      }
+    },
+    {
+      "id": "cm7b6go22000cfj28xjh3pddt",
+      "name": "Arthur",
+      "nameLast": "",
+      "authId": "arthur@tawtaw.site",
+      "password": "$2a$13$Twhb5F/VOObRx9N1s8T82.R9JJAX84NtZZMX6gf2dQa/XBZuenDzK",
+      "image": "",
+      "phone": "",
+      "email": "arthur@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2024-12-17T20:32:37.437Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "author",
+        "id": "cm7b6gjwh0003fj28qehazaxn"
+      }
+    },
+    {
+      "id": "cm7b6go220009fj28oaf3r2gw",
+      "name": "Adam",
+      "nameLast": "",
+      "authId": "adam@tawtaw.site",
+      "password": "adam@tawtaw.site",
+      "image": "",
+      "phone": "",
+      "email": "adam@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2024-12-17T20:32:37.437Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "admin",
+        "id": "cm7b6gjwa0002fj281kswcv3n"
+      }
+    },
+    {
+      "id": "cm7b6go220006fj28alnsjb92",
+      "name": "Cinda",
+      "nameLast": "",
+      "authId": "cinda@tawtaw.site",
+      "password": "$2a$13$QUeuAygr7KeNRo6mKlvwkeKcQhl0GiXlLmNd/ezCx6uE.BZeSL3Cy",
+      "image": "",
+      "phone": "",
+      "email": "cinda@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2024-12-17T20:32:37.437Z",
+      "dateModified": "2025-02-19T00:31:04.502Z",
+      "role": {
+        "name": "client",
+        "id": "cm7b6gjw80001fj284oo1ertp"
+      }
+    },
+    {
+      "id": "cm7b6go220007fj28f5kcsky3",
+      "name": "Ulric the Unverified",
+      "nameLast": "",
+      "authId": "ulric@tawtaw.site",
+      "password": "$2a$13$CIsfWvXhZWuhyoBO9kQSS.R7/lj0TsSKyTHCwcbx8uuHvwoUS7C5q",
+      "image": "",
+      "phone": "",
+      "email": "ulric@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-16T23:07:14.571Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "client",
+        "id": "cm7b6gjw80001fj284oo1ertp"
+      }
+    },
+    {
+      "id": "cm7b6go210005fj289dmbd5h0",
+      "name": "Eddy",
+      "nameLast": "",
+      "authId": "eddy@tawtaw.site",
+      "password": "$2a$13$.3pwoItHxtI3iipsByl5SOVKVR1UQkkiKVpTC0Ii9RM4KKnGytwWm",
+      "image": "",
+      "phone": "",
+      "email": "eddy@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2024-12-17T20:32:37.437Z",
+      "dateModified": "2025-02-19T00:31:04.502Z",
+      "role": {
+        "name": "editor",
+        "id": "cm7b6gjvq0000fj2859eol568"
+      }
+    },
+    {
+      "id": "cm7b6go22000bfj28lprsfxvg",
+      "name": "Catherine",
+      "nameLast": "",
+      "authId": "Catherine@tawtaw.site",
+      "password": "$2a$13$7Fcso8fJjyVuqRVtvY6ZmOp1ARPLDwV5dOtm.CPIsjRSTMb20HBNO",
+      "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Katherine&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
+      "phone": "",
+      "email": "Catherine@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-06T23:35:21.305Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "client",
+        "id": "cm7b6gjw80001fj284oo1ertp"
+      }
+    }
+  ],
+  "roles": [
+    {
+      "id": "cm7b6gjvq0000fj2859eol568",
+      "name": "editor",
+      "label": "Editor",
+      "description": "",
+      "canViewUsers": false,
+      "canManageUsers": false,
+      "canManageRoles": false,
+      "canManagePosts": true,
+      "canCreatePosts": true
+    },
+    {
+      "id": "cm7b6gjw80001fj284oo1ertp",
+      "name": "client",
+      "label": "Client",
+      "description": "",
+      "canViewUsers": false,
+      "canManageUsers": false,
+      "canManageRoles": false,
+      "canManagePosts": false,
+      "canCreatePosts": false
+     
+    },
+    {
+      "id": "cm7b6gjwa0002fj281kswcv3n",
+      "name": "admin",
+      "label": "Admin",
+      "description": "",
+      "canViewUsers": true,
+      "canManageUsers": true,
+      "canManageRoles": true,
+      "canManagePosts": true,
+      "canCreatePosts": true
+    },
+    {
+      "id": "cm7b6gjwh0003fj28qehazaxn",
+      "name": "author",
+      "label": "Author",
+      "description": "",
+      "canViewUsers": false,
+      "canManageUsers": false,
+      "canManageRoles": false,
+      "canManagePosts": false,
+      "canCreatePosts": true
+    }
+  ],
+  "posts":[]
+}

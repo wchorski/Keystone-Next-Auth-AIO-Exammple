@@ -12,8 +12,55 @@ generator client {
 }
 
 model User {
-  id        String    @id @default(cuid())
-  name      String    @default("")
-  about     Json      @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
-  createdAt DateTime? @default(now())
+  id                 String    @id @default(cuid())
+  name               String    @default("")
+  nameLast           String    @default("")
+  authId             String    @unique @default("")
+  image              String    @default("")
+  phone              String    @default("")
+  email              String    @unique @default("")
+  password           String    @default("")
+  url                String    @default("")
+  isActive           Boolean   @default(true)
+  role               Role?     @relation("User_role", fields: [roleId], references: [id])
+  roleId             String?   @map("role")
+  posts              Post[]    @relation("Post_author")
+  privatePostsAccess Post[]    @relation("Post_privateAccess")
+  dateCreated        DateTime  @default(now())
+  dateModified       DateTime? @default(now()) @updatedAt
+
+  @@index([roleId])
+}
+
+model Role {
+  id             String  @id @default(cuid())
+  name           String  @unique @default("")
+  label          String  @unique @default("")
+  description    String  @default("")
+  canViewUsers   Boolean @default(false)
+  canManageUsers Boolean @default(false)
+  canManageRoles Boolean @default(false)
+  canManagePosts Boolean @default(false)
+  canCreatePosts Boolean @default(false)
+  assignedTo     User[]  @relation("User_role")
+}
+
+model Post {
+  id             String   @id @default(cuid())
+  title          String   @default("")
+  slug           String   @unique @default("")
+  status         String?  @default("DRAFT")
+  template       String?  @default("FULLWIDTH")
+  pinned         Int?     @default(0)
+  excerpt        String   @default("")
+  featured_image String   @default("")
+  featured_video String   @default("")
+  content        Json     @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+  author         User?    @relation("Post_author", fields: [authorId], references: [id])
+  authorId       String?  @map("author")
+  privateAccess  User[]   @relation("Post_privateAccess")
+  dateCreated    DateTime @default(now())
+  dateModified   DateTime @default(now()) @updatedAt
+
+  @@index([authorId])
 }

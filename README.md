@@ -9,7 +9,13 @@ Test out a production build using the provided `package.json` scripts.
 1. `pnpm tbuild` 
 2. `pnpm start`
 
-## Docker Build
+## Seed Database
+1. `cp extData.json.example extData.json`
+2. .env SEED_EXTRACT_NONE = `seed`
+3. `pnpm ks:dev`
+
+## Production
+### Docker Build
 - `cp .env.example .env`
 - `cp compose.yml.example compose.yml`
 
@@ -21,3 +27,6 @@ docker compose up
 > you may add the `--no-cache` flag at the end incase of stale build conflicts
 
 > [!warning] Docker build does not support `sqlite` database
+
+## CSS
+In this repo I mostly rely on css modules. Make sure to set your VS Code and select **Use Workspace Version** for your typescript

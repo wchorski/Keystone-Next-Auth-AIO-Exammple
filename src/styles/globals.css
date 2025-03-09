@@ -1,3 +1,21 @@
+/* TODO not working!!!! WHY???? */
+/* @import './animations.css'; */
+:root {
+  --space-s: 0.2rem;
+  --c-accent: yellow;
+  --c-body: black;
+  --c-txt: rgb(168, 166, 166);
+}
+
+form, fieldset, label {
+  display: grid;
+  gap: .3rem;
+}
+
+/* .error {
+  border: solid 2px red;
+} */
+
 html,
 body {
   padding: 0;
@@ -14,6 +32,7 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+    
 }
 
 html {

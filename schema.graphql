@@ -3,19 +3,31 @@
 
 type User {
   id: ID!
+  typeof: String
   name: String
-  about: User_about_Document
-  createdAt: DateTime
-}
-
-type User_about_Document {
-  document(hydrateRelationships: Boolean! = false): JSON!
+  nameLast: String
+  authId: String
+  image: String
+  phone: String
+  email: String
+  password: String
+  url: String
+  isActive: Boolean
+  role: Role
+  posts(where: PostWhereInput! = {}, orderBy: [PostOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: PostWhereUniqueInput): [Post!]
+  postsCount(where: PostWhereInput! = {}): Int
+  privatePostsAccess(where: PostWhereInput! = {}, orderBy: [PostOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: PostWhereUniqueInput): [Post!]
+  privatePostsAccessCount(where: PostWhereInput! = {}): Int
+  dateCreated: DateTime
+  dateModified: DateTime
 }
 
 scalar DateTime @specifiedBy(url: "https://datatracker.ietf.org/doc/html/rfc3339#section-5.6")
 
 input UserWhereUniqueInput {
   id: ID
+  authId: String
+  email: String
 }
 
 input UserWhereInput {
@@ -24,7 +36,19 @@ input UserWhereInput {
   NOT: [UserWhereInput!]
   id: IDFilter
   name: StringFilter
-  createdAt: DateTimeNullableFilter
+  nameLast: StringFilter
+  authId: StringFilter
+  image: StringFilter
+  phone: StringFilter
+  email: StringFilter
+  password: StringFilter
+  url: StringFilter
+  isActive: BooleanFilter
+  role: RoleWhereInput
+  posts: PostManyRelationFilter
+  privatePostsAccess: PostManyRelationFilter
+  dateCreated: DateTimeFilter
+  dateModified: DateTimeNullableFilter
 }
 
 input IDFilter {
@@ -72,6 +96,28 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input BooleanFilter {
+  equals: Boolean
+  not: BooleanFilter
+}
+
+input PostManyRelationFilter {
+  every: PostWhereInput
+  some: PostWhereInput
+  none: PostWhereInput
+}
+
+input DateTimeFilter {
+  equals: DateTime
+  in: [DateTime!]
+  notIn: [DateTime!]
+  lt: DateTime
+  lte: DateTime
+  gt: DateTime
+  gte: DateTime
+  not: DateTimeFilter
+}
+
 input DateTimeNullableFilter {
   equals: DateTime
   in: [DateTime!]
@@ -86,7 +132,16 @@ input DateTimeNullableFilter {
 input UserOrderByInput {
   id: OrderDirection
   name: OrderDirection
-  createdAt: OrderDirection
+  nameLast: OrderDirection
+  authId: OrderDirection
+  image: OrderDirection
+  phone: OrderDirection
+  email: OrderDirection
+  password: OrderDirection
+  url: OrderDirection
+  isActive: OrderDirection
+  dateCreated: OrderDirection
+  dateModified: OrderDirection
 }
 
 enum OrderDirection {
@@ -96,8 +151,32 @@ enum OrderDirection {
 
 input UserUpdateInput {
   name: String
-  about: JSON
-  createdAt: DateTime
+  nameLast: String
+  authId: String
+  image: String
+  phone: String
+  email: String
+  password: String
+  url: String
+  isActive: Boolean
+  role: RoleRelateToOneForUpdateInput
+  posts: PostRelateToManyForUpdateInput
+  privatePostsAccess: PostRelateToManyForUpdateInput
+  dateCreated: DateTime
+  dateModified: DateTime
+}
+
+input RoleRelateToOneForUpdateInput {
+  create: RoleCreateInput
+  connect: RoleWhereUniqueInput
+  disconnect: Boolean
+}
+
+input PostRelateToManyForUpdateInput {
+  disconnect: [PostWhereUniqueInput!]
+  set: [PostWhereUniqueInput!]
+  create: [PostCreateInput!]
+  connect: [PostWhereUniqueInput!]
 }
 
 input UserUpdateArgs {
@@ -107,8 +186,259 @@ input UserUpdateArgs {
 
 input UserCreateInput {
   name: String
-  about: JSON
-  createdAt: DateTime
+  nameLast: String
+  authId: String
+  image: String
+  phone: String
+  email: String
+  password: String
+  url: String
+  isActive: Boolean
+  role: RoleRelateToOneForCreateInput
+  posts: PostRelateToManyForCreateInput
+  privatePostsAccess: PostRelateToManyForCreateInput
+  dateCreated: DateTime
+  dateModified: DateTime
+}
+
+input RoleRelateToOneForCreateInput {
+  create: RoleCreateInput
+  connect: RoleWhereUniqueInput
+}
+
+input PostRelateToManyForCreateInput {
+  create: [PostCreateInput!]
+  connect: [PostWhereUniqueInput!]
+}
+
+type Role {
+  id: ID!
+  name: String
+  label: String
+  description: String
+  canViewUsers: Boolean
+  canManageUsers: Boolean
+  canManageRoles: Boolean
+  canManagePosts: Boolean
+  canCreatePosts: Boolean
+  assignedTo(where: UserWhereInput! = {}, orderBy: [UserOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: UserWhereUniqueInput): [User!]
+  assignedToCount(where: UserWhereInput! = {}): Int
+}
+
+input RoleWhereUniqueInput {
+  id: ID
+  name: String
+  label: String
+}
+
+input RoleWhereInput {
+  AND: [RoleWhereInput!]
+  OR: [RoleWhereInput!]
+  NOT: [RoleWhereInput!]
+  id: IDFilter
+  name: StringFilter
+  label: StringFilter
+  description: StringFilter
+  canViewUsers: BooleanFilter
+  canManageUsers: BooleanFilter
+  canManageRoles: BooleanFilter
+  canManagePosts: BooleanFilter
+  canCreatePosts: BooleanFilter
+  assignedTo: UserManyRelationFilter
+}
+
+input UserManyRelationFilter {
+  every: UserWhereInput
+  some: UserWhereInput
+  none: UserWhereInput
+}
+
+input RoleOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+  label: OrderDirection
+  description: OrderDirection
+  canViewUsers: OrderDirection
+  canManageUsers: OrderDirection
+  canManageRoles: OrderDirection
+  canManagePosts: OrderDirection
+  canCreatePosts: OrderDirection
+}
+
+input RoleUpdateInput {
+  name: String
+  label: String
+  description: String
+  canViewUsers: Boolean
+  canManageUsers: Boolean
+  canManageRoles: Boolean
+  canManagePosts: Boolean
+  canCreatePosts: Boolean
+  assignedTo: UserRelateToManyForUpdateInput
+}
+
+input UserRelateToManyForUpdateInput {
+  disconnect: [UserWhereUniqueInput!]
+  set: [UserWhereUniqueInput!]
+  create: [UserCreateInput!]
+  connect: [UserWhereUniqueInput!]
+}
+
+input RoleUpdateArgs {
+  where: RoleWhereUniqueInput!
+  data: RoleUpdateInput!
+}
+
+input RoleCreateInput {
+  name: String
+  label: String
+  description: String
+  canViewUsers: Boolean
+  canManageUsers: Boolean
+  canManageRoles: Boolean
+  canManagePosts: Boolean
+  canCreatePosts: Boolean
+  assignedTo: UserRelateToManyForCreateInput
+}
+
+input UserRelateToManyForCreateInput {
+  create: [UserCreateInput!]
+  connect: [UserWhereUniqueInput!]
+}
+
+type Post {
+  id: ID!
+  typeof: String
+  title: String
+  slug: String
+  status: String
+  template: String
+  pinned: Int
+  excerpt: String
+  featured_image: String
+  featured_video: String
+  content: Post_content_Document
+  author: User
+  privateAccess(where: UserWhereInput! = {}, orderBy: [UserOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: UserWhereUniqueInput): [User!]
+  privateAccessCount(where: UserWhereInput! = {}): Int
+  dateCreated: DateTime
+  dateModified: DateTime
+}
+
+type Post_content_Document {
+  document(hydrateRelationships: Boolean! = false): JSON!
+}
+
+input PostWhereUniqueInput {
+  id: ID
+  slug: String
+}
+
+input PostWhereInput {
+  AND: [PostWhereInput!]
+  OR: [PostWhereInput!]
+  NOT: [PostWhereInput!]
+  id: IDFilter
+  title: StringFilter
+  slug: StringFilter
+  status: StringNullableFilter
+  template: StringNullableFilter
+  pinned: IntNullableFilter
+  excerpt: StringFilter
+  featured_image: StringFilter
+  featured_video: StringFilter
+  author: UserWhereInput
+  privateAccess: UserManyRelationFilter
+  dateCreated: DateTimeFilter
+  dateModified: DateTimeFilter
+}
+
+input StringNullableFilter {
+  equals: String
+  in: [String!]
+  notIn: [String!]
+  lt: String
+  lte: String
+  gt: String
+  gte: String
+  contains: String
+  startsWith: String
+  endsWith: String
+  mode: QueryMode
+  not: StringNullableFilter
+}
+
+input IntNullableFilter {
+  equals: Int
+  in: [Int!]
+  notIn: [Int!]
+  lt: Int
+  lte: Int
+  gt: Int
+  gte: Int
+  not: IntNullableFilter
+}
+
+input PostOrderByInput {
+  id: OrderDirection
+  title: OrderDirection
+  slug: OrderDirection
+  status: OrderDirection
+  template: OrderDirection
+  pinned: OrderDirection
+  excerpt: OrderDirection
+  featured_image: OrderDirection
+  featured_video: OrderDirection
+  dateCreated: OrderDirection
+  dateModified: OrderDirection
+}
+
+input PostUpdateInput {
+  title: String
+  slug: String
+  status: String
+  template: String
+  pinned: Int
+  excerpt: String
+  featured_image: String
+  featured_video: String
+  content: JSON
+  author: UserRelateToOneForUpdateInput
+  privateAccess: UserRelateToManyForUpdateInput
+  dateCreated: DateTime
+  dateModified: DateTime
+}
+
+input UserRelateToOneForUpdateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
+  disconnect: Boolean
+}
+
+input PostUpdateArgs {
+  where: PostWhereUniqueInput!
+  data: PostUpdateInput!
+}
+
+input PostCreateInput {
+  title: String
+  slug: String
+  status: String
+  template: String
+  pinned: Int
+  excerpt: String
+  featured_image: String
+  featured_video: String
+  content: JSON
+  author: UserRelateToOneForCreateInput
+  privateAccess: UserRelateToManyForCreateInput
+  dateCreated: DateTime
+  dateModified: DateTime
+}
+
+input UserRelateToOneForCreateInput {
+  create: UserCreateInput
+  connect: UserWhereUniqueInput
 }
 
 """
@@ -123,12 +453,31 @@ type Mutation {
   updateUsers(data: [UserUpdateArgs!]!): [User]
   deleteUser(where: UserWhereUniqueInput!): User
   deleteUsers(where: [UserWhereUniqueInput!]!): [User]
+  createRole(data: RoleCreateInput!): Role
+  createRoles(data: [RoleCreateInput!]!): [Role]
+  updateRole(where: RoleWhereUniqueInput!, data: RoleUpdateInput!): Role
+  updateRoles(data: [RoleUpdateArgs!]!): [Role]
+  deleteRole(where: RoleWhereUniqueInput!): Role
+  deleteRoles(where: [RoleWhereUniqueInput!]!): [Role]
+  createPost(data: PostCreateInput!): Post
+  createPosts(data: [PostCreateInput!]!): [Post]
+  updatePost(where: PostWhereUniqueInput!, data: PostUpdateInput!): Post
+  updatePosts(data: [PostUpdateArgs!]!): [Post]
+  deletePost(where: PostWhereUniqueInput!): Post
+  deletePosts(where: [PostWhereUniqueInput!]!): [Post]
+  endSession: Boolean!
 }
 
 type Query {
   user(where: UserWhereUniqueInput!): User
   users(where: UserWhereInput! = {}, orderBy: [UserOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: UserWhereUniqueInput): [User!]
   usersCount(where: UserWhereInput! = {}): Int
+  role(where: RoleWhereUniqueInput!): Role
+  roles(where: RoleWhereInput! = {}, orderBy: [RoleOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: RoleWhereUniqueInput): [Role!]
+  rolesCount(where: RoleWhereInput! = {}): Int
+  post(where: PostWhereUniqueInput!): Post
+  posts(where: PostWhereInput! = {}, orderBy: [PostOrderByInput!]! = [], take: Int, skip: Int! = 0, cursor: PostWhereUniqueInput): [Post!]
+  postsCount(where: PostWhereInput! = {}): Int
   keystone: KeystoneMeta!
 }
 

@@ -13,7 +13,29 @@ const DB_DOMAIN = process.env.DB_DOMAIN!
 const DB_PORT = process.env.DB_PORT!
 const DB_COLLECTION = process.env.DB_COLLECTION!
 const DB_TIMEOUT = process.env.DB_TIMEOUT!
-const CMS_URL = NODE_ENV !== 'production' ? process.env.CMS_URL! : 'http://cms:3001'
+const SEED_EXTRACT_NONE = process.env.SEED_EXTRACT_NONE
+
+// Content Management System
+const CMS_PROTOCAL = process.env.CMS_PROTOCAL!
+const CMS_DOMAIN = process.env.CMS_DOMAIN!
+const CMS_PORT = Number(process.env.CMS_PORT!)!
+const CMS_URL = `${CMS_PROTOCAL}://${CMS_DOMAIN}:${CMS_PORT}`
+
+// Website Frontend
+const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL!
+const SITE_TITLE = process.env.NEXT_PUBLIC_SITE_TITLE!
+const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION!
+const PERPAGE = Number(process.env.PERPAGE)! || 20
+
+// AUTH
+const NEXTAUTH_URL = process.env.NEXTAUTH_URL!
+const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET!
+const SEED_PASSWORD_SECRET = process.env.SEED_PASSWORD_SECRET || ''
+const WORK_FACTOR = Number(process.env.WORK_FACTOR!)!
+const GITHUB_AUTH_ID = process.env.GITHUB_AUTH_ID
+const GITHUB_AUTH_SECRET = process.env.GITHUB_AUTH_SECRET
+const GOOGLE_AUTH_ID = process.env.GOOGLE_AUTH_ID
+const GOOGLE_AUTH_SECRET = process.env.GOOGLE_AUTH_SECRET
 
 // Plugins
 const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL
@@ -46,5 +68,20 @@ export const envs = {
 	DATABASE_URL,
 	DB_PROVIDER,
   CMS_URL,
+  CMS_PORT,
   ANALYTICS_URL,
+  FRONTEND_URL,
+  NODE_ENV,
+  NEXTAUTH_URL,
+  NEXTAUTH_SECRET,
+  GITHUB_AUTH_ID,
+  GITHUB_AUTH_SECRET,
+  GOOGLE_AUTH_ID,
+  GOOGLE_AUTH_SECRET,
+  WORK_FACTOR,
+  SEED_PASSWORD_SECRET,
+  SEED_EXTRACT_NONE,
+  SITE_TITLE,
+  SITE_DESCRIPTION,
+  PERPAGE,
 }

@@ -1,4 +1,4 @@
-const CMS_URL = process.env.NODE_ENV !== 'production' ? process.env.CMS_URL : 'http://cms:3001'
+const CMS_URL = process.env.NODE_ENV !== 'production' ? `${process.env.CMS_PROTOCAL}://${process.env.CMS_DOMAIN}:${process.env.CMS_PORT}` : 'http://cms:3001'
 const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL
 
 /** @type {import('next').NextConfig} */
