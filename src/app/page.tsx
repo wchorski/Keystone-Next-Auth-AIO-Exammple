@@ -6,6 +6,7 @@ import Link from "next/link"
 import { getServerSession } from "next-auth"
 import { nextAuthOptions } from "@/session"
 import SignOutButton from "@components/SignOutButton"
+import { UsersListClient } from "@components/UsersListClient"
 
 const { PERPAGE } = envs
 const page = 1
@@ -74,6 +75,7 @@ export default async function HomePage() {
 
       <h2>Users fetch from client (GQL)</h2>
       <p>#TODO</p>
+      <UsersListClient />
 
 			<hr />
 

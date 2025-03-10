@@ -11,10 +11,12 @@ var bcrypt = require("bcryptjs")
 import { envs } from "../../../envs"
 
 import { permissions, rules } from "../access"
+import { allowAll } from "@keystone-6/core/access"
 
 const {WORK_FACTOR} = envs
 
 export const User: Lists.User = list({
+  // access: allowAll,
 	access: {
 		filter: {
 			// query: () => true,
