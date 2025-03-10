@@ -30,3 +30,10 @@ docker compose up
 
 ## CSS
 In this repo I mostly rely on css modules. Make sure to set your VS Code and select **Use Workspace Version** for your typescript
+
+The `typescript-plugin-css-modules` package allows you to import css classes like an exported js const / function.
+
+example
+```tsx
+import allStyles, { bg_c_accent, bg_c_plain, bg_c_primary, bg_c_reverse_theme, bg_c_secondary, bg_c_tertiary, bg_c_transparent, outline_c_secondary, outline_c_tertiary } from "../styles/colorthemes.module.css"
+```
