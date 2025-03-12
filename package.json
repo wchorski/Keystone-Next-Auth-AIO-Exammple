@@ -31,6 +31,8 @@
     "tbuild": "turbo ks:build n:build"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.4",
+    "@apollo/experimental-nextjs-app-support": "^0.11.10",
     "@keystone-6/core": "^6.3.1",
     "@keystone-6/document-renderer": "^1.1.2",
     "@keystone-6/fields-document": "^9.1.1",

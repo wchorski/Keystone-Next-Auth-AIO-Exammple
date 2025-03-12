@@ -10,7 +10,6 @@ import { UsersListClient } from "@components/UsersListClient"
 import { UsersListClientApollo } from "@components/UsersListClientApollo"
 import { query } from "@lib/gqlClient"
 import { gql } from "@apollo/client"
-import { FakeDataComponent } from "@components/FakeDataSuspense"
 
 const { PERPAGE } = envs
 const page = 1
@@ -65,12 +64,10 @@ export default async function HomePage() {
 
 			<h1>Next.js 🤝 Keystone</h1>
 
-			<FakeDataComponent />
-      
 			<section>
 				<h2>Users fetch with Apollo Client (From Browser)</h2>
-				{/* <UsersListClientApollo /> */}
-				<UsersListClient />
+				<UsersListClientApollo />
+				{/* <UsersListClient /> */}
 			</section>
 
 			<section>

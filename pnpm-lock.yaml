@@ -13,6 +13,12 @@ importers:
 
   .:
     dependencies:
+      '@apollo/client':
+        specifier: ^3.13.4
+        version: 3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@apollo/experimental-nextjs-app-support':
+        specifier: ^0.11.10
+        version: 0.11.10(@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0)(next@14.2.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.85.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@keystone-6/core':
         specifier: ^6.3.1
         version: 6.4.0(@prisma/generator-helper@5.22.0)(@types/express@4.17.21)(@types/react@18.3.18)(sass@1.85.1)(typescript@5.8.2)
@@ -88,8 +94,16 @@ packages:
     peerDependencies:
       graphql: 14.x || 15.x || 16.x
 
-  '@apollo/client@3.13.3':
-    resolution: {integrity: sha512-StozissNsakG9cveM5IYcVjQBiJXXtfybSwIklrJQv3c0CLshWBlUv5OddMrJxKfQ1A+9WqPQZXjkA/HxbflDA==}
+  '@apollo/client-react-streaming@0.11.10':
+    resolution: {integrity: sha512-5DpLZFtez42SWqOi3qpKh9K7mcX3KQwpvQJf++BmVvBRsAQrgGvWNBQGJCrNbFPv96sVKR+9FZY6QkihTxO9yQ==}
+    peerDependencies:
+      '@apollo/client': ^3.10.4
+      graphql: ^16 || >=17.0.0-alpha.2
+      react: ^18 || >=19.0.0-rc
+      react-dom: ^18 || >=19.0.0-rc
+
+  '@apollo/client@3.13.4':
+    resolution: {integrity: sha512-Ot3RaN2M/rhIKDqXBdOVlN0dQbHydUrYJ9lTxkvd6x7W1pAjwduUccfoz2gsO4U9by7oWtRj/ySF0MFNUp+9Aw==}
     peerDependencies:
       graphql: ^15.0.0 || ^16.0.0
       graphql-ws: ^5.5.5 || ^6.0.3
@@ -105,6 +119,13 @@ packages:
         optional: true
       subscriptions-transport-ws:
         optional: true
+
+  '@apollo/experimental-nextjs-app-support@0.11.10':
+    resolution: {integrity: sha512-rVckSnc9yPu7+YruagG5Hz+xetku9soIhjOQ3F7Bqv1p7OXZSECt2nO0FVMbHwTJuq6In7J1HzK6zjf1XuiTvA==}
+    peerDependencies:
+      '@apollo/client': ^3.10.4
+      next: 14.2.24
+      react: ^18 || >=19.0.0-rc
 
   '@apollo/protobufjs@1.2.7':
     resolution: {integrity: sha512-Lahx5zntHPZia35myYDBRuF58tlwPskwHc5CWBZC/4bMKB6siTBWwtMrkqXcsNwQiFSzSx5hKdRPUmemrEp3Gg==}
@@ -3155,7 +3176,15 @@ snapshots:
     dependencies:
       graphql: 16.10.0
 
-  '@apollo/client@3.13.3(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@apollo/client-react-streaming@0.11.10(@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@apollo/client': 3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      graphql: 16.10.0
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      ts-invariant: 0.10.3
+
+  '@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.10.0)
       '@wry/caches': 1.0.1
@@ -3176,6 +3205,16 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
     transitivePeerDependencies:
       - '@types/react'
+
+  '@apollo/experimental-nextjs-app-support@0.11.10(@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0)(next@14.2.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.85.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@apollo/client': 3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@apollo/client-react-streaming': 0.11.10(@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      next: 14.2.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.85.1)
+      react: 18.3.1
+    transitivePeerDependencies:
+      - graphql
+      - react-dom
 
   '@apollo/protobufjs@1.2.7':
     dependencies:
@@ -4134,7 +4173,7 @@ snapshots:
   '@keystone-6/core@6.4.0(@prisma/generator-helper@5.22.0)(@types/express@4.17.21)(@types/react@18.3.18)(sass@1.85.1)(typescript@5.8.2)':
     dependencies:
       '@apollo/cache-control-types': 1.0.3(graphql@16.10.0)
-      '@apollo/client': 3.13.3(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@apollo/client': 3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@apollo/server': 4.11.3(graphql@16.10.0)
       '@aws-sdk/client-s3': 3.758.0
       '@aws-sdk/lib-storage': 3.758.0(@aws-sdk/client-s3@3.758.0)
@@ -4164,7 +4203,7 @@ snapshots:
       '@prisma/internals': 5.22.0
       '@prisma/migrate': 5.22.0(@prisma/generator-helper@5.22.0)(@prisma/internals@5.22.0)
       '@sindresorhus/slugify': 1.1.2
-      apollo-upload-client: 17.0.0(@apollo/client@3.13.3(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0)
+      apollo-upload-client: 17.0.0(@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0)
       bcryptjs: 2.4.3
       body-parser: 1.20.3
       bytes: 3.1.2
@@ -5151,9 +5190,9 @@ snapshots:
     dependencies:
       color-convert: 2.0.1
 
-  apollo-upload-client@17.0.0(@apollo/client@3.13.3(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0):
+  apollo-upload-client@17.0.0(@apollo/client@3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.10.0):
     dependencies:
-      '@apollo/client': 3.13.3(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@apollo/client': 3.13.4(@types/react@18.3.18)(graphql@16.10.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       extract-files: 11.0.0
       graphql: 16.10.0
 

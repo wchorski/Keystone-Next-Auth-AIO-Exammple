@@ -16,9 +16,9 @@ const DB_TIMEOUT = process.env.DB_TIMEOUT!
 const SEED_EXTRACT_NONE = process.env.SEED_EXTRACT_NONE
 
 // Content Management System
-const CMS_PROTOCAL = process.env.CMS_PROTOCAL!
-const CMS_DOMAIN = process.env.CMS_DOMAIN!
-const CMS_PORT = Number(process.env.CMS_PORT!)!
+const CMS_PROTOCAL = process.env.NEXT_PUBLIC_CMS_PROTOCAL!
+const CMS_DOMAIN = process.env.NEXT_PUBLIC_CMS_DOMAIN!
+const CMS_PORT = Number(process.env.NEXT_PUBLIC_CMS_PORT!)!
 const CMS_URL = `${CMS_PROTOCAL}://${CMS_DOMAIN}:${CMS_PORT}`
 
 // Website Frontend
