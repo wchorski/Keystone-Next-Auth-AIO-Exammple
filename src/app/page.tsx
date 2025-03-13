@@ -9,7 +9,7 @@ import SignOutButton from "@components/SignOutButton"
 import { UsersListClient } from "@components/UsersListClient"
 import { UsersListClientApollo } from "@components/UsersListClientApollo"
 import { query } from "@lib/gqlClient"
-import { gql } from "@apollo/client"
+import { fetchGraphQL, gql } from "../graphql"
 import { FakeDataComponent } from "@components/FakeDataSuspense"
 
 const { PERPAGE } = envs
@@ -30,7 +30,7 @@ export default async function HomePage() {
 	// Apollo client fetch (Server Side)
 	// const { data } = await getClient().query({ query: userQuery })
 	// `query` is a shortcut for `getClient().query`
-	const { data } = await query({
+	const { data } = await fetchGraphQL({
 		query: gql`
 			query Users {
 				users {
@@ -40,7 +40,9 @@ export default async function HomePage() {
 				}
 			}
 		`,
+    variables: {}
 	})
+  console.log({data});
 
 	if (error)
 		return (
@@ -63,19 +65,23 @@ export default async function HomePage() {
 				<Link href={`/login`}>Login</Link>
 			)}
 
-			<h1>Next.js 🤝 Keystone</h1>
+			<h2>Next.js 🤝 Keystone</h2>
 
 			<FakeDataComponent />
-      
+
 			<section>
-				<h2>Users fetch with Apollo Client (From Browser)</h2>
+				<h2>Users fetch with Client Component (From Browser)</h2>
 				{/* <UsersListClientApollo /> */}
 				<UsersListClient />
 			</section>
 
 			<section>
-				<h2>Users fetched With Apollo Client (Server Side)</h2>
-				{data.users && data.users.length > 0 ? (
+				<h2>Users fetched GQL (Server Side)</h2>
+        <p>credentials do not get passed. Authorization does not happen here</p>
+        <pre>
+         {JSON.stringify({data}, null, 2)}
+        </pre>
+				{/* {data?.users && data.users.length > 0 ? (
 					<ol>
 						{data.users.map((u: any) => (
 							<li key={u.id}>
@@ -83,18 +89,12 @@ export default async function HomePage() {
 								<span>{u.name} </span>
 								<br />
 								<span>{u.email} </span>
-								{/* {u.about && (
-                  <>
-                    
-                    <DocumentRender document={u.about?.document} />
-                  </>
-                )} */}
 							</li>
 						))}
 					</ol>
 				) : (
 					<p>no users found.{!session && " not authorized to see data"}</p>
-				)}
+				)} */}
 			</section>
 
 			<section>
