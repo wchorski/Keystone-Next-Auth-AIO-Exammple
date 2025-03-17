@@ -15,7 +15,7 @@ import { envs } from "@/envs"
 import { useRouter } from "next/navigation"
 import { TbCheck, TbExclamationCircle, TbLoader } from "react-icons/tb"
 import { InputField } from "@components/InputField"
-import { SubmitButton } from "@components/SubmitButton"
+import { SubmitButton } from "@components/forms/SubmitButton"
 
 type State = "pending" | "error" | "success" | undefined
 
@@ -193,7 +193,7 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 				<p className={formState.status}>{formState.message}</p>
 
 				{formState.status !== "success" && (
-					<div>
+					<div className={'flex'} >
 						<SubmitButton label={"Login"} />
 
 						<Link href={`?${new URLSearchParams({ popup: "modal" })}`}>
@@ -203,7 +203,7 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 				)}
 			</fieldset>
 			
-			{socialProviders && (
+			{socialProviders?.length > 0 && (
 				<fieldset>
 					<legend> or with Social {statusIcon(state)}</legend>
 					{providers &&

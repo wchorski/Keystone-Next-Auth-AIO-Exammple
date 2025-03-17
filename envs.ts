@@ -28,6 +28,7 @@ const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION!
 const PERPAGE = Number(process.env.PERPAGE)! || 20
 
 // AUTH
+const BASIC_USER_ROLE_NAME = process.env.BASIC_USER_ROLE_NAME!
 const NEXTAUTH_URL = process.env.NEXTAUTH_URL!
 const NEXTAUTH_SECRET = process.env.NEXTAUTH_SECRET!
 const SEED_PASSWORD_SECRET = process.env.SEED_PASSWORD_SECRET || ''
@@ -39,6 +40,13 @@ const GOOGLE_AUTH_SECRET = process.env.GOOGLE_AUTH_SECRET
 
 // Plugins
 const ANALYTICS_URL = process.env.NEXT_PUBLIC_UMAMI_URL
+
+const ADMIN_EMAIL_ADDRESS = process.env.ADMIN_EMAIL_ADDRESS
+const MAIL_SERVICE = process.env.MAIL_SERVICE
+const MAIL_HOST = process.env.MAIL_HOST
+const MAIL_PORT = process.env.MAIL_PORT
+const MAIL_USER = process.env.MAIL_USER
+const MAIL_PASS = process.env.MAIL_PASS
 
 // const DB_PROTOCAL = (() => {
 //   switch (DB_PROVIDER) {
@@ -65,6 +73,13 @@ const DATABASE_URL = (() => {
 })()
 
 export const envs = {
+  BASIC_USER_ROLE_NAME,
+  ADMIN_EMAIL_ADDRESS,
+  MAIL_SERVICE,
+  MAIL_HOST,
+  MAIL_PASS,
+  MAIL_PORT,
+  MAIL_USER,
 	DATABASE_URL,
 	DB_PROVIDER,
   CMS_URL,

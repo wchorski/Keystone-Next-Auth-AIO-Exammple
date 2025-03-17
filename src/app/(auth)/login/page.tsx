@@ -7,11 +7,16 @@ import { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import { getProviders } from "next-auth/react"
 import Link from "next/link"
-
-const { SITE_TITLE } = envs
+// import {
+// 	layout_full,
+// 	layout_site,
+// 	layout_wide,
+// 	page_content,
+// 	page_layout,
+// } from "@styles/layout.module.css"
 
 export const metadata: Metadata = {
-	title: "Login | " + SITE_TITLE,
+	title: "Login | " + envs.SITE_TITLE,
 	description: "Login, register, or recover account",
 }
 
@@ -31,7 +36,9 @@ export default async function LoginPage({ searchParams }: Props) {
 	const providers = await getProviders()
 
 	return (
-		<main>
+		<main
+		// className={page_layout}
+		>
 			<DialogPopup buttonLabel="">
 				<p> Forgot your password? </p>
 				<PasswordRequestForm />
@@ -40,37 +47,42 @@ export default async function LoginPage({ searchParams }: Props) {
 			<header>
 				<h1> Login </h1>
 				{callbackUrl && (
-					<div className={"warning"}>
+					<div className={"warn"}>
 						<p>You will return back to the previous page after login</p>
 					</div>
 				)}
 			</header>
-			<div>
-				<div>
+			<div
+			// className={[page_content, layout_wide].join(" ")}
+			>
+				<div className={"flex"}>
 					<div>
 						<LoginForm providers={providers} callbackUrl={callbackUrl} />
 					</div>
 
 					<div>
-						{session?.user?.email && (
+						{session?.user.email && (
 							<div className={"info"}>
 								<p>
+									{" "}
 									currently logged in with email{" "}
-									<strong>{session.user.email}</strong>. Go to your{" "}
-									<Link href={`/`}>Account</Link>
+									<strong> {session.user.email} </strong>. Go to your{" "}
+									<Link href={`/`}> Account </Link>
 								</p>
 							</div>
 						)}
 
 						{error && (
 							<div className={"error"}>
+								{" "}
 								<p> Login failed. Please try again </p>
 							</div>
 						)}
 						<h4> Create a New Account </h4>
 						<p>
 							<Link href={`/register`} className={"button  large"}>
-								Register Now
+								{" "}
+								Register Now{" "}
 							</Link>
 						</p>
 					</div>

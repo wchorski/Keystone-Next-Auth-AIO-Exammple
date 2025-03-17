@@ -2,10 +2,7 @@
 // dave gray - https://github.com/gitdagray/next-dialog-modal/blob/main/src/app/components/Dialog.tsx
 import { useSearchParams } from "next/navigation"
 import { useRef, useEffect, type ComponentPropsWithoutRef } from "react"
-// import styles, {
-// 	animated_wrapper,
-// 	wrapper,
-// } from "@styles/popup.module.css"
+import styles, { animated_wrapper, wrapper } from "@styles/popup.module.css"
 import { useRouter } from "next/navigation"
 import { IoMdClose } from "react-icons/io"
 
@@ -29,7 +26,7 @@ export function DialogPopup(props: Props) {
 		switch (showPopup) {
 			case "modal":
 				dialogRef.current?.showModal()
-				// dialogRef.current?.classList.add(styles.open)
+				dialogRef.current?.classList.add(styles.open)
 				break
 
 			case "dialog":
@@ -49,14 +46,14 @@ export function DialogPopup(props: Props) {
 	}
 
 	const closeDialog = () => {
-		// dialogRef.current?.classList.add(styles.close)
-
+    console.log('close popup');
+    dialogRef.current?.close()
+		router.back()
 
 		dialogRef.current?.addEventListener(
 			"animationend",
 			() => {
-
-		    // dialogRef.current?.classList.remove(styles.close)
+				dialogRef.current?.classList.remove(styles.close)
 				dialogRef.current?.close()
 				router.back()
 				if (onClose) onClose()
@@ -74,29 +71,25 @@ export function DialogPopup(props: Props) {
 	// todo hide and show with style components so i can get a smooth transition
 	// const dialog: JSX.Element | null = (showPopup === 'modal') || (showPopup === 'dialog')
 	return (
-		<dialog
-			ref={dialogRef}
-			
-			onTransitionEnd={handleTransitionEnd}
-		>
-			<button  onClick={closeDialog}>
+		<dialog ref={dialogRef} onTransitionEnd={handleTransitionEnd}>
+			<button className={styles.background} onClick={closeDialog}>
 				{/* if user clicks off of dialog box, close it */}
 			</button>
 
-			<div >
+			<div className={[wrapper, animated_wrapper].join(" ")}>
 				<header>
 					<h2>{title}</h2>
 
-					<button onClick={closeDialog} >
+					<button onClick={closeDialog} className={styles.close}>
 						<IoMdClose />
 					</button>
 				</header>
 
-				<div >
+				<div className={styles.content}>
 					{children}
 
 					{buttonLabel && (
-						<div >
+						<div className={styles.buttons_wrap}>
 							<button onClick={clickOk} className={`button`}>
 								{buttonLabel}
 							</button>

@@ -29,7 +29,7 @@ export function useFetchGraphQL(
 					headers: { "Content-Type": "application/json" },
 					credentials: "include",
 				})
-				if (!res.ok) throw new Error("Failed to fetch")
+				if (!res.ok) throw new Error("Failed to fetch GraphQL")
 				const response = await res.json()
 				setData(response.data)
 			} catch (err) {

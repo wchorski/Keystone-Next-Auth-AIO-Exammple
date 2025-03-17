@@ -6,7 +6,7 @@ import {
 } from "@actions/actionPassworRequest"
 import { InputField } from "@components/InputField"
 import Link from "next/link"
-import { SubmitButton } from "@components/SubmitButton"
+import { SubmitButton } from "@components/forms/SubmitButton"
 
 const initState: PasswordRequestState = {
 	values: {

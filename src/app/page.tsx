@@ -1,5 +1,5 @@
 import React from "react"
-import { DocumentRender } from "./DocumentRender"
+// import { DocumentRender } from "./DocumentRender"
 import { fetchUsers } from "./fetch/fetchUsers"
 import { envs } from "@/envs"
 import Link from "next/link"
@@ -7,10 +7,11 @@ import { getServerSession } from "next-auth"
 import { nextAuthOptions } from "@/session"
 import SignOutButton from "@components/SignOutButton"
 import { UsersListClient } from "@components/UsersListClient"
-import { UsersListClientApollo } from "@components/UsersListClientApollo"
-import { query } from "@lib/gqlClient"
-import { fetchGraphQL, gql } from "../graphql"
+// import { fetchGraphQL, gql } from "../graphql"
 import { FakeDataComponent } from "@components/FakeDataSuspense"
+import { fetchPosts } from "./fetch/fetchPosts"
+import { PostsListClient } from "@components/PostsListClient"
+import { VerifyEmailCard } from "@components/VerifyEmailCard"
 
 const { PERPAGE } = envs
 const page = 1
@@ -20,8 +21,14 @@ export default async function HomePage() {
 	//   you will probably use getServerSession from 'next/auth'
 	//   https://next-auth.js.org/configuration/nextjs#in-app-directory
 	const session = await getServerSession(nextAuthOptions)
-	const { users, error } = await fetchUsers({
+	const { users, error: errorUsers } = await fetchUsers({
 		query: QUERY_USERS,
+		page,
+		perPage: PERPAGE,
+		session,
+	})
+	const { posts, error: errorPosts } = await fetchPosts({
+		query: QUERY_POSTS,
 		page,
 		perPage: PERPAGE,
 		session,
@@ -30,58 +37,63 @@ export default async function HomePage() {
 	// Apollo client fetch (Server Side)
 	// const { data } = await getClient().query({ query: userQuery })
 	// `query` is a shortcut for `getClient().query`
-	const { data } = await fetchGraphQL({
-		query: gql`
-			query Users {
-				users {
-					id
-					name
-					email
-				}
-			}
-		`,
-    variables: {}
-	})
-  console.log({data});
+	// const { data } = await fetchGraphQL({
+	// 	query: gql`
+	// 		query Users {
+	// 			users {
+	// 				id
+	// 				name
+	// 				email
+	// 			}
+	// 		}
+	// 	`,
+	// 	variables: {},
+	// })
 
-	if (error)
+	if (errorUsers || errorPosts)
 		return (
 			<section>
-				<p>{error.toString()}</p>
+				<p>{errorUsers?.toString() || errorPosts?.toString()}</p>
 			</section>
 		)
 
 	return (
-		<section>
+		<main>
 			{session ? (
-				<p>
-					Logged in as {session.user?.email}
-					<br />
-					<Link href={`/admin`}>Admin Dashboard CMS</Link>
-					<br />
-					<SignOutButton />
-				</p>
+				<>
+					<p>
+						Logged in as {session.user?.email}
+						<br />
+						<Link href={`/admin`}>Admin Dashboard CMS</Link>
+						<br />
+						<SignOutButton />
+					</p>
+					{!session.data.role && <VerifyEmailCard email={session.user.email} />}
+				</>
 			) : (
 				<Link href={`/login`}>Login</Link>
 			)}
 
 			<h2>Next.js 🤝 Keystone</h2>
 
-			<FakeDataComponent />
+			{/* <FakeDataComponent /> */}
+			<h3>Users: </h3>
+			<div className="col-3">
+				<section className={"card"}>
+					<h4>Users fetch with Client Component (From Browser)</h4>
+					{/* <UsersListClientApollo /> */}
+					<UsersListClient />
+				</section>
 
-			<section>
-				<h2>Users fetch with Client Component (From Browser)</h2>
-				{/* <UsersListClientApollo /> */}
-				<UsersListClient />
-			</section>
-
-			<section>
-				<h2>Users fetched GQL (Server Side)</h2>
-        <p>credentials do not get passed. Authorization does not happen here</p>
-        <pre>
-         {JSON.stringify({data}, null, 2)}
-        </pre>
-				{/* {data?.users && data.users.length > 0 ? (
+				<section className={"card"}>
+					<h4>Users fetched GQL (Server Side)</h4>
+					<p>
+						credentials do not get passed. Authorization does not happen here.
+						it's preferable to use <code>keystoneContext</code> for data
+						fetching on server
+					</p>
+					{/* <pre>{JSON.stringify({ data }, null, 2)}</pre> */}
+					{/* {data?.users && data.users.length > 0 ? (
 					<ol>
 						{data.users.map((u: any) => (
 							<li key={u.id}>
@@ -95,31 +107,63 @@ export default async function HomePage() {
 				) : (
 					<p>no users found.{!session && " not authorized to see data"}</p>
 				)} */}
-			</section>
+				</section>
 
-			<section>
-				<h2>Users fetched from the server using Keystone Context</h2>
-				{users && users.length > 0 ? (
-					<ol>
-						{users.map((u) => (
-							<li key={u.id}>
-								<hr />
-								<span>{u.name} </span>
-								<br />
-								<span>{u.email} </span>
-								{/* {u.about && (
+				<section className={"card"}>
+					<h4>
+						Users fetched from the server using Keystone Context
+						(keystoneContext)
+					</h4>
+					{users && users.length > 0 ? (
+						<ol>
+							{users.map((u) => (
+								<li key={u.id}>
+									<span>{u.name} </span>
+									<br />
+									<span>{u.email} </span>
+									<br />
+									<span>Role: {u?.role?.name || "unverified"} </span>
+									<hr />
+									{/* {u.about && (
                   <>
                     
                     <DocumentRender document={u.about?.document} />
                   </>
                 )} */}
-							</li>
-						))}
-					</ol>
-				) : (
-					<p>no users found.{!session && " not authorized to see data"}</p>
-				)}
-			</section>
+								</li>
+							))}
+						</ol>
+					) : (
+						<p>no users found.{!session && " not authorized to see data"}</p>
+					)}
+				</section>
+			</div>
+
+			<h3>Posts: </h3>
+			<div className="col-3">
+				<section>
+					<h4>Fetched by server (keystoneContext)</h4>
+					{posts ? (
+						<ol>
+							{posts.map((p) => (
+								<li className="card">
+									<h5>{p.title}</h5>
+									<p>{p.excerpt}</p>
+
+									<Link href={`/posts/${p.id}`}>read more...</Link>
+								</li>
+							))}
+						</ol>
+					) : (
+						<p>no posts found</p>
+					)}
+				</section>
+
+				<section>
+					<h4>Fetched client side (useFetchGraphQL)</h4>
+					<PostsListClient />
+				</section>
+			</div>
 
 			<hr />
 
@@ -143,7 +187,7 @@ export default async function HomePage() {
 					Check out the example in the repo more info.
 				</a>
 			</p>
-		</section>
+		</main>
 	)
 }
 
@@ -153,4 +197,14 @@ const QUERY_USERS = `
   nameLast
   email
   phone
+  role {
+    id
+    name
+  }
+`
+
+const QUERY_POSTS = `
+  id
+  title
+  excerpt
 `

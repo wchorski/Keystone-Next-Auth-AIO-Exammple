@@ -1,7 +1,10 @@
 ## Keystone-Next-Auth-AIO-Exammple
 combines keystone CMS, Next 15, and Next Auth into one package while still retaining Keystone's Admin UI nested inside Next App
 
-## Build on Local Machine
+## Development 
+### Seed data
+`cp ./keystone/seed/extracted/extData.json.example ./keystone/seed/extracted/extData.json`
+### Build on Local Machine
 Test out a production build using the provided `package.json` scripts.
 
 > this build NextJS as standalone app. Keystone is ran as a seperate app but can be accessed through NextJS app through `http://NEXTJS_APP/admin`
@@ -15,6 +18,12 @@ Test out a production build using the provided `package.json` scripts.
 3. `pnpm ks:dev`
 
 ## Production
+Before you build, you must create a `database migration` (unless you manualy copy your `db` files over from dev to production server). This will ensure all db tables (`Users` `Posts` `Roles` etc) are created.
+
+```shell
+pnpm migrate --name CUSTOM_NAME
+```
+
 ### Docker Build
 - `cp .env.example .env`
 - `cp compose.yml.example compose.yml`
@@ -37,3 +46,11 @@ example
 ```tsx
 import allStyles, { bg_c_accent, bg_c_plain, bg_c_primary, bg_c_reverse_theme, bg_c_secondary, bg_c_tertiary, bg_c_transparent, outline_c_secondary, outline_c_tertiary } from "../styles/colorthemes.module.css"
 ```
+
+## Enviroment 
+```
+node v21
+```
+
+## Issues
+- [util._extend issue](https://github.com/vercel/next.js/issues/71374)

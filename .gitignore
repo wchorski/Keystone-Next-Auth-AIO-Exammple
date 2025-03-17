@@ -5,6 +5,7 @@ node_modules
 *.env
 # making sure demo db is committed to repo so 
 # one click deploy to vercel will work
+/db/data-*
 !keystone.db
 **/seed/extracted/*
 !**/seed/extracted/extData.json.example

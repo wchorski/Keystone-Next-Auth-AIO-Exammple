@@ -9,7 +9,7 @@ const timestamp = now
 	.split(".")[0] // Format: YYYY-MM-DD_HH-mm-ss
 
 export async function extractDBData(context: Context) {
-	console.log("📄📄📄 EXTRACT_SEED from current database 📄📄📄")
+	console.log("📄⬇️📄 EXTRACT_SEED from current database 📄⬇️📄")
 
 	try {
 		const allDBData = (await context.sudo().graphql.run({
@@ -36,7 +36,7 @@ export const saveToFile = async (
 		await fs.writeFile(filePath + fileName, jsonData, "utf-8")
 
 		console.log("📄 created: ", fileName)
-		console.log(`📄📄📄 DB has been extracted 📄📄📄`)
+		console.log(`📄⬇️📄 DB has been extracted 📄⬇️📄`)
 	} catch (error: any) {
 		console.error(`Error writing to file: ${error.message}`)
 	}

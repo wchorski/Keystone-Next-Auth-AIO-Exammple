@@ -58,8 +58,7 @@ FROM base AS runner
 WORKDIR /app
 
 COPY --from=builder /app/package.json ./package.json
-# COPY --from=builder /app/yarn.lock .
-# COPY --from=builder /app/.env .
+COPY --from=builder /app/pnpm-lock.yaml .
 
 COPY --from=builder /app/.keystone ./.keystone
 COPY --from=builder /app/schema.prisma ./schema.prisma
@@ -78,4 +77,9 @@ EXPOSE 3001
 ENV NODE_ENV production
 ENV PORT 3001
 
-CMD ["npx", "keystone", "start"]
+# RUN npx keystone prisma migrate deploy
+# RUN npx keystone prisma generate
+# RUN npx keystone postinstall
+
+CMD ["npx", "keystone", "start", "--with-migrations"]
+# CMD ["pnpm", "ks:start"]

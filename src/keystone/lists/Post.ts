@@ -140,6 +140,7 @@ export const Post: Lists.Post = list({
 			componentBlocks,
 			ui: {
 				views: "./src/keystone/blocks",
+        
 			},
 			formatting: {
 				inlineMarks: {

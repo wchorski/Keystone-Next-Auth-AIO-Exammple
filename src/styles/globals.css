@@ -1,67 +1,115 @@
 /* TODO not working!!!! WHY???? */
 /* @import './animations.css'; */
 :root {
-  --space-s: 0.2rem;
-  --c-accent: yellow;
-  --c-body: black;
-  --c-txt: rgb(168, 166, 166);
+	--space-s: 0.2rem;
+	--c-accent: yellow;
+	--c-primary: rgb(0, 255, 179);
+	--c-body: black;
+	--c-txt: rgb(168, 166, 166);
+	--c-txt-bg: rgb(29, 29, 29);
+	--space-m: 1rem;
+	--space-ms: 0.3rem;
 }
 
-form, fieldset, label {
-  display: grid;
-  gap: .3rem;
+.flex {
+	display: flex;
+	gap: 1rem;
 }
 
-/* .error {
-  border: solid 2px red;
-} */
+figure.featured_img {
+	position: relative;
+	height: 30vh;
+	height: 30dvh;
+}
+
+header img {
+	object-fit: contain;
+}
+
+ol {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.card {
+	background-color: rgba(128, 128, 128, 0.22);
+	padding: 1rem;
+	border-radius: 5px;
+
+	& > *:first-child {
+		margin-top: 0;
+	}
+}
+
+.col-3 {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+	gap: 1rem; /* Adjust as needed */
+}
+
+form,
+fieldset,
+label {
+	display: grid;
+	gap: 0.3rem;
+}
+
+.error:empty,
+.success:empty {
+	display: none;
+}
+.error {
+	border: solid 2px red;
+}
+.success {
+	border: solid 2px lime;
+}
+.warn {
+	border: solid 2px yellow;
+}
+.info {
+	border: solid 2px blue;
+}
+
+.error, .success {
+  padding: 1rem;
+}
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    Segoe UI,
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    Fira Sans,
-    Droid Sans,
-    Helvetica Neue,
-    sans-serif;
-    
+	padding: 0;
+	margin: 0;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 html {
-  max-width: 70ch;
-  padding: 2em 1em;
-  margin: auto;
-  line-height: 1.75;
+	max-width: 70ch;
+	padding: 2em 1em;
+	margin: auto;
+	line-height: 1.75;
 }
 
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+	html {
+		color-scheme: dark;
+	}
 
-  body {
-    color: white;
-    background: black;
-  }
+	body {
+		color: white;
+		background: black;
+	}
 }
 
 input {
-  min-height: 2rem;
+	min-height: 2rem;
 }
 
 button {
-  height: 2rem;
-  min-width: 4rem;
+	height: 2rem;
+	min-width: 4rem;
 }

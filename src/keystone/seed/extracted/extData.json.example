@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "cm7b6gni10004fj284e4ycv97",
+      "id": "cm817n4r00004clto8wrqone2",
       "name": "Cole",
       "nameLast": "",
       "authId": "Cole@tawtaw.site",
-      "password": "$2a$13$jyz3wHM.fYO2Tp4VZQAxCOjyBp1rDcfjMuRAIxxOjojnMWxJZJ/Ke",
+      "password": "$2a$13$KIcQxnVpZ3bvXK10/DISKuZpesRCInpQco0qAUQozwzW357pViHMi",
       "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Maria&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
       "phone": "",
       "email": "Cole@tawtaw.site",
@@ -15,33 +15,15 @@
       "dateModified": "2025-02-19T00:31:04.400Z",
       "role": {
         "name": "client",
-        "id": "cm7b6gjw80001fj284oo1ertp"
+        "id": "cm817n0tu0003cltogzr32yp8"
       }
     },
     {
-      "id": "cm7b6go22000afj282ny9r7lm",
-      "name": "Colin",
-      "nameLast": "",
-      "authId": "Colin@tawtaw.site",
-      "password": "$2a$13$ZUiuVjKqKCdKmP3p.dMdUe0SVrSeE5ryfZ8aIvWVA0fJmuCmMfpm.",
-      "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Aidan&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
-      "phone": "",
-      "email": "Colin@tawtaw.site",
-      "url": "",
-      "isActive": true,
-      "dateCreated": "2025-01-06T23:35:21.305Z",
-      "dateModified": "2025-02-19T00:31:04.503Z",
-      "role": {
-        "name": "client",
-        "id": "cm7b6gjw80001fj284oo1ertp"
-      }
-    },
-    {
-      "id": "cm7b6go220008fj28azoxuyvg",
+      "id": "cm817n4r00006cltoozz7wjx1",
       "name": "Cinderella",
       "nameLast": "",
       "authId": "Cinderella@tawtaw.site",
-      "password": "$2a$13$f35HRgwwIoPZ9Xj9awpoqON5jevLvY7SULFNU80V4JQsHx4ztf8pm",
+      "password": "$2a$13$tjTJ9Vr.UE8N0uU8V8kjFOQRPwpzIiBO4aKOg5r/OYYgSEWIu.QUy",
       "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Vivian&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
       "phone": "",
       "email": "Cinderella@tawtaw.site",
@@ -51,15 +33,33 @@
       "dateModified": "2025-02-19T00:31:04.503Z",
       "role": {
         "name": "client",
-        "id": "cm7b6gjw80001fj284oo1ertp"
+        "id": "cm817n0tu0003cltogzr32yp8"
       }
     },
     {
-      "id": "cm7b6go22000cfj28xjh3pddt",
+      "id": "cm817n4r00005clto4avrmahm",
+      "name": "Colin",
+      "nameLast": "",
+      "authId": "Colin@tawtaw.site",
+      "password": "$2a$13$eZGYA0WHAMDnAGStWSJ8/OkaLwmV9Efpqu1KPwmwATlRh3/vC0iRC",
+      "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Aidan&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
+      "phone": "",
+      "email": "Colin@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-06T23:35:21.305Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "client",
+        "id": "cm817n0tu0003cltogzr32yp8"
+      }
+    },
+    {
+      "id": "cm817n4r10007cltoth7vt86d",
       "name": "Arthur",
       "nameLast": "",
       "authId": "arthur@tawtaw.site",
-      "password": "$2a$13$Twhb5F/VOObRx9N1s8T82.R9JJAX84NtZZMX6gf2dQa/XBZuenDzK",
+      "password": "$2a$13$GCMXwxK9Vkset5JkvuD23uaaFVQOPb6m9yRYvfX8C1UQVJs8wI5Wy",
       "image": "",
       "phone": "",
       "email": "arthur@tawtaw.site",
@@ -69,15 +69,15 @@
       "dateModified": "2025-02-19T00:31:04.503Z",
       "role": {
         "name": "author",
-        "id": "cm7b6gjwh0003fj28qehazaxn"
+        "id": "cm817n0tt0002cltomrvssugg"
       }
     },
     {
-      "id": "cm7b6go220009fj28oaf3r2gw",
+      "id": "cm817n4x00008cltoxzti9838",
       "name": "Adam",
       "nameLast": "",
       "authId": "adam@tawtaw.site",
-      "password": "adam@tawtaw.site",
+      "password": "$2a$13$bIvl4JQQoSwoCzwWzcfuxe.B9IkC8S/B5UiOFM0zyS8jKFcAPVlJG",
       "image": "",
       "phone": "",
       "email": "adam@tawtaw.site",
@@ -87,51 +87,15 @@
       "dateModified": "2025-02-19T00:31:04.503Z",
       "role": {
         "name": "admin",
-        "id": "cm7b6gjwa0002fj281kswcv3n"
+        "id": "cm817n0ts0001cltogsboyx3o"
       }
     },
     {
-      "id": "cm7b6go220006fj28alnsjb92",
-      "name": "Cinda",
-      "nameLast": "",
-      "authId": "cinda@tawtaw.site",
-      "password": "$2a$13$QUeuAygr7KeNRo6mKlvwkeKcQhl0GiXlLmNd/ezCx6uE.BZeSL3Cy",
-      "image": "",
-      "phone": "",
-      "email": "cinda@tawtaw.site",
-      "url": "",
-      "isActive": true,
-      "dateCreated": "2024-12-17T20:32:37.437Z",
-      "dateModified": "2025-02-19T00:31:04.502Z",
-      "role": {
-        "name": "client",
-        "id": "cm7b6gjw80001fj284oo1ertp"
-      }
-    },
-    {
-      "id": "cm7b6go220007fj28f5kcsky3",
-      "name": "Ulric the Unverified",
-      "nameLast": "",
-      "authId": "ulric@tawtaw.site",
-      "password": "$2a$13$CIsfWvXhZWuhyoBO9kQSS.R7/lj0TsSKyTHCwcbx8uuHvwoUS7C5q",
-      "image": "",
-      "phone": "",
-      "email": "ulric@tawtaw.site",
-      "url": "",
-      "isActive": true,
-      "dateCreated": "2025-01-16T23:07:14.571Z",
-      "dateModified": "2025-02-19T00:31:04.503Z",
-      "role": {
-        "name": "client",
-        "id": "cm7b6gjw80001fj284oo1ertp"
-      }
-    },
-    {
-      "id": "cm7b6go210005fj289dmbd5h0",
+      "id": "cm817n4x0000bcltoulv7dx4l",
       "name": "Eddy",
       "nameLast": "",
       "authId": "eddy@tawtaw.site",
-      "password": "$2a$13$.3pwoItHxtI3iipsByl5SOVKVR1UQkkiKVpTC0Ii9RM4KKnGytwWm",
+      "password": "$2a$13$LuUDU/QYnQaxSCIjq/qmzeqMi5b9lRG7NTAk08WwZpXG7OwHP1FaG",
       "image": "",
       "phone": "",
       "email": "eddy@tawtaw.site",
@@ -141,15 +105,51 @@
       "dateModified": "2025-02-19T00:31:04.502Z",
       "role": {
         "name": "editor",
-        "id": "cm7b6gjvq0000fj2859eol568"
+        "id": "cm817n0mj0000cltos9db37g6"
       }
     },
     {
-      "id": "cm7b6go22000bfj28lprsfxvg",
+      "id": "cm817n4x00009cltolmem3o8k",
+      "name": "Ulric the Unverified",
+      "nameLast": "",
+      "authId": "ulric@tawtaw.site",
+      "password": "$2a$13$ob0FHrbBDGmDSOsen91NcuNcb.0EYdbsqGjMsVuMkMGQbhJdFXBUe",
+      "image": "",
+      "phone": "",
+      "email": "ulric@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2025-01-16T23:07:14.571Z",
+      "dateModified": "2025-02-19T00:31:04.503Z",
+      "role": {
+        "name": "client",
+        "id": "cm817n0tu0003cltogzr32yp8"
+      }
+    },
+    {
+      "id": "cm817n4x0000aclto14udjpam",
+      "name": "Cinda",
+      "nameLast": "",
+      "authId": "cinda@tawtaw.site",
+      "password": "$2a$13$87Og2RP9xBgBOy24AYdSvulsDPWLF0.SrER7W7/MQaTKuDiz9YcyO",
+      "image": "",
+      "phone": "",
+      "email": "cinda@tawtaw.site",
+      "url": "",
+      "isActive": true,
+      "dateCreated": "2024-12-17T20:32:37.437Z",
+      "dateModified": "2025-02-19T00:31:04.502Z",
+      "role": {
+        "name": "client",
+        "id": "cm817n0tu0003cltogzr32yp8"
+      }
+    },
+    {
+      "id": "cm817n4x0000ccltotr8jeqmg",
       "name": "Catherine",
       "nameLast": "",
       "authId": "Catherine@tawtaw.site",
-      "password": "$2a$13$7Fcso8fJjyVuqRVtvY6ZmOp1ARPLDwV5dOtm.CPIsjRSTMb20HBNO",
+      "password": "$2a$13$Ps9Rrf/B5rCrI56QUjW.DOwo4Z0TxXbfSJdsPqgGksUwDiTceQ2mK",
       "image": "https://api.dicebear.com/9.x/bottts-neutral/svg?seed=Katherine&backgroundColor=00897b,00acc1,039be5,1e88e5,3949ab,43a047,546e7a,5e35b1,6d4c41,757575,7cb342,8e24aa,c0ca33,d81b60,e53935,f4511e,fb8c00,fdd835,ffb300,d1d4f9,b6e3f4,c0aede,ffd5dc,ffdfbf,transparent",
       "phone": "",
       "email": "Catherine@tawtaw.site",
@@ -159,13 +159,13 @@
       "dateModified": "2025-02-19T00:31:04.503Z",
       "role": {
         "name": "client",
-        "id": "cm7b6gjw80001fj284oo1ertp"
+        "id": "cm817n0tu0003cltogzr32yp8"
       }
     }
   ],
   "roles": [
     {
-      "id": "cm7b6gjvq0000fj2859eol568",
+      "id": "cm817n0mj0000cltos9db37g6",
       "name": "editor",
       "label": "Editor",
       "description": "",
@@ -176,19 +176,7 @@
       "canCreatePosts": true
     },
     {
-      "id": "cm7b6gjw80001fj284oo1ertp",
-      "name": "client",
-      "label": "Client",
-      "description": "",
-      "canViewUsers": false,
-      "canManageUsers": false,
-      "canManageRoles": false,
-      "canManagePosts": false,
-      "canCreatePosts": false
-     
-    },
-    {
-      "id": "cm7b6gjwa0002fj281kswcv3n",
+      "id": "cm817n0ts0001cltogsboyx3o",
       "name": "admin",
       "label": "Admin",
       "description": "",
@@ -199,7 +187,7 @@
       "canCreatePosts": true
     },
     {
-      "id": "cm7b6gjwh0003fj28qehazaxn",
+      "id": "cm817n0tt0002cltomrvssugg",
       "name": "author",
       "label": "Author",
       "description": "",
@@ -208,7 +196,407 @@
       "canManageRoles": false,
       "canManagePosts": false,
       "canCreatePosts": true
+    },
+    {
+      "id": "cm817n0tu0003cltogzr32yp8",
+      "name": "client",
+      "label": "Client",
+      "description": "",
+      "canViewUsers": false,
+      "canManageUsers": false,
+      "canManageRoles": false,
+      "canManagePosts": false,
+      "canCreatePosts": false
     }
   ],
-  "posts":[]
+  "posts": [
+    {
+      "id": "cm8alqnyv0001m5ifhs2yje7w",
+      "title": "Labrador",
+      "slug": "labrador",
+      "status": "PUBLIC",
+      "template": "FULLWIDTH",
+      "pinned": 0,
+      "excerpt": "Labrador Retrievers are one of the most popular dog breeds in the world, known for their friendly personality, intelligence, and loyalty. Originally bred as hunting and retrieving dogs, they are now cherished as family pets, service dogs, and working companions.",
+      "featured_image": "https://cdn.pixabay.com/photo/2018/03/07/21/26/animal-3207164_1280.jpg",
+      "featured_video": "",
+      "content": {
+        "document": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Labrador Retrievers are one of the most popular dog breeds in the world, known for their friendly personality, intelligence, and loyalty. Originally bred as hunting and retrieving dogs, they are now cherished as family pets, service dogs, and working companions."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "Characteristics"
+              }
+            ]
+          },
+          {
+            "type": "unordered-list",
+            "children": [
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "bold": true,
+                        "text": "Size:"
+                      },
+                      {
+                        "text": " Medium to large (21-24 inches tall)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "bold": true,
+                        "text": "Temperament:"
+                      },
+                      {
+                        "text": " Friendly, outgoing, and intelligent"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "bold": true,
+                        "text": "Lifespan:"
+                      },
+                      {
+                        "text": " Around 10-12 years"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "Why People Love Labradors"
+              }
+            ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "intent": "success",
+              "content": null
+            },
+            "children": [
+              {
+                "type": "component-block-prop",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "Labradors are highly social and great with families, children, and other pets. "
+                      }
+                    ]
+                  }
+                ],
+                "propPath": [
+                  "content"
+                ]
+              }
+            ],
+            "component": "callout"
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "They are easy to train, making them excellent service dogs, therapy dogs, and search-and-rescue workers. Their playful and affectionate nature makes them a joy to have at home."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "Things to Consider"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Labradors are energetic and require plenty of exercise to stay healthy and happy. They also love food and can be prone to obesity, so a balanced diet is important. Regular training helps manage their enthusiasm and prevent unwanted behaviors."
+              }
+            ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "color": "",
+              "caption": {
+                "value": null,
+                "discriminant": false
+              },
+              "imageSrc": "https://cdn.pixabay.com/photo/2016/11/30/16/23/dog-1873218_1280.jpg"
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "component": "hero"
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "children": [
+              {
+                "text": "Final Thoughts"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "If you want a loyal, affectionate, and intelligent companion, a Labrador Retriever is a fantastic choice!"
+              }
+            ]
+          }
+        ]
+      },
+      "author": {
+        "id": "cm817n4x00008cltoxzti9838",
+        "email": "adam@tawtaw.site"
+      },
+      "privateAccess": [],
+      "dateCreated": "2025-03-15T19:30:46.614Z",
+      "dateModified": "2025-03-15T21:23:10.408Z"
+    },
+    {
+      "id": "cm8aloe2w0000m5ifme4t6hfy",
+      "title": "Beagle",
+      "slug": "beagle",
+      "status": "PUBLIC",
+      "template": "FULLWIDTH",
+      "pinned": 0,
+      "excerpt": "Beagles are one of the most popular dog breeds, known for their friendly nature and keen sense of smell. Originally bred as hunting dogs, they are now beloved family pets worldwide.",
+      "featured_image": "https://cdn.pixabay.com/photo/2016/02/19/13/12/animals-1210206_1280.jpg",
+      "featured_video": "",
+      "content": {
+        "document": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Beagles are one of the most popular dog breeds, known for their friendly nature and keen sense of smell. Originally bred as hunting dogs, they are now beloved family pets worldwide."
+              }
+            ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "color": "",
+              "caption": {
+                "value": null,
+                "discriminant": false
+              },
+              "imageSrc": "https://cdn.pixabay.com/photo/2021/05/24/11/50/beagle-6278808_1280.jpg"
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ]
+              }
+            ],
+            "component": "hero"
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "Characteristics"
+              }
+            ]
+          },
+          {
+            "type": "unordered-list",
+            "children": [
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "bold": true,
+                        "text": "Size:"
+                      },
+                      {
+                        "text": " Small to medium (13-15 inches tall)"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "bold": true,
+                        "text": "Temperament:"
+                      },
+                      {
+                        "text": " Friendly, curious, and energetic"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "bold": true,
+                        "text": "Lifespan:"
+                      },
+                      {
+                        "text": " Around 12-15 years"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "Why People Love Beagles"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "Beagles are affectionate and great with families. They have a playful personality and get along well with kids and other pets. Their strong nose makes them excellent at scent detection, often used in search-and-rescue work."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "Things to Consider"
+              }
+            ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "intent": "warning",
+              "content": null
+            },
+            "children": [
+              {
+                "type": "component-block-prop",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "Beagles are intelligent but stubborn, requiring consistent training. "
+                      }
+                    ]
+                  }
+                ],
+                "propPath": [
+                  "content"
+                ]
+              }
+            ],
+            "component": "callout"
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "They are also prone to following scents, so a secure yard is a must. Regular exercise helps keep them happy and healthy."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "children": [
+              {
+                "text": "Final Thoughts"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "If you’re looking for a loving, energetic, and playful companion, a beagle might be the perfect dog for you!"
+              }
+            ]
+          }
+        ]
+      },
+      "author": {
+        "id": "cm817n4x00008cltoxzti9838",
+        "email": "adam@tawtaw.site"
+      },
+      "privateAccess": [],
+      "dateCreated": "2025-03-15T19:29:00.486Z",
+      "dateModified": "2025-03-15T21:13:04.264Z"
+    }
+  ]
 }

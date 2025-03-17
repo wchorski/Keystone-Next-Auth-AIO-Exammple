@@ -13,10 +13,10 @@ import { envs } from "../../../envs"
 import { permissions, rules } from "../access"
 import { allowAll } from "@keystone-6/core/access"
 
-const {WORK_FACTOR} = envs
+const { WORK_FACTOR } = envs
 
 export const User: Lists.User = list({
-  // access: allowAll,
+	// access: allowAll,
 	access: {
 		filter: {
 			// query: () => true,
@@ -121,7 +121,7 @@ export const User: Lists.User = list({
 
 		role: relationship({
 			ref: "Role.assignedTo",
-			// todo add access control  
+			// todo add access control
 			access: {
 				create: permissions.canManageUsers,
 				update: permissions.canManageUsers,
@@ -149,7 +149,7 @@ export const User: Lists.User = list({
 					db: {
 						updatedAt: true,
 					},
-          //? `updatedAt: true,` updates date anytime data is mutated
+					//? `updatedAt: true,` updates date anytime data is mutated
 					// hooks: {
 					// 	beforeOperation({ resolvedData, operation }) {
 					// 		if (operation === "create" || operation === "update") {
@@ -166,18 +166,18 @@ export const User: Lists.User = list({
 		// 	create: async ({ resolvedData, item }) => {},
 		// 	update: async ({ resolvedData, item }) => {},
 		// },
-		async afterOperation({ operation, context, item }) {
-			if (operation === "create") {
-				const data = (await context
+		afterOperation: {
+			create: async ({ context, item }) => {
+				const mail = (await context
 					.sudo()
 					.graphql.run({
 						query: `
-            mutation VerifyEmailRequest($email: String!) {
-              verifyEmailRequest(email: $email) {
-                id
+              mutation VerifyEmailRequest($email: String!) {
+                verifyEmailRequest(email: $email) {
+                  id
+                }
               }
-            }
-          `,
+            `,
 						variables: {
 							email: item.email,
 						},
@@ -185,7 +185,7 @@ export const User: Lists.User = list({
 					.catch((err) =>
 						console.log(`!!! verify email did not send: ${item.email}`)
 					)) as object
-			}
+			},
 		},
 	},
 })

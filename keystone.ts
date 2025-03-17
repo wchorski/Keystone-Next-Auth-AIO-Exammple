@@ -1,6 +1,6 @@
 require("dotenv").config()
 import { config } from "@keystone-6/core"
-import { lists } from "./src/keystone/schema"
+import { extendGraphqlSchema, lists } from "./src/keystone/schema"
 import type { Context } from ".keystone/types"
 import { envs } from "./envs"
 import { nextAuthSessionStrategy } from "./session"
@@ -24,13 +24,16 @@ export default config({
 		onConnect: async (context: Context) => {
 			console.log(`💾✅ Database Connected`)
 			// TODO why argv doesn't work?
-			if (SEED_EXTRACT_NONE === "seed" && NODE_ENV === "development") {
+			if (
+				SEED_EXTRACT_NONE === "seed"
+				// && NODE_ENV === "development"
+			) {
 				//todo would like to have this as an arg instead of env var
 				// if (process.argv.includes('--seed-database')) {
 				await seedDatabase(context)
 			} else if (
-				SEED_EXTRACT_NONE === "extract" &&
-				NODE_ENV === "development"
+				SEED_EXTRACT_NONE === "extract" 
+        // && NODE_ENV === "development"
 			) {
 				await extractDBData(context)
 			}
@@ -42,6 +45,9 @@ export default config({
 		port: CMS_PORT,
 		cors: { origin: [FRONTEND_URL], credentials: true },
 	},
+	graphql: {
+		extendGraphqlSchema,
+	},
 	// https://github.com/keystonejs/keystone/discussions/7746
 	ui: {
 		isDisabled: false,
@@ -49,19 +55,19 @@ export default config({
 		// TODO add rule that checks Role.adminDashboardAccess
 		// isAccessAllowed: ({session}) => true,
 		publicPages: [
-			"/api/auth/csrf",
-			"/api/auth/signin",
-			"/api/auth/callback",
-			"/api/auth/session",
-			"/api/auth/providers",
-			"/api/auth/signout",
-			"/api/auth/error",
+			FRONTEND_URL + "/api/auth/csrf",
+			FRONTEND_URL + "/api/auth/signin",
+			FRONTEND_URL + "/api/auth/callback",
+			FRONTEND_URL + "/api/auth/session",
+			FRONTEND_URL + "/api/auth/providers",
+			FRONTEND_URL + "/api/auth/signout",
+			FRONTEND_URL + "/api/auth/error",
 
 			//! each provider will need a separate callback and signin page listed here
-			"/api/auth/signin/github",
-			"/api/auth/callback/github",
-			"/api/auth/signin/credentials",
-			"/api/auth/callback/credentials",
+			FRONTEND_URL + "/api/auth/signin/github",
+			FRONTEND_URL + "/api/auth/callback/github",
+			FRONTEND_URL + "/api/auth/signin/credentials",
+			FRONTEND_URL + "/api/auth/callback/credentials",
 		],
 
 		// adding page middleware ensures that users are redirected to the signin page if they are not signed in.
@@ -70,7 +76,7 @@ export default config({
 
 			return {
 				kind: "redirect",
-				to: "/api/auth/signin",
+				to: FRONTEND_URL + "/api/auth/signin",
 			}
 		},
 	},

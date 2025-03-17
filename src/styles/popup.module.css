@@ -27,12 +27,15 @@ dialog.popup:modal {
 }
 
 .background {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.627);
   width: 100%;
   height: 100%;
   position: fixed;
   z-index: -1;
   border: none;
+  top:0;
+  left: 0;
+  backdrop-filter: blur(2px);
 }
 
 .wrapper {
@@ -49,7 +52,7 @@ dialog.popup:modal {
   max-height: 85vh;
   max-height: 85dvh;
   overflow-y: auto;
-  
+  border: solid 2px var(--c-primary);
 
   transition: opacity 3s ease, transform 3s ease;
 

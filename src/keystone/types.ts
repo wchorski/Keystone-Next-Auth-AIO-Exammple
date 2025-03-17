@@ -1,6 +1,5 @@
-import type {
-	Lists,
-} from ".keystone/types"
+import type { Lists } from ".keystone/types"
+import { JsonValue } from "@prisma/client/runtime/library"
 
 export type Session = {
 	user?:
@@ -26,12 +25,15 @@ export type ListAccessArgs = {
 }
 
 export type Post = Lists.Post.Item & {
-  author: User,
+	//? document field
+	content: { document: JsonValue }
+	//? relationship
+	author: User
 }
 
 export type User = Lists.User.Item & {
-  role: Role,
-  posts: Post[]
+	role?: Role
+	posts: Post[]
 }
 
 export type Role = Lists.Role.Item & {

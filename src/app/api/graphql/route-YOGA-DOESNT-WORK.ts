@@ -14,7 +14,7 @@ const handler = createYoga<{
 }>({
 	graphqlEndpoint: "/api/graphql",
 	schema: keystoneContext.graphql.schema,
-	context: ({ req }) => keystoneContext.withRequest(req),
+	context: async req => keystoneContext,
 	
 })
 
