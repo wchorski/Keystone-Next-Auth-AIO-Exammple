@@ -1,5 +1,5 @@
 ## Keystone-Next-Auth-AIO-Exammple
-combines keystone CMS, Next 15, and Next Auth into one package while still retaining Keystone's Admin UI nested inside Next App
+combines keystone CMS, Next 14, and Next Auth into one package while still retaining Keystone's Admin UI nested inside Next App
 
 ## Development 
 ### Seed data
@@ -14,8 +14,9 @@ Test out a production build using the provided `package.json` scripts.
 
 ## Seed Database
 1. `cp seedData.json.example seedData.json`
-2. .env SEED_EXTRACT_NONE = `seed`
+2. .env SEED_EXTRACT_NONE=`seed`
 3. `pnpm ks:dev`
+4. use `pnpm dev` to run both NextJs app and Keystone CMS in parallel
 
 ## Production
 Before you build, you must create a `database migration` (unless you manualy copy your `db` files over from dev to production server). This will ensure all db tables (`Users` `Posts` `Roles` etc) are created.
