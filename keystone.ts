@@ -54,20 +54,21 @@ export default config({
 		basePath: "/admin",
 		// TODO add rule that checks Role.adminDashboardAccess
 		// isAccessAllowed: ({session}) => true,
+    //? must append `basePath` to front of pages
 		publicPages: [
-			FRONTEND_URL + "/api/auth/csrf",
-			FRONTEND_URL + "/api/auth/signin",
-			FRONTEND_URL + "/api/auth/callback",
-			FRONTEND_URL + "/api/auth/session",
-			FRONTEND_URL + "/api/auth/providers",
-			FRONTEND_URL + "/api/auth/signout",
-			FRONTEND_URL + "/api/auth/error",
+			"/admin" + "/api/auth/csrf",
+			"/admin" + "/api/auth/signin",
+			"/admin" + "/api/auth/callback",
+			"/admin" + "/api/auth/session",
+			"/admin" + "/api/auth/providers",
+			"/admin" + "/api/auth/signout",
+			"/admin" + "/api/auth/error",
 
 			//! each provider will need a separate callback and signin page listed here
-			FRONTEND_URL + "/api/auth/signin/github",
-			FRONTEND_URL + "/api/auth/callback/github",
-			FRONTEND_URL + "/api/auth/signin/credentials",
-			FRONTEND_URL + "/api/auth/callback/credentials",
+			"/admin" + "/api/auth/signin/github",
+			"/admin" + "/api/auth/callback/github",
+			"/admin" + "/api/auth/signin/credentials",
+			"/admin" + "/api/auth/callback/credentials",
 		],
 
 		// adding page middleware ensures that users are redirected to the signin page if they are not signed in.
@@ -76,7 +77,7 @@ export default config({
 
 			return {
 				kind: "redirect",
-				to: FRONTEND_URL + "/api/auth/signin",
+				to: "/admin" + "/api/auth/signin",
 			}
 		},
 	},

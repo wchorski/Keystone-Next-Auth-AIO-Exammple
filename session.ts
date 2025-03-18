@@ -68,6 +68,7 @@ async function getKeystoneContext() {
 export const nextAuthOptions: NextAuthOptions = {
 	secret: sessionSecret,
 	pages: {
+		// signIn: FRONTEND_URL + "/login",
 		signIn: FRONTEND_URL + "/login",
 	},
 	callbacks: {
@@ -183,22 +184,22 @@ export const nextAuthOptions: NextAuthOptions = {
 		},
 	},
 	// allow anyone with a GitHub account to sign up as an author
-	// ...(GITHUB_AUTH_ID && GITHUB_AUTH_SECRET
-	// 	? [
-	// 			GithubProvider({
-	// 				clientId: GITHUB_AUTH_ID,
-	// 				clientSecret: GITHUB_AUTH_SECRET,
-	// 			}),
-	// 	  ]
-	// 	: []),
-	// ...(GOOGLE_AUTH_ID && GOOGLE_AUTH_SECRET
-	// 	? [
-	// 			GoogleProvider({
-	// 				clientId: GOOGLE_AUTH_ID,
-	// 				clientSecret: GOOGLE_AUTH_SECRET,
-	// 			}),
-	// 	  ]
-	// 	: []),
+	...(GITHUB_AUTH_ID && GITHUB_AUTH_SECRET
+		? [
+				GithubProvider({
+					clientId: GITHUB_AUTH_ID,
+					clientSecret: GITHUB_AUTH_SECRET,
+				}),
+		  ]
+		: []),
+	...(GOOGLE_AUTH_ID && GOOGLE_AUTH_SECRET
+		? [
+				GoogleProvider({
+					clientId: GOOGLE_AUTH_ID,
+					clientSecret: GOOGLE_AUTH_SECRET,
+				}),
+		  ]
+		: []),
 	providers: [
 		CredentialProvider({
 			name: "credentials",

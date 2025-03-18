@@ -9,7 +9,7 @@ import { fetchPostById } from "../../fetch/fetchPostById"
 import { notFound } from "next/navigation"
 import { DocumentRender } from "../../DocumentRender"
 import Image from "next/image"
-import { gql } from "../../graphql"
+import { gql } from "@ks/context"
 
 type Props = {
 	searchParams: { q: string }

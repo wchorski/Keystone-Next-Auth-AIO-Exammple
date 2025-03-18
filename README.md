@@ -3,7 +3,7 @@ combines keystone CMS, Next 15, and Next Auth into one package while still retai
 
 ## Development 
 ### Seed data
-`cp ./keystone/seed/extracted/extData.json.example ./keystone/seed/extracted/extData.json`
+`cp ./keystone/seed/extracted/seedData.json.example ./keystone/seed/extracted/seedData.json`
 ### Build on Local Machine
 Test out a production build using the provided `package.json` scripts.
 
@@ -13,7 +13,7 @@ Test out a production build using the provided `package.json` scripts.
 2. `pnpm start`
 
 ## Seed Database
-1. `cp extData.json.example extData.json`
+1. `cp seedData.json.example seedData.json`
 2. .env SEED_EXTRACT_NONE = `seed`
 3. `pnpm ks:dev`
 

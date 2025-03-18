@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 // const API_URI =  || 'http://localhost:3000/api/graphql'
 
-export const gql = ([content]: TemplateStringsArray) => content
+export const cgql = ([content]: TemplateStringsArray) => content
 
 export function useFetchGraphQL(
 	query: string,

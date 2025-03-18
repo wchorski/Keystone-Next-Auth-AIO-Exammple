@@ -1,5 +1,5 @@
 "use client"
-import { gql, useFetchGraphQL } from "../useFetchGraphql"
+import { cgql, useFetchGraphQL } from "../useFetchGraphql"
 
 type Data = {
 	users: {
@@ -23,7 +23,7 @@ type Variables = {
 
 export function UsersListClient() {
 	const { data, loading, error } = useFetchGraphQL(
-		gql`
+		cgql`
 			query Users($orderBy: [UserOrderByInput!]!) {
 				users(orderBy: $orderBy) {
 					id

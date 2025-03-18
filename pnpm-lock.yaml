@@ -13,12 +13,6 @@ importers:
 
   .:
     dependencies:
-      '@apollo/server':
-        specifier: ^4.11.3
-        version: 4.11.3(graphql@16.10.0)
-      '@as-integrations/next':
-        specifier: ^3.2.0
-        version: 3.2.0(@apollo/server@4.11.3(graphql@16.10.0))(next@14.2.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.85.1))
       '@keystone-6/core':
         specifier: ^6.3.1
         version: 6.4.0(@prisma/generator-helper@5.22.0)(@types/express@4.17.21)(@types/react@18.3.18)(sass@1.85.1)(typescript@5.8.2)
@@ -46,9 +40,6 @@ importers:
       graphql:
         specifier: ^16.8.1
         version: 16.10.0
-      graphql-tag:
-        specifier: ^2.12.6
-        version: 2.12.6(graphql@16.10.0)
       graphql-yoga:
         specifier: ^3.1.0
         version: 3.9.1(graphql@16.10.0)
@@ -201,13 +192,6 @@ packages:
   '@apollo/utils.withrequired@2.0.1':
     resolution: {integrity: sha512-YBDiuAX9i1lLc6GeTy1m7DGLFn/gMnvXqlalOIMjM7DeOgIacEjjfwPqb0M1CQ2v11HhR15d1NmxJoRCfrNqcA==}
     engines: {node: '>=14'}
-
-  '@as-integrations/next@3.2.0':
-    resolution: {integrity: sha512-JTVtRwHdOQTixIacmvfdUukSqNytEHfgvg+K9P8cW7JeF4SCPXat+i9abSII3/cbR6/GQwFZ6gq+c4R0nmSzMg==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      '@apollo/server': ^4.0.0
-      next: 14.2.24
 
   '@aws-crypto/crc32@5.2.0':
     resolution: {integrity: sha512-nLbCWqQNgUiwwtFsen1AdzAtvuLRsQS8rYgMuxCrdKf9kOssamGLuPwyTY9wyYblNr9+1XM8v6zoDTPPSIeANg==}
@@ -3342,11 +3326,6 @@ snapshots:
       graphql: 16.10.0
 
   '@apollo/utils.withrequired@2.0.1': {}
-
-  '@as-integrations/next@3.2.0(@apollo/server@4.11.3(graphql@16.10.0))(next@14.2.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.85.1))':
-    dependencies:
-      '@apollo/server': 4.11.3(graphql@16.10.0)
-      next: 14.2.24(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.85.1)
 
   '@aws-crypto/crc32@5.2.0':
     dependencies:

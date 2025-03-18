@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { gql, useFetchGraphQL } from "../useFetchGraphql"
+import { cgql, useFetchGraphQL } from "../useFetchGraphql"
 
 type Data = {
 	posts: {
@@ -20,7 +20,7 @@ type Variables = {
 
 export function PostsListClient() {
 	const { data, loading, error } = useFetchGraphQL(
-		gql`
+		cgql`
 			query Posts($orderBy: [PostOrderByInput!]!) {
 				posts(orderBy: $orderBy) {
 					id
@@ -37,7 +37,6 @@ export function PostsListClient() {
 			],
 		}
 	)
-	console.log(data)
 
 	if (loading) return <Loading />
 	if (error) return <p>error</p>

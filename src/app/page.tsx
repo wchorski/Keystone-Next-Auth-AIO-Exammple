@@ -86,30 +86,6 @@ export default async function HomePage() {
 				</section>
 
 				<section className={"card"}>
-					<h4>Users fetched GQL (Server Side)</h4>
-					<p>
-						credentials do not get passed. Authorization does not happen here.
-						it's preferable to use <code>keystoneContext</code> for data
-						fetching on server
-					</p>
-					{/* <pre>{JSON.stringify({ data }, null, 2)}</pre> */}
-					{/* {data?.users && data.users.length > 0 ? (
-					<ol>
-						{data.users.map((u: any) => (
-							<li key={u.id}>
-								<hr />
-								<span>{u.name} </span>
-								<br />
-								<span>{u.email} </span>
-							</li>
-						))}
-					</ol>
-				) : (
-					<p>no users found.{!session && " not authorized to see data"}</p>
-				)} */}
-				</section>
-
-				<section className={"card"}>
 					<h4>
 						Users fetched from the server using Keystone Context
 						(keystoneContext)

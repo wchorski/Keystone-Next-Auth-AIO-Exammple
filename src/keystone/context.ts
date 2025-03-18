@@ -3,6 +3,8 @@ import config from '../../keystone'
 import { type Context } from '.keystone/types'
 import * as PrismaModule from '@prisma/client'
 
+export const gql = ([content]: TemplateStringsArray) => content
+
 // Making sure multiple prisma clients are not created during hot reloading
 export const keystoneContext: Context =
   (globalThis as any).keystoneContext ?? getContext(config, PrismaModule)

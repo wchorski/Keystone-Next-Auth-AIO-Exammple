@@ -16,11 +16,11 @@ export async function extractDBData(context: Context) {
 			query,
 		})) as JSON
 
-		const fileName = `extData.${timestamp}.json`
+		const fileName = `seedData.${timestamp}.json`
 		const filePath = `./src/keystone/seed/extracted/`
 
 		saveToFile(fileName, filePath, allDBData)
-		saveToFile("extData.json", filePath, allDBData)
+		saveToFile("seedData.json", filePath, allDBData)
 	} catch (error) {
 		console.log("!!! extract: ", error)
 	}

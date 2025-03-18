@@ -1,6 +1,6 @@
 import type { Lists, Context } from ".keystone/types"
 
-import allDataJson from "./extracted/extData.json"
+import allDataJson from "./extracted/seedData.json"
 import { envs } from "../../../envs"
 
 const { SEED_PASSWORD_SECRET } = envs
