@@ -9,6 +9,7 @@ import { useSession } from "next-auth/react"
 import { PiUsersThreeFill } from "react-icons/pi"
 import { BsFilePostFill, BsFillTicketPerforatedFill } from "react-icons/bs"
 import type { CSSProperties } from "react"
+// import { Callout } from "@components/blocs/Callout"
 
 export function CustomNavigation({
 	authenticatedItem,
@@ -28,6 +29,9 @@ export function CustomNavigation({
 
 	return (
 		<NavigationContainer authenticatedItem={authenticatedItem}>
+			{/* <Callout intent={"info"}>
+				<p>how to use tsconfig paths in keystone files?</p>{" "}
+			</Callout> */}
 			{status === "loading" ? (
 				<p style={styleBorder}>Loading...</p>
 			) : (
@@ -63,10 +67,7 @@ export function CustomNavigation({
 			<hr style={lineSeperator} />
 			<div className="nav-link-group">
 				<BsFilePostFill />
-				<ListNavItems
-					lists={lists}
-					include={["Post"]}
-				/>
+				<ListNavItems lists={lists} include={["Post"]} />
 			</div>
 
 			{/* <hr style={lineSeperator} />

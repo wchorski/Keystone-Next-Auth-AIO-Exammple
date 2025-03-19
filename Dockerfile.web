@@ -6,6 +6,7 @@ WORKDIR /app
 COPY package.json ./
 COPY yarn.lock ./
 COPY . .
+COPY .env.prod ./.env
 RUN yarn install --frozen-lockfile
 # For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended
 RUN yarn add sharp

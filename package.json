@@ -1,5 +1,5 @@
 {
-  "name": "@keystone-6/example-framework-nextjs-app-directory",
+  "name": "@tawtaw/next-keystone-aio-example",
   "private": true,
   "license": "MIT",
   "scripts": {
@@ -33,7 +33,6 @@
     "tbuild": "turbo ks:build n:build"
   },
   "dependencies": {
-    "@keystar/ui": "^0.7.18",
     "@keystone-6/core": "^6.3.1",
     "@keystone-6/document-renderer": "^1.1.2",
     "@keystone-6/fields-document": "^9.1.1",

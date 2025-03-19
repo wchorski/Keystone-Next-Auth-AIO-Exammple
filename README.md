@@ -26,7 +26,7 @@ pnpm migrate --name CUSTOM_NAME
 ```
 
 ### Docker Build
-- `cp .env.example .env`
+- `cp .env.example .env.prod` (seperate file for production)
 - `cp compose.yml.example compose.yml`
 
 ```shell

@@ -22,7 +22,7 @@ services:
     image: ${IMAGE_BASE_NAME}-backend:latest # rename ALL 'cutefruit-kypn' to a unique name 
     restart: unless-stopped
     env_file:
-      - .env
+      - .env.prod
     build: 
       context: ./
       dockerfile: ./Dockerfile.cms
@@ -44,7 +44,7 @@ services:
     image: ${IMAGE_BASE_NAME}-frontend:latest # rename ALL 'cutefruit-kypn' to a unique name 
     restart: unless-stopped
     env_file:
-      - .env
+      - .env.prod
     build: 
       context: ./
       # dockerfile: ./Dockerfile.web

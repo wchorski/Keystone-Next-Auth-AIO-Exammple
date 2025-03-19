@@ -10,11 +10,12 @@ README.md
 .next
 .react-email
 .git*
-.env.prod
+.*
 .env.dev
 .env.local
-.*
-!.env
+!.env.prod
+## do not copy over local .env file
+# !.env
 db
 images
 private
