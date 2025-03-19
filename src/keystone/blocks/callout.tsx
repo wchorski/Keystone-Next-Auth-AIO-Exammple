@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-
+//! "@keystone-ui" will show errors in editor but still works in dev and prod
 import { jsx, useTheme } from '@keystone-ui/core';
 import { component, fields, NotEditable } from '@keystone-6/fields-document/component-blocks';
 import {
