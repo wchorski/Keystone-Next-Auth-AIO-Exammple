@@ -1,7 +1,7 @@
 import { graphql } from "@keystone-6/core"
 import { Context } from ".keystone/types"
 import { BaseSchemaMeta } from "@keystone-6/core/dist/declarations/src/types/schema/graphql-ts-schema"
-import {  mailPasswordResetConfirm } from "../../lib/mail"
+import { mailPasswordRequest, mailPasswordResetConfirm } from "../../lib/mail"
 
 import jwt from "jsonwebtoken"
 

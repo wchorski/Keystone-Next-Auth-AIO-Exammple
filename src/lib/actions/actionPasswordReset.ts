@@ -41,7 +41,7 @@ export async function actionPasswordReset(
 			},
 			id: data.passwordReset.id,
 			// url: envs.FRONTEND_URL + `/users/${data.PasswordReset.id}`,
-			url: envs.FRONTEND_URL + `/`,
+			url: envs.FRONTEND_URL + `/account`,
 			success: `Success! Password has been updated`,
 		}
 	} catch (error) {

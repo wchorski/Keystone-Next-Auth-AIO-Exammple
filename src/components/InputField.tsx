@@ -1,4 +1,4 @@
-// import { input_label } from "@styles/menus/form.module.scss"
+import { input_label } from "@styles/menus/form.module.scss"
 import {
 	forwardRef,
 	type Ref,
@@ -28,7 +28,7 @@ function InputFieldComponent(props: Props, ref: Ref<HTMLInputElement>) {
 	return (
 		<label
 			htmlFor={name}
-			// className={input_label}
+			className={input_label}
 			title={required ? `${label || name} is required` : label || name}
 		>
 			{type !== "checkbox" && <span>{label || name}</span>}

@@ -13,7 +13,6 @@ const {
 	DB_PROVIDER,
 	FRONTEND_URL,
 	SEED_EXTRACT_NONE,
-	NODE_ENV,
 } = envs
 
 export default config({
@@ -32,8 +31,8 @@ export default config({
 				// if (process.argv.includes('--seed-database')) {
 				await seedDatabase(context)
 			} else if (
-				SEED_EXTRACT_NONE === "extract" 
-        // && NODE_ENV === "development"
+				SEED_EXTRACT_NONE === "extract"
+				// && NODE_ENV === "development"
 			) {
 				await extractDBData(context)
 			}
@@ -48,13 +47,15 @@ export default config({
 	graphql: {
 		extendGraphqlSchema,
 	},
+	session: nextAuthSessionStrategy,
+	lists,
 	// https://github.com/keystonejs/keystone/discussions/7746
 	ui: {
 		isDisabled: false,
 		basePath: "/admin",
 		// TODO add rule that checks Role.adminDashboardAccess
 		// isAccessAllowed: ({session}) => true,
-    //? must append `basePath` to front of pages
+		//? must append `basePath` to front of pages
 		publicPages: [
 			"/admin" + "/api/auth/csrf",
 			"/admin" + "/api/auth/signin",
@@ -81,6 +82,4 @@ export default config({
 			}
 		},
 	},
-	session: nextAuthSessionStrategy,
-	lists,
 })

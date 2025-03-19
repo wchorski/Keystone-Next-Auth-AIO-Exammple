@@ -1,115 +1,66 @@
-/* TODO not working!!!! WHY???? */
-/* @import './animations.css'; */
-:root {
-	--space-s: 0.2rem;
-	--c-accent: yellow;
-	--c-primary: rgb(0, 255, 179);
-	--c-body: black;
-	--c-txt: rgb(168, 166, 166);
-	--c-txt-bg: rgb(29, 29, 29);
-	--space-m: 1rem;
-	--space-ms: 0.3rem;
-}
+@import './vars.css';
+@import './colors.css';
+@import './site-layout.css';
+@import './typography.css';
+@import './elements.css';
+@import './animations.css';
+@import './skeleton/normalize.css';
+@import './media.css';
 
-.flex {
-	display: flex;
-	gap: 1rem;
-}
 
-figure.featured_img {
-	position: relative;
-	height: 30vh;
-	height: 30dvh;
+html{
+  height: 100%;
+  scroll-padding-top: 4rem;
 }
-
-header img {
-	object-fit: contain;
-}
-
-ol {
-	display: grid;
-	gap: 0.5rem;
-}
-
-.card {
-	background-color: rgba(128, 128, 128, 0.22);
-	padding: 1rem;
-	border-radius: 5px;
-
-	& > *:first-child {
-		margin-top: 0;
-	}
-}
-
-.col-3 {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-	gap: 1rem; /* Adjust as needed */
-}
-
-form,
-fieldset,
-label {
-	display: grid;
-	gap: 0.3rem;
-}
-
-.error:empty,
-.success:empty {
-	display: none;
-}
-.error {
-	border: solid 2px red;
-}
-.success {
-	border: solid 2px lime;
-}
-.warn {
-	border: solid 2px yellow;
-}
-.info {
-	border: solid 2px blue;
-}
-
-.error, .success {
-  padding: 1rem;
+body{
+  min-height: 100%;
 }
 
 html,
 body {
-	padding: 0;
-	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+  /* overflow-x: hidden; */
+
 }
 
-html {
-	max-width: 70ch;
-	padding: 2em 1em;
-	margin: auto;
-	line-height: 1.75;
+/* // https://css-tricks.com/snippets/css/accessibilityseo-friendly-css-hiding/ */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
 }
 
-* {
-	box-sizing: border-box;
-}
+
 
 @media (prefers-color-scheme: dark) {
-	html {
-		color-scheme: dark;
-	}
-
-	body {
-		color: white;
-		background: black;
-	}
-}
-
-input {
-	min-height: 2rem;
-}
-
-button {
-	height: 2rem;
-	min-width: 4rem;
+  html {
+    color-scheme: dark;
+  }
 }

@@ -25,7 +25,8 @@ const CMS_URL = `${CMS_PROTOCAL}://${CMS_DOMAIN}:${CMS_PORT}`
 const FRONTEND_URL = process.env.NEXT_PUBLIC_FRONTEND_URL!
 const SITE_TITLE = process.env.NEXT_PUBLIC_SITE_TITLE!
 const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION!
-const PERPAGE = Number(process.env.PERPAGE)! || 20
+const PERPAGE = Number(process.env.NEXT_PUBLIC_PERPAGE) || 20
+const TIMEZONES = process.env.TIMEZONES ? process.env.TIMEZONES.split(',') : ['America/Chicago']
 
 // AUTH
 const BASIC_USER_ROLE_NAME = process.env.BASIC_USER_ROLE_NAME!
@@ -47,6 +48,19 @@ const MAIL_HOST = process.env.MAIL_HOST
 const MAIL_PORT = process.env.MAIL_PORT
 const MAIL_USER = process.env.MAIL_USER
 const MAIL_PASS = process.env.MAIL_PASS
+
+const STRIPE_PUBLIC_KEY = process.env.NEXT_PUBLIC_STRIPE_KEY
+const STRIPE_SECRET = process.env.STRIPE_SECRET
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET
+const STRIPE_SUB_TRIAL_PERIOD_DAYS = Number(process.env.STRIPE_SUB_TRIAL_PERIOD_DAYS) || 30
+
+const UMAMI_ID = process.env.NEXT_PUBLIC_UMAMI_ID
+const UMAMI_URL = process.env.NEXT_PUBLIC_UMAMI_URL
+const UMAMI_SCRIPT = process.env.NEXT_PUBLIC_UMAMI_SCRIPT
+const NEXT_PUBLIC__ANALYTICS_LINK =
+	process.env.NEXT_PUBLIC__ANALYTICS_LINK
+
+  const ASSET_REPO = process.env.NEXT_PUBLIC_ASSET_REPO
 
 // const DB_PROTOCAL = (() => {
 //   switch (DB_PROVIDER) {
@@ -99,4 +113,14 @@ export const envs = {
   SITE_TITLE,
   SITE_DESCRIPTION,
   PERPAGE,
+  TIMEZONES,
+  STRIPE_PUBLIC_KEY,
+  STRIPE_SECRET,
+  STRIPE_WEBHOOK_SECRET,
+  STRIPE_SUB_TRIAL_PERIOD_DAYS,
+  UMAMI_ID,
+  UMAMI_SCRIPT,
+  UMAMI_URL,
+  NEXT_PUBLIC__ANALYTICS_LINK,
+  ASSET_REPO,
 }

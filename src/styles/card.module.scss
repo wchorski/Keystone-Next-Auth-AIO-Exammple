@@ -1,0 +1,39 @@
+.card{
+  padding-block: var(--space-m);
+  margin-block: var(--space-m);
+  border-radius: var(--br-dull);
+  display: flex;
+  box-sizing: border-box;
+}
+.row{
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+}
+.card > *:first-child {
+  margin-top: 0;
+}
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
+.center{
+  display: grid;
+  align-content: center;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  // align-items: center;
+
+  > div {
+    display: grid;
+    align-content: center;
+  }
+}
+// .card > *:last-child {
+//   margin-bottom: 0;
+// }

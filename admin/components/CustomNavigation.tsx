@@ -1,3 +1,4 @@
+import React from 'react'
 import { envs } from "../../envs"
 import {
 	NavigationContainer,
@@ -8,8 +9,11 @@ import type { NavigationProps } from "@keystone-6/core/admin-ui/components"
 import { useSession } from "next-auth/react"
 import { PiUsersThreeFill } from "react-icons/pi"
 import { BsFilePostFill, BsFillTicketPerforatedFill } from "react-icons/bs"
+import { IoBookmarks } from "react-icons/io5"
+import { FaTags } from "react-icons/fa6"
+import { TiShoppingCart } from "react-icons/ti"
+import { MdOutlineInventory2 } from "react-icons/md"
 import type { CSSProperties } from "react"
-// import { Callout } from "@components/blocs/Callout"
 
 export function CustomNavigation({
 	authenticatedItem,
@@ -29,9 +33,6 @@ export function CustomNavigation({
 
 	return (
 		<NavigationContainer authenticatedItem={authenticatedItem}>
-			{/* <Callout intent={"info"}>
-				<p>how to use tsconfig paths in keystone files?</p>{" "}
-			</Callout> */}
 			{status === "loading" ? (
 				<p style={styleBorder}>Loading...</p>
 			) : (
@@ -67,14 +68,55 @@ export function CustomNavigation({
 			<hr style={lineSeperator} />
 			<div className="nav-link-group">
 				<BsFilePostFill />
-				<ListNavItems lists={lists} include={["Post"]} />
+				<ListNavItems
+					lists={lists}
+					include={["Page", "Post", "Announcement"]}
+				/>
 			</div>
 
-			{/* <hr style={lineSeperator} />
+			<hr style={lineSeperator} />
+			<div className="nav-link-group">
+				<IoBookmarks />
+				<ListNavItems
+					lists={lists}
+					include={["Booking", "Rental", "Availability", "SubscriptionItem"]}
+				/>
+			</div>
+
+			<hr style={lineSeperator} />
+			<div className="nav-link-group">
+				<MdOutlineInventory2 />
+				<ListNavItems
+					lists={lists}
+					include={[
+						"Product",
+						"Service",
+						"Location",
+						"Addon",
+						"SubscriptionPlan",
+						"",
+						"Coupon",
+					]}
+				/>
+			</div>
+
+			<hr style={lineSeperator} />
+			<div className="nav-link-group">
+				<TiShoppingCart />
+				<ListNavItems lists={lists} include={["Order"]} />
+			</div>
+
+			<hr style={lineSeperator} />
+			<div className="nav-link-group">
+				<BsFillTicketPerforatedFill />
+				<ListNavItems lists={lists} include={["Event", "Ticket"]} />
+			</div>
+
+			<hr style={lineSeperator} />
 			<div className="nav-link-group">
 				<FaTags />
-				<ListNavItems lists={lists} include={["Category"]} />
-			</div> */}
+				<ListNavItems lists={lists} include={["Category", "Tag"]} />
+			</div>
 
 			{/* //? from ks schema: single item*/}
 			{/* <ListNavItems lists={lists}/> */}

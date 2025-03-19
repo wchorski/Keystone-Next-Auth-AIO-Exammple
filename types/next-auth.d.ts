@@ -14,7 +14,7 @@ declare module "next-auth" {
 			email: string
 			id: string
 			stripeCustomerId: string
-			image: string
+      image: string
 		}
 		itemId: string
 		authId: string
@@ -25,8 +25,27 @@ declare module "next-auth" {
 				canManageUsers: boolean
 				canViewUsers: boolean
 				canManageRoles: boolean
+				canManagePages: boolean
 				canManagePosts: boolean
 				canCreatePosts: boolean
+				canManageCategories: boolean
+				canManageTags: boolean
+				canManageAnnouncements: boolean
+				canManageProducts: boolean
+				canViewProducts: boolean
+				canManageAddons: boolean
+				canManageBookings: boolean
+				canManageAvailability: boolean
+				canCreateAvailability: boolean
+				canManageEvents: boolean
+				canManageTickets: boolean
+				canManageCart: boolean
+				canManageOrders: boolean
+				canManageLocations: boolean
+				canManageServices: boolean
+				canManageSubscriptionPlans: boolean
+				canManageSubscriptionItems: boolean
+				canManageCoupons: boolean
 			}
 		}
 	}

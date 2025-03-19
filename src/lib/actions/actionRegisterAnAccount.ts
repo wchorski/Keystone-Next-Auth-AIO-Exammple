@@ -37,7 +37,7 @@ export async function actionRegisterAnAccount(
 			},
 			id: data.registerAnAccount.id,
 			// url: envs.FRONTEND_URL + `/users/${data.registerAnAccount.id}`,
-			url: envs.FRONTEND_URL + `/`,
+			url: envs.FRONTEND_URL + `/account`,
 			success: `Success! Account registered`,
 		}
 	} catch (error) {

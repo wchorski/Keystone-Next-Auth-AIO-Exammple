@@ -1,22 +1,28 @@
-import { graphql, group, list } from "@keystone-6/core"
+import { graphql, list } from "@keystone-6/core"
 import type { Lists } from ".keystone/types"
 import {
 	checkbox,
 	relationship,
+	select,
 	text,
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
+// import { permissions, rules } from "../access";
+// import stripeConfig, { stripeCustomerCreate, stripeCustomerDelete } from "../../lib/stripe";
+// import { timesArray } from "../../lib/timeArrayCreator";
 var bcrypt = require("bcryptjs")
 import { envs } from "../../../envs"
-
+// import { timesArray } from "../../lib/timeArrayCreator"
 import { permissions, rules } from "../access"
-import { allowAll } from "@keystone-6/core/access"
-
-const { WORK_FACTOR } = envs
+import { timesArray } from "../../lib/timeArrayCreator"
+import { calcTotalPrice } from "../../lib/calcTotalPrice"
+import { CartItem } from "../types"
+import { stripeCustomerCreate, stripeCustomerUpdate } from "../../lib/stripe"
+// import { mailVerifyUser } from "../../lib/mail";
+// import { tokenEmailVerify } from "../../lib/tokenEmailVerify";
 
 export const User: Lists.User = list({
-	// access: allowAll,
 	access: {
 		filter: {
 			// query: () => true,
@@ -55,7 +61,7 @@ export const User: Lists.User = list({
 			field: graphql.field({
 				type: graphql.String,
 				resolve() {
-					return "User"
+					return "user"
 				},
 			}),
 			ui: {
@@ -110,7 +116,10 @@ export const User: Lists.User = list({
 				beforeOperation: async ({ operation, resolvedData }) => {
 					if (operation === "create" || operation === "update") {
 						if (!resolvedData?.password) return console.log("no password set")
-						const hash = await bcrypt.hash(resolvedData?.password, WORK_FACTOR)
+						const hash = await bcrypt.hash(
+							resolvedData?.password,
+							envs.WORK_FACTOR
+						)
 						resolvedData.password = hash
 					}
 				},
@@ -118,7 +127,75 @@ export const User: Lists.User = list({
 		}),
 		url: text(),
 		isActive: checkbox({ defaultValue: true }),
-
+		stripeCustomerId: text({
+			isIndexed: true,
+			validation: { isRequired: false },
+			hooks: {
+				validate: {
+					create: async ({ resolvedData, context, addValidationError }) => {
+						//? custom `unique` validation that also allows the field to be empty is not using stripe at all
+						if (!resolvedData.stripeCustomerId) return
+						const users = await context.sudo().db.User.findMany({
+							where: {
+								stripeCustomerId: {
+									equals: resolvedData.stripeCustomerId,
+								},
+							},
+						})
+						if (users.length > 0)
+							addValidationError(
+								"!!! User can not share same stripeCustomerId with others"
+							)
+					},
+					update: async ({ resolvedData, context, addValidationError }) => {
+						if (!resolvedData.stripeCustomerId) return
+						const users = await context.sudo().db.User.findMany({
+							where: {
+								stripeCustomerId: {
+									equals: String(resolvedData.stripeCustomerId),
+								},
+							},
+						})
+						if (users.length > 1)
+							addValidationError(
+								"!!! User can not share same stripeCustomerId with others"
+							)
+					},
+				},
+			},
+		}),
+		dateCreated: timestamp({
+			defaultValue: { kind: "now" },
+			validation: { isRequired: true },
+		}),
+		dateModified: timestamp({
+			defaultValue: { kind: "now" },
+			db: {
+				updatedAt: true,
+			},
+			hooks: {
+				beforeOperation({ resolvedData, operation }) {
+					if (operation === "create" || operation === "update") {
+						resolvedData.dateModified = new Date().toISOString()
+					}
+				},
+			},
+		}),
+		buisnessHourOpen: select({
+			options: timesArray(),
+			defaultValue: "09:00:00",
+			ui: {
+				displayMode: "select",
+				createView: { fieldMode: "edit" },
+			},
+		}),
+		buisnessHourClosed: select({
+			options: timesArray(),
+			defaultValue: "18:00:00",
+			ui: {
+				displayMode: "select",
+			},
+		}),
 		role: relationship({
 			ref: "Role.assignedTo",
 			// todo add access control
@@ -134,50 +211,103 @@ export const User: Lists.User = list({
 			},
 		}),
 		posts: relationship({ ref: "Post.author", many: true }),
+		pages: relationship({ ref: "Page.author", many: true }),
+		privatePagesAccess: relationship({ ref: "Page.privateAccess", many: true }),
 		privatePostsAccess: relationship({ ref: "Post.privateAccess", many: true }),
-		...group({
-			label: "Inventory",
-			// description: 'Group description',
-
-			fields: {
-				dateCreated: timestamp({
-					defaultValue: { kind: "now" },
-					validation: { isRequired: true },
-				}),
-				dateModified: timestamp({
-					defaultValue: { kind: "now" },
-					db: {
-						updatedAt: true,
-					},
-					//? `updatedAt: true,` updates date anytime data is mutated
-					// hooks: {
-					// 	beforeOperation({ resolvedData, operation }) {
-					// 		if (operation === "create" || operation === "update") {
-					// 			resolvedData.dateModified = new Date().toISOString()
-					// 		}
-					// 	},
-					// },
-				}),
+		servicesProvided: relationship({ ref: "Service.employees", many: true }),
+		servicesAuthored: relationship({ ref: "Service.author", many: true }),
+		bookings: relationship({ ref: "Booking.customer", many: true }),
+		gigs: relationship({ ref: "Booking.employees", many: true }),
+		gig_requests: relationship({
+			ref: "Booking.employee_requests",
+			many: true,
+		}),
+		eventsHost: relationship({ ref: "Event.hosts", many: true }),
+		eventsCohost: relationship({ ref: "Event.cohosts", many: true }),
+		availability: relationship({ ref: "Availability.employee", many: true }),
+		cart: relationship({
+			ref: "CartItem.user",
+			many: true,
+			ui: {
+				createView: { fieldMode: "hidden" },
+				itemView: { fieldMode: "hidden" },
 			},
+		}),
+		cartTotalPrice: virtual({
+			field: graphql.field({
+				type: graphql.Int,
+				async resolve(item, args, context) {
+					// if(!item.serviceId) return item.name
+					const userCartItems = (await context.query.CartItem.findMany({
+						where: { user: { id: { equals: item.id } } },
+						query: `
+              id
+              quantity
+              type
+              subTotal
+            `,
+					})) as CartItem[]
+
+					return calcTotalPrice(userCartItems)
+				},
+			}),
+		}),
+
+		products: relationship({ ref: "Product.author", many: true }),
+		addons: relationship({ ref: "Addon.author", many: true }),
+		rentals: relationship({ ref: "Rental.customer", many: true }),
+		subscriptionPlans: relationship({
+			ref: "SubscriptionPlan.author",
+			many: true,
+		}),
+		subscriptions: relationship({ ref: "SubscriptionItem.user", many: true }),
+		orders: relationship({
+			ref: "Order.user",
+			many: true,
+		}),
+		tickets: relationship({
+			ref: "Ticket.holder",
+			many: true,
 		}),
 	},
 	hooks: {
-		// beforeOperation: {
-		// 	create: async ({ resolvedData, item }) => {},
-		// 	update: async ({ resolvedData, item }) => {},
-		// },
-		afterOperation: {
-			create: async ({ context, item }) => {
-				const mail = (await context
+		beforeOperation: {
+			create: async ({ resolvedData, item }) => {
+				await stripeCustomerCreate({
+					email: String(resolvedData.email),
+					name: String(resolvedData.name),
+					nameLast: String(resolvedData.nameLast),
+					isActive: resolvedData.isActive ? resolvedData.isActive : false,
+				}).then(res => {
+          if(!res) return
+          resolvedData.stripeCustomerId = res.id
+        })
+			},
+      update: async ({resolvedData, item}) => {
+        await stripeCustomerUpdate({
+          stripeCustomerId: resolvedData.stripeCustomerId?.toString() || item.stripeCustomerId,
+          email: String(resolvedData.email),
+					name: String(resolvedData.name),
+					nameLast: String(resolvedData.nameLast),
+					isActive: resolvedData.isActive ? Boolean(resolvedData.isActive) : item.isActive,
+        }).then(res => {
+          if(!res) return
+          resolvedData.stripeCustomerId = res.id
+        })
+      },
+		},
+		async afterOperation({ operation, context, item }) {
+			if (operation === "create") {
+				const data = (await context
 					.sudo()
 					.graphql.run({
 						query: `
-              mutation VerifyEmailRequest($email: String!) {
-                verifyEmailRequest(email: $email) {
-                  id
-                }
+            mutation VerifyEmailRequest($email: String!) {
+              verifyEmailRequest(email: $email) {
+                id
               }
-            `,
+            }
+          `,
 						variables: {
 							email: item.email,
 						},
@@ -185,7 +315,7 @@ export const User: Lists.User = list({
 					.catch((err) =>
 						console.log(`!!! verify email did not send: ${item.email}`)
 					)) as object
-			},
+			}
 		},
 	},
 })

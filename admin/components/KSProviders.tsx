@@ -9,7 +9,7 @@ type Props = {
 
 export function KSProviders ({ authenticatedItem, lists }: NavigationProps) {
   return (
-    <SessionProvider basePath="/admin/api/auth">
+    <SessionProvider>
       <CustomNavigation authenticatedItem={authenticatedItem} lists={lists}/>
     </SessionProvider>
   )

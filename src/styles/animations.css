@@ -1,9 +1,6 @@
 /* //todo add `@media (prefers-reduced-motion: no-preference){` for any `transform` animation */
-
 button,
 .button {
-  
-  
 	&:enabled:active {
 		transform: translateY(1px);
 	}

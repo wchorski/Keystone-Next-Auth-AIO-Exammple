@@ -140,7 +140,6 @@ export const Post: Lists.Post = list({
 			componentBlocks,
 			ui: {
 				views: "./src/keystone/blocks",
-        
 			},
 			formatting: {
 				inlineMarks: {
@@ -196,14 +195,14 @@ export const Post: Lists.Post = list({
 			// description: 'Group description',
 
 			fields: {
-				// categories: relationship({
-				// 	ref: "Category.posts",
-				// 	many: true,
-				// }),
-				// tags: relationship({
-				// 	ref: "Tag.posts",
-				// 	many: true,
-				// }),
+				categories: relationship({
+					ref: "Category.posts",
+					many: true,
+				}),
+				tags: relationship({
+					ref: "Tag.posts",
+					many: true,
+				}),
 				dateCreated: timestamp({
 					defaultValue: { kind: "now" },
 					validation: { isRequired: true },
@@ -211,9 +210,6 @@ export const Post: Lists.Post = list({
 				dateModified: timestamp({
 					defaultValue: { kind: "now" },
 					validation: { isRequired: true },
-          db: {
-            updatedAt: true,
-          }
 				}),
 			},
 		}),
@@ -226,6 +222,9 @@ export const Post: Lists.Post = list({
 				if (currUserId && !resolvedData.author) {
 					resolvedData.author = { connect: { id: currUserId } }
 				}
+			}
+			if (operation === "update") {
+				resolvedData.dateModified = new Date().toISOString()
 			}
 		},
 	},

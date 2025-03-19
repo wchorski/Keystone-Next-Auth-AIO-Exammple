@@ -72,7 +72,7 @@ export const passwordRequestLink = (base: BaseSchemaMeta) =>
 					id: user.id,
 					email: user.email,
 					name: user.name,
-				} as User,
+				},
 			}).catch((error) => console.log("!!! ✉️❌ passwordRequestLink Mutation: ", error))
 
 			return {

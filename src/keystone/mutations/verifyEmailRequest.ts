@@ -2,12 +2,18 @@
 import { graphql } from '@keystone-6/core';
 import { Context } from '.keystone/types';
 import { BaseSchemaMeta } from '@keystone-6/core/dist/declarations/src/types/schema/graphql-ts-schema';
-import { mailVerifyUser } from '../../lib/mail';
+import { mailBooking, mailVerifyUser } from '../../lib/mail';
 import { envs } from '../../../envs';
 // @ts-ignore
 import { tokenEmailVerify } from '../../lib/tokenEmailVerify';
 import { User } from '../types';
 
+type Payload = {
+  id:string,
+  email:string,
+  iat:number,
+  exp: number
+}
 
 export const verifyEmailRequest = (base: BaseSchemaMeta) => graphql.field({
 
@@ -72,7 +78,7 @@ export const verifyEmailRequest = (base: BaseSchemaMeta) => graphql.field({
           email: foundUser.email,
           name: foundUser.name,
           id: foundUser.id,
-        } as User,
+        },
       })
 
       return {status: 'success', message: 'email verification sent out to email'}
