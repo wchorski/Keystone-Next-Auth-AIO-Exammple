@@ -52,24 +52,24 @@ export default config({
 	// https://github.com/keystonejs/keystone/discussions/7746
 	ui: {
 		isDisabled: false,
-		basePath: "/admin",
+		// basePath: "/admin",
 		// TODO add rule that checks Role.adminDashboardAccess
 		// isAccessAllowed: ({session}) => true,
 		//? must append `basePath` to front of pages
 		publicPages: [
-			"/admin" + "/api/auth/csrf",
-			"/admin" + "/api/auth/signin",
-			"/admin" + "/api/auth/callback",
-			"/admin" + "/api/auth/session",
-			"/admin" + "/api/auth/providers",
-			"/admin" + "/api/auth/signout",
-			"/admin" + "/api/auth/error",
+			"/api/auth/csrf",
+			"/api/auth/signin",
+			"/api/auth/callback",
+			"/api/auth/session",
+			"/api/auth/providers",
+			"/api/auth/signout",
+			"/api/auth/error",
 
 			//! each provider will need a separate callback and signin page listed here
-			"/admin" + "/api/auth/signin/github",
-			"/admin" + "/api/auth/callback/github",
-			"/admin" + "/api/auth/signin/credentials",
-			"/admin" + "/api/auth/callback/credentials",
+			"/api/auth/signin/github",
+			"/api/auth/callback/github",
+			"/api/auth/signin/credentials",
+			"/api/auth/callback/credentials",
 		],
 
 		// adding page middleware ensures that users are redirected to the signin page if they are not signed in.
@@ -78,8 +78,41 @@ export default config({
 
 			return {
 				kind: "redirect",
-				to: "/admin" + "/api/auth/signin",
+				to: "/api/auth/signin",
 			}
 		},
 	},
+  //! breaks next-auth. session data returns undefined (yet i'm still logged in because it doesn't redirect me to login)
+	// ui: {
+	// 	isDisabled: false,
+	// 	basePath: "/admin",
+	// 	// TODO add rule that checks Role.adminDashboardAccess
+	// 	// isAccessAllowed: ({session}) => true,
+	// 	//? must append `basePath` to front of pages
+	// 	publicPages: [
+	// 		"/admin" + "/api/auth/csrf",
+	// 		"/admin" + "/api/auth/signin",
+	// 		"/admin" + "/api/auth/callback",
+	// 		"/admin" + "/api/auth/session",
+	// 		"/admin" + "/api/auth/providers",
+	// 		"/admin" + "/api/auth/signout",
+	// 		"/admin" + "/api/auth/error",
+
+	// 		//! each provider will need a separate callback and signin page listed here
+	// 		"/admin" + "/api/auth/signin/github",
+	// 		"/admin" + "/api/auth/callback/github",
+	// 		"/admin" + "/api/auth/signin/credentials",
+	// 		"/admin" + "/api/auth/callback/credentials",
+	// 	],
+
+	// 	// adding page middleware ensures that users are redirected to the signin page if they are not signed in.
+	// 	pageMiddleware: async ({ wasAccessAllowed }) => {
+	// 		if (wasAccessAllowed) return
+
+	// 		return {
+	// 			kind: "redirect",
+	// 			to: "/admin" + "/api/auth/signin",
+	// 		}
+	// 	},
+	// },
 })

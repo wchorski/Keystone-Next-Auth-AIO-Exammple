@@ -19,33 +19,58 @@ const nextConfig = {
 		ignoreBuildErrors: true,
 	},
 	// async redirects() {
-	//   return [
-	//     {
-	//       source: '/',
-	//       destination: '/home',
-	//       permanent: true,
-	//     },
-	//   ];
+	//   // return [
+	//   //   {
+	//   //     source: '/juicy',
+	//   //     destination: '/posts',
+	//   //     permanent: true,
+	//   //   },
+	//   // ];
+	//   // return [
+	//   //   {
+	//   //     source: '/',
+	//   //     destination: '/home',
+	//   //     permanent: true,
+	//   //   },
+	//   // ];
 	// },
+	//? https://nextjs.org/docs/pages/api-reference/config/next-config-js/rewrites
 	async rewrites() {
+		const beforeFiles = []
+		const afterFiles = [
+			// {
+			// 	source: "/juicy",
+			// 	destination: "/posts",
+			// },
+      //TODO back on
+      // {
+      // 	source: "/admin",
+			// 	destination: `${CMS_URL}/`,
+			// },
+		]
 		const fallback = [
-			{
-				source: "/admin",
-				destination: `${CMS_URL}/admin`,
-			},
-			{
-				source: "/admin/:admin*",
-				destination: `${CMS_URL}/admin/:admin*`,
-			},
+      //! cannot make this work. check `keystone.ts`
+			// {
+			// 	source: "/admin",
+			// 	destination: `${CMS_URL}/admin`,
+			// },
+			// {
+			// 	source: "/admin/:admin*",
+			// 	destination: `${CMS_URL}/admin/:admin*`,
+			// },
+			// {
+			// 	source: "/admin/:path*",
+			// 	destination: `${CMS_URL}/:path*`,
+			// },
 			...(ANALYTICS_URL
 				? [{ source: "/stts/:match*", destination: ANALYTICS_URL }]
 				: []),
 		]
 
 		return {
-			beforeFiles: [],
+			beforeFiles,
 			fallback,
-			afterFiles: [],
+			afterFiles,
 		}
 	},
 	images: {

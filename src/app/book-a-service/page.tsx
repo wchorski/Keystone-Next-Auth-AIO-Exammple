@@ -2,16 +2,6 @@ import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
 import ErrorMessage from "@components/ErrorMessage"
 import { BookingForm } from "@components/bookings/BookingForm4"
-import {
-	Addon,
-	Availability,
-	Booking,
-	BookingPrevious,
-	Service,
-	Session,
-	User,
-	Location,
-} from "@ks/types"
 import fetchBookingFormData from "@lib/fetchdata/fetchBookingFormInfo"
 import { Metadata } from "next"
 import { getServerSession } from "next-auth"

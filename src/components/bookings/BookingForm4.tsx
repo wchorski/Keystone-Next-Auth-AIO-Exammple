@@ -3,8 +3,6 @@
 // cred dave gray - https://www.youtube.com/watch?v=26ogBZXeBwc
 // cred ByteGrad -  https://www.youtube.com/watch?v=GgyP0_b-WPY
 
-throw new Error('!!! fix layout with Grid component')
-
 import {
 	Addon,
 	AddonCheckboxOptions,
@@ -58,6 +56,7 @@ import {
 } from "@lib/actions/actionBookAService"
 import { Session } from "next-auth"
 import { envs } from "@/envs"
+import { Grid } from "@components/layouts/Grid"
 
 type Fields = {
 	// event: string,
@@ -144,7 +143,6 @@ type FormAsideAction =
 				phone?: string
 			}
 	  }
-
 
 export function BookingForm({ data, session, timeZoneOptions }: Props) {
 	const {
@@ -536,7 +534,8 @@ export function BookingForm({ data, session, timeZoneOptions }: Props) {
 	}
 
 	return (
-		<div className={formStyles.grid_wrap}>
+		// <div className={formStyles.grid_wrap}>
+		<Grid layout={"1_1"} alignContent={"start"}>
 			<div>
 				{!state.id || !state.url ? (
 					<form action={action} ref={formRef} className={form}>
@@ -788,7 +787,11 @@ export function BookingForm({ data, session, timeZoneOptions }: Props) {
 				)}
 			</div>
 
-			<aside key={stateRed.addonOptions.length} style={{ maxWidth: "20rem" }}>
+			<aside
+				key={stateRed.addonOptions.length}
+				style={{ maxWidth: "20rem" }}
+				className={"sticky"}
+			>
 				<table>
 					<tbody>
 						<tr>
@@ -856,6 +859,7 @@ export function BookingForm({ data, session, timeZoneOptions }: Props) {
 					</tbody>
 				</table>
 			</aside>
-		</div>
+		</Grid>
+		// </div>
 	)
 }

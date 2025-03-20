@@ -1,6 +1,6 @@
 import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
-import { DialogPopup } from "@components/DialogPopup"
+import { DialogPopup } from "@components/menus/DialogPopup"
 import { LoginForm } from "@components/LoginForm"
 import { PasswordRequestForm } from "@components/PasswordRequestForm"
 import { Metadata } from "next"

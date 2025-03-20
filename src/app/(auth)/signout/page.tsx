@@ -2,7 +2,7 @@ import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
 import { Callout } from "@components/blocks/Callout"
 import { PageTHeaderMain } from "@components/layouts/PageTemplates"
-import DialogPopup from "@components/menus/DialogPopup"
+import { DialogPopup } from "@components/menus/DialogPopup"
 import { LoginForm } from "@components/menus/LoginForm"
 import { PasswordRequestForm } from "@components/menus/PasswordRequestForm"
 import { PasswordResetForm } from "@components/menus/PasswordResetForm"
@@ -44,7 +44,7 @@ export default async function SignOutPage({ searchParams }: Props) {
 			</Header>
 
 			<div className={[page_content, layout_content].join(" ")}>
-					<SignOutButton />
+				<SignOutButton />
 			</div>
 			<DialogPopup buttonLabel="">
 				<p> Forgot your password? </p>
