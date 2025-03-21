@@ -1,13 +1,15 @@
-import React, { ReactElement } from "react"
-import Link from "next/link"
-import styles from "@styles/ecommerce/product.module.css"
 import AddToCartForm from "@components/ecommerce/AddToCartForm"
-import { ImageDynamic } from "../elements/ImageDynamic"
-// import { OutOfStockLabel } from '../elements/OutOfStockLabel';
-import type {  Product, Session  } from "@ks/types"
 import { PriceTag } from "@components/ecommerce/PriceTag"
-import { envs } from "@/envs"
 import { StatusBadge } from "@components/StatusBadge"
+// import { OutOfStockLabel } from '../elements/OutOfStockLabel';
+import type {  Product  } from "@ks/types"
+import styles from "@styles/ecommerce/product.module.css"
+import Link from "next/link"
+import React from "react"
+
+import { envs } from "@/envs"
+
+import { ImageDynamic } from "../elements/ImageDynamic"
 
 type Props = {
 	product: Product

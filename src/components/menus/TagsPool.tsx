@@ -1,7 +1,7 @@
-import Link from "next/link"
-import styles from '@styles/tags.module.scss'
-import fetchTags from "@lib/fetchdata/fetchTags"
 import type {  Tag  } from "@ks/types"
+import fetchTags from "@lib/fetchdata/fetchTags"
+import styles from '@styles/tags.module.scss'
+import Link from "next/link"
 
 // any is a bug workaround
 // @ts-ignore

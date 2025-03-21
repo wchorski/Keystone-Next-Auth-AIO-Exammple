@@ -3,6 +3,12 @@
 // cred dave gray - https://www.youtube.com/watch?v=26ogBZXeBwc
 // cred ByteGrad -  https://www.youtube.com/watch?v=GgyP0_b-WPY
 
+import { SelectField } from "@components/forms/SelectField"
+import { SubmitButton } from "@components/forms/SubmitButton"
+import { InputField } from "@components/InputField"
+import { Grid } from "@components/layouts/Grid"
+import { TextareaField } from "@components/TextareaField"
+import { useForm } from "@hooks/useForm"
 import type { 
 	Addon,
 	AddonCheckboxOptions,
@@ -15,48 +21,34 @@ import type {
 	Service,
 	User,
  } from "@ks/types"
-import { generateTimesArray } from "@lib/generateTimesArray"
+import type {
+	BookAServiceState} from "@lib/actions/actionBookAService";
 import {
-	ReducerAction,
-	useCallback,
-	useEffect,
-	useReducer,
-	useRef,
-	useState,
-	useActionState,
-} from "react"
-import { useFormState, useFormStatus } from "react-dom"
-
-import formStyles, { form } from "@styles/menus/form.module.scss"
-import { LoadingAnim } from "@components/elements/LoadingAnim"
-import { calcEndTime } from "@lib/dateCheck"
-import moneyFormatter from "@lib/moneyFormatter"
-import gridStyles from "@styles/elements/section.module.scss"
+	actionBookAService
+} from "@lib/actions/actionBookAService"
+import { findOverlapTimes } from "@lib/dateCheckCal"
 import { datePrettyLocal, timePrettyTo12HourFormat } from "@lib/dateFormatter"
-import { CalendarDatePicker } from "./Calendar"
 import {
 	filterBuisnessTimes,
 	findUniqueDays,
 	isDateRangeAvailable,
 } from "@lib/filterTimeAVail"
+import { generateTimesArray } from "@lib/generateTimesArray"
+import moneyFormatter from "@lib/moneyFormatter"
 import { findEmployeeBusyRanges } from "@lib/userUtils"
-import { TimePicker } from "./TimePicker"
-import { findOverlapTimes } from "@lib/dateCheckCal"
+import formStyles, { form } from "@styles/menus/form.module.scss"
 import Link from "next/link"
-import { BsFillBookmarkFill } from "react-icons/bs"
-import { Button } from "@components/elements/Button"
-import { SelectField } from "@components/forms/SelectField"
-import { InputField } from "@components/InputField"
-import { TextareaField } from "@components/TextareaField"
-import { SubmitButton } from "@components/forms/SubmitButton"
-import { useForm } from "@hooks/useForm"
+import type { Session } from "next-auth"
 import {
-	actionBookAService,
-	BookAServiceState,
-} from "@lib/actions/actionBookAService"
-import { Session } from "next-auth"
-import { envs } from "@/envs"
-import { Grid } from "@components/layouts/Grid"
+	useCallback,
+	useEffect,
+	useReducer,
+	useRef,
+} from "react"
+import { BsFillBookmarkFill } from "react-icons/bs"
+
+import { CalendarDatePicker } from "./Calendar"
+import { TimePicker } from "./TimePicker"
 
 type Fields = {
 	// event: string,

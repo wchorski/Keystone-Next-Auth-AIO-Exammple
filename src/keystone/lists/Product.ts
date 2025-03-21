@@ -1,8 +1,6 @@
 import { graphql, group, list } from "@keystone-6/core"
-import { Lists } from ".keystone/types"
 import {
 	checkbox,
-	image,
 	integer,
 	relationship,
 	select,
@@ -10,16 +8,18 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
-import { permissions, rules } from "../access"
+import { document } from "@keystone-6/fields-document"
+
+import { envs } from "../../../envs"
+import { slugFormat } from "../../lib/slugFormat"
 import {
 	stripeArchiveProduct,
 	stripeProductCreate,
 	stripeProductUpdate,
 } from "../../lib/stripe"
-import { document } from "@keystone-6/fields-document"
+import { permissions, rules } from "../access"
 import { componentBlocks } from "../blocks"
-import { slugFormat } from "../../lib/slugFormat"
-import { envs } from "../../../envs"
+import type { Lists } from ".keystone/types"
 
 export const Product: Lists.Product = list({
 	// access: allowAll,

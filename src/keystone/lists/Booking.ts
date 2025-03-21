@@ -2,9 +2,7 @@
 // docs - https://github.com/keystonejs/keystone/blob/333152e620183f310be892f1c82fbf847b47ecae/examples/framework-nextjs-pages-directory/src/pages/index.tsx
 
 import { graphql, list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
-	decimal,
 	integer,
 	json,
 	relationship,
@@ -13,20 +11,21 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
+import { Decimal } from "@keystone-6/core/types"
 import { document } from "@keystone-6/fields-document"
-import { componentBlocks } from "../blocks"
-import { mailBooking } from "../../lib/mail"
-import { User, Addon, Service, Coupon } from "../types"
+
+import { envs } from "../../../envs"
 import { calcDurationInHours, calcEndTime } from "../../lib/dateCheck"
 import {
 	createCalendarEvent,
 	deleteCalendarEvent,
 	updateCalendarEvent,
 } from "../../lib/googleapi/calCreate"
+import { mailBooking } from "../../lib/mail"
 import { isLoggedIn, permissions, rules } from "../access"
-import { envs } from "../../../envs"
-import { Decimal } from "@keystone-6/core/types"
-import { allowAll } from "@keystone-6/core/access"
+import { componentBlocks } from "../blocks"
+import type { Addon,Service, User } from "../types";
+import type { Lists } from ".keystone/types"
 
 // const EMAIL_ADDRESS = 'y@m'
 

@@ -1,5 +1,4 @@
 import { graphql, group, list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
 	decimal,
 	integer,
@@ -11,17 +10,17 @@ import {
 	virtual,
 } from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
-import { timesArray } from "../../lib/timeArrayCreator"
-import { permissions, rules } from "../access"
-import { componentBlocks } from "../../keystone/blocks"
+
 import { envs } from "../../../envs"
+import { componentBlocks } from "../../keystone/blocks"
 import {
 	stripeArchiveProduct,
 	stripeProductCreate,
-	stripeProductDelete,
 	stripeProductUpdate,
-	stripeServiceCreate,
 } from "../../lib/stripe"
+import { timesArray } from "../../lib/timeArrayCreator"
+import { permissions, rules } from "../access"
+import type { Lists } from ".keystone/types"
 
 export const Service: Lists.Service = list({
 	access: {

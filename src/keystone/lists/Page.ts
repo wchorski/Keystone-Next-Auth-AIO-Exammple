@@ -1,17 +1,17 @@
 import { list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
+	integer,
 	relationship,
 	select,
 	text,
 	timestamp,
-	integer,
-	checkbox,
 } from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
-import { componentBlocks } from "../blocks"
-import { permissions, rules } from "../access"
+
 import { slugFormat } from "../../lib/slugFormat"
+import { permissions, rules } from "../access"
+import { componentBlocks } from "../blocks"
+import type { Lists } from ".keystone/types"
 
 export const Page: Lists.Page = list({
 	access: {

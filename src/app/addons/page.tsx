@@ -1,15 +1,14 @@
-import { envs } from "@/envs"
-
-import { Metadata } from "next"
-
-import ErrorMessage from "@components/ErrorMessage"
 import { List } from "@components/elements/List"
-import Link from "next/link"
-import { getServerSession } from "next-auth"
-import { nextAuthOptions } from "@/session"
+import ErrorMessage from "@components/ErrorMessage"
 import fetchAddons from "@lib/fetchdata/fetchAddons"
+import { layout_content, page_layout } from "@styles/layout.module.css"
+import type { Metadata } from "next"
+import Link from "next/link"
 import { notFound } from "next/navigation"
-import { layout_content, layout_site, page_layout } from "@styles/layout.module.css"
+import { getServerSession } from "next-auth"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
 
 export const metadata: Metadata = {
 	title: "Addons | " + envs.SITE_TITLE,

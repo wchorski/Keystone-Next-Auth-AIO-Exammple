@@ -1,5 +1,4 @@
-import { list, group, graphql } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
+import { graphql,group, list } from "@keystone-6/core"
 import {
 	integer,
 	relationship,
@@ -8,10 +7,12 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
+
+import { codeFormat } from "../../lib/slugFormat"
 import { stripeCouponCreate, stripeCouponDelete } from "../../lib/stripe"
 import { isLoggedIn, permissions, rules } from "../access"
-import { Duration, OrderItem } from "../types"
-import { codeFormat } from "../../lib/slugFormat"
+import type { Duration} from "../types";
+import type { Lists } from ".keystone/types"
 
 // TODO figoure out coupons
 export const Coupon: Lists.Coupon = list({

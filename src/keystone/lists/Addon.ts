@@ -1,7 +1,4 @@
 import { list } from "@keystone-6/core"
-// @ts-ignore
-import type { Lists } from ".keystone/types"
-
 import {
 	integer,
 	relationship,
@@ -9,14 +6,17 @@ import {
 	text,
 	timestamp,
 } from "@keystone-6/core/fields"
-import { permissions, rules } from "../access"
+
+import { envs } from "../../../envs"
 import { slugFormat } from "../../lib/slugFormat"
 import {
 	stripeArchiveProduct,
 	stripeProductCreate,
 	stripeProductUpdate,
 } from "../../lib/stripe"
-import { envs } from "../../../envs"
+import { permissions, rules } from "../access"
+// @ts-ignore
+import type { Lists } from ".keystone/types"
 
 export const Addon: Lists.Addon = list({
 

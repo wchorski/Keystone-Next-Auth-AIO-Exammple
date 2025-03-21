@@ -1,12 +1,13 @@
-import { envs } from "@/envs"
-import { Metadata } from "next"
+import { ActionRegsiterForm } from "@components/forms/ActionRegisterForm"
 import {
   layout_breakout,
 	layout_content,
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
-import { ActionRegsiterForm } from "@components/forms/ActionRegisterForm"
+import type { Metadata } from "next"
+
+import { envs } from "@/envs"
 
 export const metadata: Metadata = {
 	title: "Regsiter | " + envs.SITE_TITLE,

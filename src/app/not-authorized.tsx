@@ -1,10 +1,12 @@
-import { PageTHeaderMain } from "@components/layouts/PageTemplates"
-import Link from "next/link"
-import { Metadata } from "next"
-import { envs } from "@/envs"
 import { Section } from "@components/blocks/Section"
+import { PageTHeaderMain } from "@components/layouts/PageTemplates"
+import type { Metadata } from "next"
+import Link from "next/link"
+import type { ReactNode } from "react"
+
+import { envs } from "@/envs"
+
 import styles from "../styles/elements/404.module.css"
-import { ReactNode } from "react"
 
 type Props = {
 	children?: ReactNode

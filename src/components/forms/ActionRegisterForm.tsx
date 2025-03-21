@@ -1,7 +1,7 @@
 "use client"
 
-import { InputField } from "@components/InputField"
 import { PasswordRequirements } from "@components/forms/PasswordRequirements"
+import { InputField } from "@components/InputField"
 import { useForm } from "@hooks/useForm"
 import {
 	actionRegisterAnAccount,
@@ -9,6 +9,7 @@ import {
 } from "@lib/actions/actionRegisterAnAccount"
 import { form } from "@styles/menus/form.module.scss"
 import { signIn } from "next-auth/react"
+
 import { SubmitButton } from "./SubmitButton"
 
 const initState: RegisterAnAccountState = {

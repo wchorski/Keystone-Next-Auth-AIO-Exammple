@@ -1,7 +1,5 @@
 import { graphql } from '@keystone-6/core'
-import { User } from "./lists/User"
-import { Role } from "./lists/Role"
-import { type Lists } from '.keystone/types'
+
 import { Addon } from './lists/Addon'
 import { Announcement } from './lists/Announcement'
 import { Availability } from './lists/Availability'
@@ -17,24 +15,26 @@ import { Page } from './lists/Page'
 import { Post } from "./lists/Post"
 import { Product } from './lists/Product'
 import { Rental } from './lists/Rental'
+import { Role } from "./lists/Role"
 import { Service } from './lists/Service'
 import { SubscriptionItem } from './lists/SubscriptionItem'
 import { SubscriptionPlan } from './lists/SubscriptionPlan'
 import { Tag } from './lists/Tag'
 import { Ticket } from './lists/Ticket'
-
-import { registerAnAccount } from "./mutations/registerAnAccount"
-import { bookAService } from "./mutations/bookAService"
-import { passwordRequestLink } from "./mutations/passwordRequestLink"
-import { verifyEmailRequest } from "./mutations/verifyEmailRequest"
-import { verifyEmail } from "./mutations/verifyEmail"
-import { passwordReset } from "./mutations/passwordReset"
-import { contact } from "./mutations/contact"
-import { checkoutTickets } from "./mutations/checkoutTickets"
+import { User } from "./lists/User"
 import { addToCart } from "./mutations/addToCart"
+import { bookAService } from "./mutations/bookAService"
 import { checkout } from "./mutations/checkout"
 import { checkoutSubscription } from "./mutations/checkoutSubscription"
+import { checkoutTickets } from "./mutations/checkoutTickets"
+import { contact } from "./mutations/contact"
+import { passwordRequestLink } from "./mutations/passwordRequestLink"
+import { passwordReset } from "./mutations/passwordReset"
 import { redeemCoupon } from "./mutations/redeemCoupon"
+import { registerAnAccount } from "./mutations/registerAnAccount"
+import { verifyEmail } from "./mutations/verifyEmail"
+import { verifyEmailRequest } from "./mutations/verifyEmailRequest"
+import { type Lists } from '.keystone/types'
 
 export const lists = {
   Addon,

@@ -1,18 +1,19 @@
-import styles from "@styles/footer.module.scss"
-import Link from "next/link"
-import { TawTawPowered } from "../menus/TawTawPowered"
-import { envs } from "@/envs"
 import { SocialLinkNav } from "@components/blocks/SocialLinkNav"
 import { List } from "@components/elements/List"
-import { BlockLayout } from "@components/layouts/BlockLayout"
 import Flex from "@components/layouts/Flex"
-import { CSSProperties } from "react"
+import { Grid } from "@components/layouts/Grid"
+import styles from "@styles/footer.module.scss"
 import {
 	layout_full,
 	layout_site,
 	page_layout,
 } from "@styles/layout.module.css"
-import { Grid } from "@components/layouts/Grid"
+import Link from "next/link"
+import type { CSSProperties } from "react"
+
+import { envs } from "@/envs"
+
+import { TawTawPowered } from "../menus/TawTawPowered"
 
 const txtStyle = {
 	color: "var(--c-light)",

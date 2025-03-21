@@ -26,7 +26,7 @@
     "ks:startmigrations": "keystone start --with-migrations",
     "ks:watch": "keystone dev --no-server",
     "generate": "keystone prisma generate",
-    "lint": "next lint",
+    "lint": "next lint --fix",
     "dev2": "turbo ks:watch ks:nextdev n:dev",
     "dev": "turbo ks:dev n:dev",
     "build": " pnpm keystone build --no-ui &&  pnpm next build",

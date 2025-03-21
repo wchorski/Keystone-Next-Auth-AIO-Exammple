@@ -1,6 +1,7 @@
 import { createYoga } from "graphql-yoga"
+import type { NextRequest} from "next/server";
+
 import { keystoneContext } from "../../../keystone/context"
-import { NextRequest, NextResponse } from "next/server"
 
 export const config = {
 	api: {

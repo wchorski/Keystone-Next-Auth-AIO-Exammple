@@ -1,7 +1,7 @@
 "use client"
 import { NavLink } from "@components/menus/NavLink"
-import styles from "@styles/nav.module.css"
 import { useNavControl } from "@hooks/useGlobalContext"
+import styles from "@styles/nav.module.css"
 
 export function MainNavList() {
 	const { isNavOpen } = useNavControl()

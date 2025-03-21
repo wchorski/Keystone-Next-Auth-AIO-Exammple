@@ -1,7 +1,8 @@
-import { envs } from "@/envs"
-import { nextAuthOptions } from "@/session"
+import { CartItemsList } from "@components/ecommerce/CartItemsList"
+import { CartTotal } from "@components/ecommerce/CartTotal"
 import { CheckoutCartForm } from "@components/ecommerce/CheckoutCartForm"
 import { StripeCheckoutForm } from "@components/ecommerce/StripeCheckoutForm"
+import { Card } from "@components/layouts/Card"
 import { keystoneContext } from "@ks/context"
 import type { User } from "@ks/types"
 import { plainObj } from "@lib/contentHelpers"
@@ -11,13 +12,13 @@ import {
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
-import { Metadata } from "next"
-import { getServerSession } from "next-auth"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { redirect } from "next/navigation"
-import { Card } from "@components/layouts/Card"
-import { CartItemsList } from "@components/ecommerce/CartItemsList"
-import { CartTotal } from "@components/ecommerce/CartTotal"
+import { getServerSession } from "next-auth"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
 
 export const metadata: Metadata = {
 	title: `Checkout | ` + envs.SITE_TITLE,

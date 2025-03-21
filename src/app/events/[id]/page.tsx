@@ -1,39 +1,41 @@
-import { envs } from "@/envs"
-import { nextAuthOptions } from "@/session"
+import { BlockRender } from "@components/blocks/BlockRender"
+import { IconLink } from "@components/elements/IconLink"
 import { ImageDynamic } from "@components/elements/ImageDynamic"
+import { Card } from "@components/layouts/Card"
+import ErrorPage from "@components/layouts/ErrorPage"
+import Flex from "@components/layouts/Flex"
+import { CallbackLink } from "@components/menus/CallbackLink"
+import { DialogPopup } from "@components/menus/DialogPopup"
+import { VerifyEmailCard } from "@components/menus/VerifyEmailCard"
+import { AddTicketButton } from "@components/tickets/AddTicketButton"
+import { TicketForm } from "@components/tickets/TicketForm"
+import { AddToCalendar } from "@components/widgets/AddToCalendar"
 import type {  User  } from "@ks/types"
+import { isEmptyDocument } from "@lib/contentHelpers"
 import {
 	datePrettyLocal,
 	datePrettyLocalDay,
 	datePrettyLocalTime,
 } from "@lib/dateFormatter"
 import { fetchEvent } from "@lib/fetchdata/fetchEvent"
-import { Metadata, ResolvingMetadata } from "next"
-import { getServerSession, Session } from "next-auth"
-import Link from "next/link"
-import styleProduct from "@styles/ecommerce/productSingle.module.css"
-import { BlockRender } from "@components/blocks/BlockRender"
-import { AddTicketButton } from "@components/tickets/AddTicketButton"
-import { Card } from "@components/layouts/Card"
-import { TicketForm } from "@components/tickets/TicketForm"
-import styles from "@styles/events/event.module.css"
-import { AddToCalendar } from "@components/widgets/AddToCalendar"
-import { VerifyEmailCard } from "@components/menus/VerifyEmailCard"
+import moneyFormatter from "@lib/moneyFormatter"
 import { plainObj } from "@lib/utils"
+import styleProduct from "@styles/ecommerce/productSingle.module.css"
+import styles from "@styles/events/event.module.css"
 import {
 	layout_site,
 	layout_wide,
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
+import type { Metadata, ResolvingMetadata } from "next"
+import Link from "next/link"
 import { notFound } from "next/navigation"
-import { DialogPopup } from "@components/menus/DialogPopup"
-import moneyFormatter from "@lib/moneyFormatter"
-import { IconLink } from "@components/elements/IconLink"
-import { isEmptyDocument } from "@lib/contentHelpers"
-import Flex from "@components/layouts/Flex"
-import ErrorPage from "@components/layouts/ErrorPage"
-import { CallbackLink } from "@components/menus/CallbackLink"
+import type { Session } from "next-auth";
+import { getServerSession } from "next-auth"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
 
 export async function generateMetadata(
 	{ params }: Props,

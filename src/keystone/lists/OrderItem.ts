@@ -1,15 +1,15 @@
 import { graphql, group, list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
 	integer,
 	relationship,
 	select,
-	text,
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
-import { isLoggedIn, permissions, rules } from "../access"
+
 import { hasOnlyOneValue } from "../../lib/utils"
+import { isLoggedIn, permissions, rules } from "../access"
+import type { Lists } from ".keystone/types"
 
 export const OrderItem: Lists.OrderItem = list({
 	access: {

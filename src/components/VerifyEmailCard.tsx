@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from "react"
-import stylesAnim from '@styles/eyecandy/SpinCycle.module.scss'
 import { TbCheck, TbExclamationCircle, TbLoader } from "react-icons/tb"
 
 

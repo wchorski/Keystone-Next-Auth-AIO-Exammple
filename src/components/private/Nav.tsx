@@ -1,10 +1,11 @@
-import styles, { nav, utility } from "@styles/nav.module.css"
+import { CartBadgeButton } from "@components/ecommerce/CartBadgeButton"
+import Flex from "@components/layouts/Flex"
+import { layout_site, page_layout } from "@styles/layout.module.css"
+import { nav, utility } from "@styles/nav.module.css"
+
 import { NavWichButton } from "../menus/NavWichButton"
 import { SessionBadge } from "../menus/Session"
 import { MainNavList } from "./MainNavList"
-import { layout_site, page_layout } from "@styles/layout.module.css"
-import Flex from "@components/layouts/Flex"
-import { CartBadgeButton } from "@components/ecommerce/CartBadgeButton"
 
 export function Nav() {
 	// const { isNavOpen, toggleNav } = useNavControl()

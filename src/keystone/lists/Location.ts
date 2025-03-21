@@ -1,9 +1,9 @@
 import { list } from "@keystone-6/core"
+import { integer, relationship, select, text } from "@keystone-6/core/fields"
+
+import { permissions, rules } from "../access"
 // @ts-ignore
 import type { Lists } from ".keystone/types"
-import { allowAll } from "@keystone-6/core/access"
-import { integer, relationship, select, text } from "@keystone-6/core/fields"
-import { permissions, rules } from "../access"
 
 export const Location: Lists.Location = list({
 	access: {

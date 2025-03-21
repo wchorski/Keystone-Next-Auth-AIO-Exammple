@@ -1,9 +1,5 @@
 import { graphql, list } from "@keystone-6/core"
-// @ts-ignore
-import type { Lists } from ".keystone/types"
-import { allowAll } from "@keystone-6/core/access"
 import {
-	image,
 	integer,
 	relationship,
 	select,
@@ -11,11 +7,12 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
-import { isLoggedIn, permissions, rules } from "../access"
+
+import type { OrderItem } from "../../keystone/types"
 import moneyFormatter from "../../lib/moneyFormatter"
-import { envs } from "../../../envs"
-import { mailOrder } from "../../lib/mail"
-import { User, Order as TOrder, OrderItem } from "../../keystone/types"
+import { isLoggedIn, permissions, rules } from "../access"
+// @ts-ignore
+import type { Lists } from ".keystone/types"
 
 // TODO thinking about changing to `Transaction` to all encompass products, subscriptions, etc.
 export const Order: Lists.Order = list({

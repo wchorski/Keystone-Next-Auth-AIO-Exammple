@@ -1,7 +1,4 @@
 import { graphql, group, list } from "@keystone-6/core"
-// @ts-ignore
-import type { Lists } from ".keystone/types"
-import { allowAll } from "@keystone-6/core/access"
 import {
 	integer,
 	relationship,
@@ -10,9 +7,12 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
-import { isLoggedIn, rules } from "../access"
 import { document } from "@keystone-6/fields-document"
+
+import { isLoggedIn, rules } from "../access"
 import { componentBlocks } from "../blocks"
+// @ts-ignore
+import type { Lists } from ".keystone/types"
 
 export const Event: Lists.Event = list({
 	// access: allowAll,

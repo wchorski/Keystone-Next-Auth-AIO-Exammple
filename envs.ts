@@ -27,6 +27,8 @@ const SITE_TITLE = process.env.NEXT_PUBLIC_SITE_TITLE!
 const SITE_DESCRIPTION = process.env.NEXT_PUBLIC_SITE_DESCRIPTION!
 const PERPAGE = Number(process.env.NEXT_PUBLIC_PERPAGE) || 20
 const TIMEZONES = process.env.TIMEZONES ? process.env.TIMEZONES.split(',') : ['America/Chicago']
+const COLOR_PRIMARY = process.env.NEXT_PUBLIC_COLOR_PRIMARY || "#abdbe8"
+const COLOR_TXT_PRIMARY = process.env.NEXT_PUBLIC_COLOR_TXT_PRIMARY || "#576768"
 
 // AUTH
 const BASIC_USER_ROLE_NAME = process.env.BASIC_USER_ROLE_NAME!
@@ -87,6 +89,8 @@ const DATABASE_URL = (() => {
 })()
 
 export const envs = {
+  COLOR_PRIMARY,
+  COLOR_TXT_PRIMARY,
   BASIC_USER_ROLE_NAME,
   ADMIN_EMAIL_ADDRESS,
   MAIL_SERVICE,

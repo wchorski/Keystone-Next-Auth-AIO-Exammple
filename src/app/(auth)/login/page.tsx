@@ -1,20 +1,19 @@
-import { envs } from "@/envs"
-import { nextAuthOptions } from "@/session"
-import { DialogPopup } from "@components/menus/DialogPopup"
+import { Callout } from "@components/blocks/Callout"
 import { LoginForm } from "@components/LoginForm"
+import { DialogPopup } from "@components/menus/DialogPopup"
 import { PasswordRequestForm } from "@components/PasswordRequestForm"
-import { Metadata } from "next"
-import { getServerSession } from "next-auth"
-import { getProviders } from "next-auth/react"
-import Link from "next/link"
 import {
-	layout_full,
-	layout_site,
 	layout_wide,
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
-import { Callout } from "@components/blocks/Callout"
+import type { Metadata } from "next"
+import Link from "next/link"
+import { getServerSession } from "next-auth"
+import { getProviders } from "next-auth/react"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
 
 export const metadata: Metadata = {
 	title: "Login | " + envs.SITE_TITLE,

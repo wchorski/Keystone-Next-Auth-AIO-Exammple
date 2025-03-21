@@ -1,16 +1,17 @@
 "use client"
 // cred - github.com/apollographql/apollo-client-nextjs/issues/281#issuecomment-2057927433
 //! given up on using client and just using NextJS's api to pass query and variable as json
-import { envs } from "@/envs"
 // ^ this file needs the "use client" pragma
-
 import { HttpLink } from "@apollo/client"
 import { setContext } from "@apollo/client/link/context"
 import {
-	ApolloNextAppProvider,
 	ApolloClient,
+	ApolloNextAppProvider,
 	InMemoryCache,
 } from "@apollo/experimental-nextjs-app-support"
+
+import { envs } from "@/envs"
+
 import { useCookies } from "./CookieContext"
 
 // have a function to create a client for you

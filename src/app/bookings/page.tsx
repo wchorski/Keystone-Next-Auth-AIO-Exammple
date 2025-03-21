@@ -1,6 +1,7 @@
-import { envs } from "@/envs"
-import { Metadata } from "next"
 import { layout_wide, page_content, page_layout } from "@styles/layout.module.css"
+import type { Metadata } from "next"
+
+import { envs } from "@/envs"
 
 export const metadata: Metadata = {
 	title: "Bookings | " + envs.SITE_TITLE,

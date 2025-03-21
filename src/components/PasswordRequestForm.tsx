@@ -1,13 +1,14 @@
 "use client"
-import { useFormState } from "react-dom"
+import type {
+	PasswordRequestState} from "@actions/actionPassworRequest";
 import {
-	actionPasswordRequest,
-	PasswordRequestState,
+	actionPasswordRequest
 } from "@actions/actionPassworRequest"
-import { InputField } from "@components/InputField"
-import Link from "next/link"
 import { SubmitButton } from "@components/forms/SubmitButton"
+import { InputField } from "@components/InputField"
 import { form } from "@styles/menus/form.module.scss"
+import Link from "next/link"
+import { useFormState } from "react-dom"
 
 const initState: PasswordRequestState = {
 	values: {

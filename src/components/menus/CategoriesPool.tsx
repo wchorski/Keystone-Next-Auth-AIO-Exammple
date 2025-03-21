@@ -1,7 +1,7 @@
-import Link from "next/link"
-import styles from '@styles/categories.module.css'
-import fetchCategories from "@lib/fetchdata/fetchCats"
 import type {  Category  } from "@ks/types"
+import fetchCategories from "@lib/fetchdata/fetchCats"
+import styles from '@styles/categories.module.css'
+import Link from "next/link"
 
 type Props = {
   activeIds?:string[]

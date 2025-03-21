@@ -1,7 +1,8 @@
 // note - tried to use styled components but something was overriding
-import React, { CSSProperties, ReactNode } from "react"
 import styles from "@styles/blocs/callout.module.css"
 import { layout_breakout } from "@styles/layout.module.css"
+import type { CSSProperties, ReactNode } from "react";
+import React from "react"
 
 type CalloutProps = {
 	intent: "info" | "warning" | "error" | "success"

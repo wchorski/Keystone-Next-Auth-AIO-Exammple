@@ -1,18 +1,19 @@
-import { envs } from "@/envs"
-import { nextAuthOptions } from "@/session"
-import ErrorMessage from "@components/ErrorMessage"
 import { BookingForm } from "@components/bookings/BookingForm4"
+import ErrorMessage from "@components/ErrorMessage"
 import fetchBookingFormData from "@lib/fetchdata/fetchBookingFormInfo"
-import { Metadata } from "next"
-import { getServerSession } from "next-auth"
-import NoDataFoundError404 from "../not-found"
 import { plainObj } from "@lib/utils"
-import { notFound } from "next/navigation"
 import {
 	layout_wide,
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
+import type { Metadata } from "next"
+import { notFound } from "next/navigation"
+import { getServerSession } from "next-auth"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
+
 
 export const metadata: Metadata = {
 	title: "Book a Service | " + envs.SITE_TITLE,

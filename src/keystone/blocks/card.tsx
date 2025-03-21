@@ -1,6 +1,6 @@
+import { component, fields } from '@keystone-6/fields-document/component-blocks';
 import React from 'react';
-import { component, fields, NotEditable } from '@keystone-6/fields-document/component-blocks';
-import { ColorsTheme } from '../types';
+
 import { colorThemeOptions, getColorTheme } from '../../lib/styleHelpers';
 // import { bg_c_plain } from '../../styles/colorthemes.module.css';
 

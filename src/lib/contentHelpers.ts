@@ -1,4 +1,5 @@
 import type {  KSHeading, TOCLink  } from "@ks/types"
+
 import { slugFormat } from "./slugFormat"
 
 export function isEmptyDocument(document: any) {

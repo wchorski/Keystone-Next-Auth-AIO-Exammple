@@ -1,14 +1,17 @@
 import "@styles/globals.css"
-import type { Metadata } from "next"
-import { Inter, Barlow } from "next/font/google"
-import Script from "next/script"
+
+import { ShoppingCart } from "@components/ecommerce/ShoppingCart"
+import { AnnouncementBanner } from "@components/elements/AnnouncementBanner"
+import { Footer } from "@components/private/Footer"
 import { Nav } from "@components/private/Nav"
+import type { Metadata } from "next"
+import { Barlow,Inter } from "next/font/google"
+import Script from "next/script"
+
 import { envs } from "@/envs"
+
 // import { cookies } from "next/dist/client/components/headers"
 import { Providers } from "./providers"
-import { Footer } from "@components/private/Footer"
-import { AnnouncementBanner } from "@components/elements/AnnouncementBanner"
-import { ShoppingCart } from "@components/ecommerce/ShoppingCart"
 
 const header_font = Inter({
 	subsets: ["latin"],

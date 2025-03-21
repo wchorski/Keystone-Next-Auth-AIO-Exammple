@@ -1,19 +1,17 @@
 "use client"
+import { SubmitButton } from "@components/forms/SubmitButton"
+import { InputField } from "@components/InputField"
+import type {
+	PasswordResetState} from "@lib/actions/actionPasswordReset";
+import {
+	actionPasswordReset
+} from "@lib/actions/actionPasswordReset"
 import { form } from "@styles/menus/form.module.scss"
-
-import { useFormState, useFormStatus } from "react-dom"
+import { signIn } from "next-auth/react"
 import { useRef } from "react"
+import { useFormState } from "react-dom"
 
 import { PasswordRequirements } from "./PasswordRequirements"
-import {
-	actionPasswordReset,
-	PasswordResetState,
-} from "@lib/actions/actionPasswordReset"
-
-import { InputField } from "@components/InputField"
-import { signIn } from "next-auth/react"
-
-import { SubmitButton } from "@components/forms/SubmitButton"
 
 // type Fields = {
 // 	password: string

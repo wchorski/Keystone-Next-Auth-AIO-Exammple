@@ -2,10 +2,8 @@
 // docs - https://github.com/keystonejs/keystone/blob/333152e620183f310be892f1c82fbf847b47ecae/examples/framework-nextjs-pages-directory/src/pages/index.tsx
 
 import { graphql, list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
 	checkbox,
-	decimal,
 	integer,
 	json,
 	relationship,
@@ -14,15 +12,16 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
-import { User, Addon, Service, Location } from "../types"
+import { Decimal } from "@keystone-6/core/types"
+
+import { envs } from "../../../envs"
 import {
 	calcDaysBetweenTimestamps,
 	calcDurationInHours,
 } from "../../lib/dateCheck"
-
 import { isLoggedIn, permissions, rules } from "../access"
-import { envs } from "../../../envs"
-import { Decimal } from "@keystone-6/core/types"
+import type { User } from "../types";
+import type { Lists } from ".keystone/types"
 
 const now = new Date()
 const year = now.getFullYear()

@@ -1,5 +1,5 @@
-import type {  Service  } from "@ks/types"
 import { keystoneContext } from "@ks/context"
+import type {  Service  } from "@ks/types"
 
 type Props = {
 	id: string

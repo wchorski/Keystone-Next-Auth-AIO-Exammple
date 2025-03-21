@@ -3,13 +3,12 @@
 // import { react } from "react";
 //? '@keystone-ui/core' still works even though editor throws errors
 // import { jsx, useTheme } from '@keystone-ui/core';
-import { jsx } from '@keystone-ui/core';
 import { component, fields, NotEditable } from '@keystone-6/fields-document/component-blocks';
 import {
-  ToolbarButton,
   ToolbarGroup,
   ToolbarSeparator,
 } from '@keystone-6/fields-document/primitives';
+import { jsx } from '@keystone-ui/core';
 // import { InfoIcon } from '@keystone-ui/icons/icons/InfoIcon';
 // import { AlertTriangleIcon } from '@keystone-ui/icons/icons/AlertTriangleIcon';
 // import { AlertOctagonIcon } from '@keystone-ui/icons/icons/AlertOctagonIcon';

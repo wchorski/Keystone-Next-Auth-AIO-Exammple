@@ -1,12 +1,15 @@
 
-import React, { ReactElement } from 'react'
-import Link from 'next/link';
+import { PriceTag } from '@components/ecommerce/PriceTag';
+import type { SubscriptionPlan} from '@ks/types';
 import styles from '@styles/ecommerce/product.module.css'
+import Link from 'next/link';
+import type { ReactElement } from 'react';
+import React from 'react'
+
+import { envs } from '@/envs';
+
 import { ImageDynamic } from '../elements/ImageDynamic';
 import { OutOfStockLabel } from '../elements/OutOfStockLabel';
-import { SubscriptionPlan, Session } from '@ks/types';
-import { PriceTag } from '@components/ecommerce/PriceTag';
-import { envs } from '@/envs';
 
 type Props = {
   SubscriptionPlan:SubscriptionPlan,

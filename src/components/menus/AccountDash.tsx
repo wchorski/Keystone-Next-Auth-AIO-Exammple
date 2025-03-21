@@ -1,6 +1,8 @@
+import { EmployeeGigDecisionForm } from "@components/bookings/EmployeeGigDecisionForm"
 import { Table } from "@components/elements/Table"
-import { datePrettyLocalDay, datePrettyLocalTime } from "@lib/dateFormatter"
-import moneyFormatter from "@lib/moneyFormatter"
+import { TicketList } from "@components/events/TicketList"
+import { Card } from "@components/layouts/Card"
+import { StatusBadge } from "@components/StatusBadge"
 import type { 
 	Booking,
 	Order,
@@ -9,11 +11,10 @@ import type {
 	Ticket,
 	User,
  } from "@ks/types"
-import { Card } from "@components/layouts/Card"
+import { datePrettyLocalDay, datePrettyLocalTime } from "@lib/dateFormatter"
+import moneyFormatter from "@lib/moneyFormatter"
 import styles from "@styles/menus/dashboard.module.css"
-import { StatusBadge } from "@components/StatusBadge"
-import { EmployeeGigDecisionForm } from "@components/bookings/EmployeeGigDecisionForm"
-import { TicketList } from "@components/events/TicketList"
+
 import { VerifyEmailCard } from "./VerifyEmailCard"
 
 type Props = {

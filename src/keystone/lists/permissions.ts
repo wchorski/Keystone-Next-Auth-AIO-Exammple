@@ -1,5 +1,5 @@
-import { checkbox } from "@keystone-6/core/fields"
 import { group } from "@keystone-6/core"
+import { checkbox } from "@keystone-6/core/fields"
 //! When you add a field here also add it to these files below
 //! `session.ts` `userQuery` object on top
 //! `/types/next-auth.d.ts` under `role:`

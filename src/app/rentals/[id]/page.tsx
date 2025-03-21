@@ -1,34 +1,29 @@
-import ErrorMessage from "@components/ErrorMessage"
 import { DayMonthTime } from "@components/blocks/DayMonthTime"
-import { UserBadge } from "@components/menus/UserBadge"
-
-import { datePrettyLocal } from "@lib/dateFormatter"
-import fetchRental from "@lib/fetchdata/fetchRental"
-import moneyFormatter from "@lib/moneyFormatter"
-import Link from "next/link"
-import { FiEdit } from "react-icons/fi"
-import { CgExternal } from "react-icons/cg"
+import { ProductOrderItem } from "@components/ecommerce/ProductOrderItem"
+import { NoData } from "@components/elements/NoData"
+import ErrorMessage from "@components/ErrorMessage"
+import { Card } from "@components/layouts/Card"
+import Flex from "@components/layouts/Flex"
 import { DialogPopup } from "@components/menus/DialogPopup"
 import { StatusBadge } from "@components/StatusBadge"
+import { datePrettyLocal } from "@lib/dateFormatter"
+import fetchRental from "@lib/fetchdata/fetchRental"
+import { IconUserAccountAvatar } from "@lib/useIcons"
 import { booking_single } from "@styles/booking.module.css"
-import { Metadata, ResolvingMetadata } from "next"
-import { envs } from "@/envs"
-import { getServerSession } from "next-auth"
-import { nextAuthOptions } from "@/session"
-import { BlockRender } from "@components/blocks/BlockRender"
 import {
 	layout_breakout,
 	layout_content,
 	page_layout,
 } from "@styles/layout.module.css"
-import { notFound } from "next/navigation"
-import Flex from "@components/layouts/Flex"
-import { IconUserAccountAvatar } from "@lib/useIcons"
-import { Card } from "@components/layouts/Card"
-import { NoData } from "@components/elements/NoData"
+import type { Metadata, ResolvingMetadata } from "next"
 import Image from "next/image"
-import { Callout } from "@components/blocks/Callout"
-import { ProductOrderItem } from "@components/ecommerce/ProductOrderItem"
+import Link from "next/link"
+import { notFound } from "next/navigation"
+import { getServerSession } from "next-auth"
+import { FiEdit } from "react-icons/fi"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
 
 // export const metadata: Metadata = {
 //   title: 'Rental | ' + envs.SITE_TITLE,

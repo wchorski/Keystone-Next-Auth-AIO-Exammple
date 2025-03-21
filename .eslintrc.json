@@ -14,8 +14,8 @@
       ], // Applies these rules only to TypeScript files
       "plugins": [
         "@typescript-eslint", // TypeScript specific linting rules
-        "unused-imports", // Plugin to automatically remove unused imports
-        "simple-import-sort" // Plugin to enforce consistent import order
+        "simple-import-sort", // Plugin to enforce consistent import order
+        "unused-imports" // Plugin to automatically remove unused imports
       ],
       "extends": [
         "next/core-web-vitals" // Next.js core web vitals plugin
@@ -53,7 +53,7 @@
         "import/order": "off", // Disable import order rule to avoid conflict with simple-import-sort
         "@typescript-eslint/no-unused-vars": "off", // Disable unused variables rule for TypeScript
         "unused-imports/no-unused-imports": "error", // Automatically remove unused imports
-        "no-unused-vars": "off", // Disable unused variables rule (covered by unused-imports plugin)
+        // "no-unused-vars": "off", // Disable unused variables rule (covered by unused-imports plugin)
         "@typescript-eslint/naming-convention": "off", // Disable naming convention rule (can be enabled if desired)
         "unused-imports/no-unused-vars": [
           "warn",

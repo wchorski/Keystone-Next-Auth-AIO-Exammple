@@ -1,19 +1,16 @@
 import { graphql, list } from "@keystone-6/core"
-// @ts-ignore
-import type { Lists, Context } from ".keystone/types"
-import { allowAll } from "@keystone-6/core/access"
 import {
-	integer,
 	relationship,
 	select,
 	text,
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
+import type {  Event  } from "@ks/types"
+
 import { isLoggedIn, permissions, rules } from "../access"
-import type {  Event, Order  } from "@ks/types"
-import { datePrettyLocalDay } from "../../lib/dateFormatter"
-import type { KeystoneContextFromListTypeInfo } from "@keystone-6/core/types"
+// @ts-ignore
+import type {Lists } from ".keystone/types"
 
 export const Ticket: Lists.Ticket = list({
 	// todo only employees of event are allowed to update

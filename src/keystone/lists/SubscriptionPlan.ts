@@ -1,5 +1,6 @@
+import "dotenv/config"
+
 import { graphql, group, list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
 	integer,
 	relationship,
@@ -9,17 +10,18 @@ import {
 	virtual,
 } from "@keystone-6/core/fields"
 import { document } from "@keystone-6/fields-document"
-import { permissions, rules } from "../access"
+import type {  Billing_Interval  } from "@ks/types"
+
+import { envs } from "../../../envs"
+import { slugFormat } from "../../lib/slugFormat"
 import {
 	stripeArchiveProduct,
 	stripeProductCreate,
 	stripeProductUpdate,
 } from "../../lib/stripe"
-import "dotenv/config"
+import { permissions, rules } from "../access"
 import { componentBlocks } from "../blocks"
-import { slugFormat } from "../../lib/slugFormat"
-import type {  Billing_Interval  } from "@ks/types"
-import { envs } from "../../../envs"
+import type { Lists } from ".keystone/types"
 
 export const SubscriptionPlan: Lists.SubscriptionPlan = list({
 	// access: allowAll,

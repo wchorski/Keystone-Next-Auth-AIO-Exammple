@@ -1,5 +1,5 @@
-import React from 'react';
 import { component, fields, NotEditable } from '@keystone-6/fields-document/component-blocks';
+import React from 'react';
 
 export const postslist = component({
   label: 'Posts List',
@@ -20,12 +20,12 @@ export const postslist = component({
       defaultValue: 'gray'
     }),
  
-    // categories: fields.relationship({
-    //   label: 'Categories',
-    //   listKey: 'Category',
-    //   selection: 'name',
-    //   many: true,
-    // })
+    categories: fields.relationship({
+      label: 'Categories',
+      listKey: 'Category',
+      selection: 'name',
+      many: true,
+    })
    
   },
   preview: function Preview(props) {

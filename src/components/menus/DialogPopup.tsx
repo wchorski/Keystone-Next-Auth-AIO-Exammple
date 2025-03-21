@@ -1,12 +1,12 @@
 "use client"
 // dave gray - https://github.com/gitdagray/next-dialog-modal/blob/main/src/app/components/Dialog.tsx
-import { useSearchParams } from "next/navigation"
-import { useRef, useEffect, type ComponentPropsWithoutRef } from "react"
 import styles, {
 	animated_wrapper,
 	wrapper,
 } from "@styles/popup.module.css"
+import { useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
+import { type ComponentPropsWithoutRef,useEffect, useRef } from "react"
 import { IoMdClose } from "react-icons/io"
 
 type Props = ComponentPropsWithoutRef<"dialog"> & {

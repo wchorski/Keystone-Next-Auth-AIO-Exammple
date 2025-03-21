@@ -1,16 +1,13 @@
 import { list } from "@keystone-6/core"
-// @ts-ignore
-import type { Lists } from ".keystone/types"
-import { allowAll } from "@keystone-6/core/access"
 import {
 	relationship,
-	select,
 	text,
-	timestamp,
-	integer,
 } from "@keystone-6/core/fields"
-import { permissions, rules } from "../access"
+
 import { slugFormat } from "../../lib/slugFormat"
+import { permissions, rules } from "../access"
+// @ts-ignore
+import type { Lists } from ".keystone/types"
 
 export const Category: Lists.Category = list({
 	access: {

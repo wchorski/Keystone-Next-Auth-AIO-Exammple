@@ -1,5 +1,4 @@
 import { graphql, list } from "@keystone-6/core"
-import type { Lists } from ".keystone/types"
 import {
 	checkbox,
 	relationship,
@@ -8,17 +7,19 @@ import {
 	timestamp,
 	virtual,
 } from "@keystone-6/core/fields"
+
+import type { Lists } from ".keystone/types"
 // import { permissions, rules } from "../access";
 // import stripeConfig, { stripeCustomerCreate, stripeCustomerDelete } from "../../lib/stripe";
 // import { timesArray } from "../../lib/timeArrayCreator";
 var bcrypt = require("bcryptjs")
 import { envs } from "../../../envs"
+import { calcTotalPrice } from "../../lib/calcTotalPrice"
+import { stripeCustomerCreate, stripeCustomerUpdate } from "../../lib/stripe"
+import { timesArray } from "../../lib/timeArrayCreator"
 // import { timesArray } from "../../lib/timeArrayCreator"
 import { permissions, rules } from "../access"
-import { timesArray } from "../../lib/timeArrayCreator"
-import { calcTotalPrice } from "../../lib/calcTotalPrice"
-import { CartItem } from "../types"
-import { stripeCustomerCreate, stripeCustomerUpdate } from "../../lib/stripe"
+import type { CartItem } from "../types"
 // import { mailVerifyUser } from "../../lib/mail";
 // import { tokenEmailVerify } from "../../lib/tokenEmailVerify";
 

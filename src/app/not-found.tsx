@@ -1,16 +1,16 @@
-import { PageTHeaderMain } from "@components/layouts/PageTemplates"
-import Link from "next/link"
-import { Metadata } from "next"
-import { envs } from "@/envs"
-import { Section } from "@components/blocks/Section"
-import styles from "../styles/elements/404.module.css"
-import { ReactNode } from "react"
+import { Header } from "@components/elements/Header"
 import {
 	layout_wide,
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
-import { Header } from "@components/elements/Header"
+import type { Metadata } from "next"
+import Link from "next/link"
+import type { ReactNode } from "react"
+
+import { envs } from "@/envs"
+
+import styles from "../styles/elements/404.module.css"
 
 type Props = {
 	children?: ReactNode

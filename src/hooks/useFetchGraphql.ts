@@ -1,4 +1,3 @@
-import { envs } from "@/envs"
 import { useEffect, useState } from "react"
 
 // const API_URI =  || 'http://localhost:3000/api/graphql'

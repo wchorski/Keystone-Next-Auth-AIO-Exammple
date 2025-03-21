@@ -1,7 +1,7 @@
-import Link from "next/link"
-import type {  User  } from "@ks/types"
 import { ImageDynamic } from "@components/elements/ImageDynamic"
+import type {  User  } from "@ks/types"
 import styles from '@styles/menus/userbadge.module.css'
+import Link from "next/link"
 
 export function UserBadge({user}:{user:User}){
 

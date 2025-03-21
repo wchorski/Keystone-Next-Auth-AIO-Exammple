@@ -1,9 +1,9 @@
 import { list } from "@keystone-6/core";
+import { relationship, text, } from "@keystone-6/core/fields";
+
+import { permissions, rules } from "../access";
 // @ts-ignore
 import type { Lists } from '.keystone/types';
-import { allowAll } from "@keystone-6/core/access";
-import { relationship, text, } from "@keystone-6/core/fields";
-import { permissions, rules } from "../access";
 
 
 

@@ -1,5 +1,4 @@
-import { envs } from "../../envs"
-import { User } from "../keystone/types"
+import type { User } from "../keystone/types"
 
 export const passwordResetEmail = (
 	user: User,

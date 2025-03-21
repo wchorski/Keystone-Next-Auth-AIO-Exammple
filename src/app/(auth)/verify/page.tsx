@@ -1,11 +1,12 @@
 import { VerifyEmailCard } from "@components/VerifyEmailCard"
-import { fetchVerifyEmail } from "../../fetch/fetchVerifyEmail"
 // import {
 // 	layout_content,
 // 	page_content,
 // 	page_layout,
 // } from "@styles/layout.module.css"
 import Link from "next/link"
+
+import { fetchVerifyEmail } from "../../fetch/fetchVerifyEmail"
 type Props = {
 	searchParams: {
 		email: string

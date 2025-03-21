@@ -1,5 +1,3 @@
-import { envs } from "@/envs"
-import { nextAuthOptions } from "@/session"
 import { StripeSubscriptionCheckout } from "@components/ecommerce/StripeSubscriptionCheckout"
 import ErrorPage from "@components/layouts/ErrorPage"
 import { keystoneContext } from "@ks/context"
@@ -12,9 +10,12 @@ import {
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"
-import { Metadata } from "next"
-import { getServerSession } from "next-auth"
+import type { Metadata } from "next"
 import { notFound, redirect } from "next/navigation"
+import { getServerSession } from "next-auth"
+
+import { envs } from "@/envs"
+import { nextAuthOptions } from "@/session"
 
 type Props = {
 	searchParams: {
