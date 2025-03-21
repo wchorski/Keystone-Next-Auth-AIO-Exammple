@@ -411,7 +411,7 @@ export function BookingForm({ data, session, timeZoneOptions }: Props) {
 		const employeeBusyRanges = findEmployeeBusyRanges(selectedEmpl)
 
 		const buisnessTimeStrings = filterBuisnessTimes(
-			genTimeStrings,
+			generateTimesArray().map(t => t.value),
 			buisnessHours
 		)
 		const uniqueBusyDays = findUniqueDays(employeeBusyRanges)
