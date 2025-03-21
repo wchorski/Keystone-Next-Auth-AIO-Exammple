@@ -1,5 +1,5 @@
 import { ImageDynamic } from "@components/elements/ImageDynamic"
-import { OrderItem } from "@ks/types"
+import type {  OrderItem  } from "@ks/types"
 import Link from "next/link"
 import { PriceTag } from "./PriceTag"
 import moneyFormatter from "@lib/moneyFormatter"

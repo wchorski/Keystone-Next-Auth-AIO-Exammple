@@ -1,4 +1,4 @@
-import { Addon, Availability, Booking, Location, Service, User } from "@ks/types";
+import type { Addon, Availability, Booking, Location, Service, User } from "@ks/types";
 import { keystoneContext } from '@ks/context';
 
 type Props ={

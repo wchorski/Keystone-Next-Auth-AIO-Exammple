@@ -2,7 +2,7 @@
 import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
 import { keystoneContext } from "@ks/context"
-import { CartItem, Rental } from "@ks/types"
+import type {  CartItem, Rental  } from "@ks/types"
 import { dateTimeToISOTimezone } from "@lib/dateFormatter"
 import { plainObj } from "@lib/utils"
 import { quantity } from "@styles/ecommerce/cart.module.css"

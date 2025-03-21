@@ -6,7 +6,7 @@ import { InputField } from "@components/InputField"
 import { TextareaField } from "@components/TextareaField"
 // import { useForm } from "@hooks/useForm"
 import { useFormState } from "react-dom"
-import { Rental, SelectOption } from "@ks/types"
+import type {  Rental, SelectOption  } from "@ks/types"
 import {
 	postRentalToCart,
 	RentalToCartState,

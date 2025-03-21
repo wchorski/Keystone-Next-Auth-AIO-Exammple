@@ -1,5 +1,5 @@
 import { datePrettyLocalDay } from "@lib/dateFormatter"
-import { Ticket } from "@ks/types"
+import type {  Ticket  } from "@ks/types"
 import Link from "next/link"
 import { BsQrCode } from "react-icons/bs"
 import { StatusBadge } from "@components/StatusBadge"

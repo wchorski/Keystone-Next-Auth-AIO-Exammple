@@ -8,7 +8,6 @@ import { plainObj } from "@lib/contentHelpers"
 import {
 	layout_content,
 	layout_site,
-	layout_wide,
 	page_content,
 	page_layout,
 } from "@styles/layout.module.css"

@@ -3,7 +3,7 @@
 import { useEffect, useReducer, useRef } from "react"
 import { useFormState, useFormStatus } from "react-dom"
 
-import { Event, User } from "@ks/types"
+import type {  Event, User  } from "@ks/types"
 import { envs } from "@/envs"
 import { loadStripe } from "@stripe/stripe-js"
 import moneyFormatter from "@lib/moneyFormatter"

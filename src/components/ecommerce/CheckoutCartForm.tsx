@@ -2,7 +2,7 @@
 import { SubmitButton } from "@components/forms/SubmitButton"
 import { useCart } from "@components/hooks/CartStateContext"
 import { useForm } from "@hooks/useForm"
-import { CartItem } from "@ks/types"
+import type {  CartItem  } from "@ks/types"
 import {
 	CheckoutCartState,
 	postCheckoutCart,

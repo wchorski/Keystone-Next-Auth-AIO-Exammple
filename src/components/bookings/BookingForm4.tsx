@@ -3,7 +3,7 @@
 // cred dave gray - https://www.youtube.com/watch?v=26ogBZXeBwc
 // cred ByteGrad -  https://www.youtube.com/watch?v=GgyP0_b-WPY
 
-import {
+import type { 
 	Addon,
 	AddonCheckboxOptions,
 	Availability,
@@ -14,7 +14,7 @@ import {
 	SelectOption,
 	Service,
 	User,
-} from "@ks/types"
+ } from "@ks/types"
 import { generateTimesArray } from "@lib/generateTimesArray"
 import {
 	ReducerAction,

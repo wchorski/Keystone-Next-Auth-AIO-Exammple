@@ -22,7 +22,7 @@ import {
 import { fetchOrder } from "@lib/fetchdata/fetchOrder"
 import ErrorPage from "@components/layouts/ErrorPage"
 import { notFound } from "next/navigation"
-import { OrderItem } from "@ks/types"
+import type {  OrderItem  } from "@ks/types"
 import { NoData } from "@components/elements/NoData"
 import { PriceTag } from "@components/ecommerce/PriceTag"
 import { ProductOrderItem } from "@components/ecommerce/ProductOrderItem"

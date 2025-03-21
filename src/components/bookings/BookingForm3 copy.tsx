@@ -1,7 +1,7 @@
 "use client"
 // cred - https://www.sumologic.com/blog/react-hook-typescript/
 // cred dave gray - https://www.youtube.com/watch?v=26ogBZXeBwc
-import {
+import type { 
 	Addon,
 	AddonCheckboxOptions,
 	Availability,
@@ -13,7 +13,7 @@ import {
 	Service,
 	Session,
 	User,
-} from "@ks/types"
+ } from "@ks/types"
 import { generateTimesArray } from "@lib/generateTimesArray"
 import {
 	ReducerAction,

@@ -1,4 +1,4 @@
-import { SpaceSize } from "@ks/types"
+import type {  SpaceSize  } from "@ks/types"
 import styles from "@styles/flex.module.scss"
 import { CSSProperties, ReactNode } from "react"
 type Props = {

@@ -1,14 +1,14 @@
 import { Table } from "@components/elements/Table"
 import { datePrettyLocalDay, datePrettyLocalTime } from "@lib/dateFormatter"
 import moneyFormatter from "@lib/moneyFormatter"
-import {
+import type { 
 	Booking,
 	Order,
 	Rental,
 	SubscriptionItem,
 	Ticket,
 	User,
-} from "@ks/types"
+ } from "@ks/types"
 import { Card } from "@components/layouts/Card"
 import styles from "@styles/menus/dashboard.module.css"
 import { StatusBadge } from "@components/StatusBadge"

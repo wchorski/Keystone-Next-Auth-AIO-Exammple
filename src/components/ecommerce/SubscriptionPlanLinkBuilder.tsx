@@ -1,11 +1,11 @@
 "use client"
 
-import {
+import type { 
 	Addon,
 	AddonCheckboxOptions,
 	Coupon,
 	SubscriptionPlan,
-} from "@ks/types"
+ } from "@ks/types"
 import { useCallback, useEffect, useReducer } from "react"
 import formStyles, { form, stand_alone } from "@styles/menus/form.module.scss"
 import moneyFormatter, { calcDiscount, handleCouponDetails } from "@lib/moneyFormatter"

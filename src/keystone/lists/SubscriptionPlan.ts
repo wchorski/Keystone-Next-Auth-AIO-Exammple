@@ -18,7 +18,7 @@ import {
 import "dotenv/config"
 import { componentBlocks } from "../blocks"
 import { slugFormat } from "../../lib/slugFormat"
-import { Billing_Interval } from "@ks/types"
+import type {  Billing_Interval  } from "@ks/types"
 import { envs } from "../../../envs"
 
 export const SubscriptionPlan: Lists.SubscriptionPlan = list({

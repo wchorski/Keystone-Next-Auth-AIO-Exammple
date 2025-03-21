@@ -1,4 +1,4 @@
-import { Addon } from "@ks/types"
+import type { Addon } from "@ks/types"
 import { keystoneContext } from "@ks/context"
 
 type Props = {

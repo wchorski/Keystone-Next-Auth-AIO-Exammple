@@ -1,7 +1,7 @@
 import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
 import { ImageDynamic } from "@components/elements/ImageDynamic"
-import { User } from "@ks/types"
+import type {  User  } from "@ks/types"
 import { fetchEvent } from "@lib/fetchdata/fetchEvent"
 import { Metadata, ResolvingMetadata } from "next"
 import { getServerSession, Session } from "next-auth"

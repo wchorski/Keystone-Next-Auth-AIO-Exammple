@@ -1,5 +1,5 @@
 "use client"
-import { cgql, useFetchGraphQL } from "../useFetchGraphql"
+import { cgql, useFetchGraphQL } from "@hooks/useFetchGraphql"
 
 type Data = {
 	users: {

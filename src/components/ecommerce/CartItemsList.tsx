@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import CartItem from "./CartItem"
-import { CartItem as TCartItem } from "@ks/types"
+import type {  CartItem as TCartItem  } from "@ks/types"
 import { Callout } from "@components/blocks/Callout"
 import { sortedCartItems } from "@lib/sortUtils"
 

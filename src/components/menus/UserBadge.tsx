@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { User } from "@ks/types"
+import type {  User  } from "@ks/types"
 import { ImageDynamic } from "@components/elements/ImageDynamic"
 import styles from '@styles/menus/userbadge.module.css'
 

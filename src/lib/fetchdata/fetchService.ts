@@ -1,4 +1,4 @@
-import { Service } from "@ks/types"
+import type {  Service  } from "@ks/types"
 import { keystoneContext } from "@ks/context"
 
 type Props = {

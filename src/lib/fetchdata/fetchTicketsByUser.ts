@@ -1,4 +1,4 @@
-import { Ticket } from "@ks/types"
+import type {  Ticket  } from "@ks/types"
 import { keystoneContext } from "@ks/context"
 import { getServerSession } from "next-auth"
 import { nextAuthOptions } from "@/session"

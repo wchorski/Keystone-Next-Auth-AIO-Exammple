@@ -4,7 +4,7 @@ import styles from "@styles/ecommerce/product.module.css"
 import AddToCartForm from "@components/ecommerce/AddToCartForm"
 import { ImageDynamic } from "../elements/ImageDynamic"
 // import { OutOfStockLabel } from '../elements/OutOfStockLabel';
-import { Product, Session } from "@ks/types"
+import type {  Product, Session  } from "@ks/types"
 import { PriceTag } from "@components/ecommerce/PriceTag"
 import { envs } from "@/envs"
 import { StatusBadge } from "@components/StatusBadge"

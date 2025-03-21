@@ -1,5 +1,5 @@
 import { CSSProperties, ReactNode } from "react"
-import { GridLayout, SpaceSize } from "@ks/types"
+import type {  GridLayout, SpaceSize  } from "@ks/types"
 import { layout_full, layout_site } from "@styles/layout.module.css"
 // import styles from "@styles/elements/section.module.scss";
 

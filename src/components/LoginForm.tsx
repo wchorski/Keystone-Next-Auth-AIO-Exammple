@@ -1,5 +1,5 @@
 "use client"
-// import { form } from "@styles/menus/form.module.scss"
+import { form } from "@styles/menus/form.module.scss"
 import {
 	FaGithub,
 	FaFacebookSquare,
@@ -9,11 +9,15 @@ import {
 } from "react-icons/fa"
 import { useFormState, useFormStatus } from "react-dom"
 import { useState } from "react"
+import { LoadingAnim } from "@components/elements/LoadingAnim"
 import { signIn } from "next-auth/react"
 import Link from "next/link"
 import { envs } from "@/envs"
 import { useRouter } from "next/navigation"
 import { TbCheck, TbExclamationCircle, TbLoader } from "react-icons/tb"
+import stylesAnim from "@styles/eyecandy/SpinCycle.module.scss"
+import { Button } from "@components/elements/Button"
+import Flex from "@components/layouts/Flex"
 import { InputField } from "@components/InputField"
 import { SubmitButton } from "@components/forms/SubmitButton"
 
@@ -36,14 +40,8 @@ type Props = {
 	callbackUrl?: string
 }
 
-const { FRONTEND_URL } = envs
-
 export function LoginForm({ providers, callbackUrl }: Props) {
 	const [state, setstate] = useState<State>(undefined)
-
-	const socialProviders = Object.values(providers).filter(
-		(prov: any) => prov.id !== "credentials"
-	)
 
 	const router = useRouter()
 	// const { session, setSession } = useGlobalContext()
@@ -76,7 +74,7 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 				email,
 				password,
 				redirect: false,
-				callbackUrl: callbackUrl || FRONTEND_URL + "/",
+				callbackUrl: callbackUrl || envs.FRONTEND_URL + "/account",
 			})
 
 			if (res?.error)
@@ -95,7 +93,7 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 				// router.push(`/account`)
 				// window.location.replace("/account")
 
-				router.push(res?.url || "/")
+				router.push(res?.url || "/account")
 				return {
 					...formState,
 					status: "success",
@@ -155,7 +153,7 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 	const statusIcon = (state: State) => {
 		switch (state) {
 			case "pending":
-				return <TbLoader className={"anim_border_spin"} />
+				return <TbLoader className={stylesAnim.spin} />
 
 			case "success":
 				return <TbCheck />
@@ -169,7 +167,7 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 	}
 
 	return (
-		<form action={formAction}>
+		<form action={formAction} className={form}>
 			<fieldset>
 				<InputField
 					name={"email"}
@@ -193,29 +191,30 @@ export function LoginForm({ providers, callbackUrl }: Props) {
 				<p className={formState.status}>{formState.message}</p>
 
 				{formState.status !== "success" && (
-					<div className={'flex'} >
+					<Flex alignItems="center">
 						<SubmitButton label={"Login"} />
 
 						<Link href={`?${new URLSearchParams({ popup: "modal" })}`}>
 							password reset
 						</Link>
-					</div>
+					</Flex>
 				)}
 			</fieldset>
-			
-			{socialProviders?.length > 0 && (
+
+			{providers && providers.length > 0 && (
 				<fieldset>
 					<legend> or with Social {statusIcon(state)}</legend>
-					{providers &&
-						socialProviders.map((provider: any) => (
-							<button
+					{Object.values(providers)
+						.filter((prov: any) => prov.id !== "credentials")
+						.map((provider: any) => (
+							<Button
 								key={provider.name}
 								type="button"
 								disabled={state === "pending"}
 								onClick={() => socialSignin(provider.id)}
 							>
 								Login with {provider.name} {getIcon(provider.id)}
-							</button>
+							</Button>
 						))}
 				</fieldset>
 			)}

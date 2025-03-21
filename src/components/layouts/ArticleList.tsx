@@ -1,5 +1,5 @@
 import styles, { post_card, row_graphic } from "@styles/articles.module.css"
-import { Post, Product, Service, SubscriptionPlan } from "@ks/types"
+import type {  Post, Product, Service, SubscriptionPlan  } from "@ks/types"
 import { GridList } from "@components/layouts/GridList"
 import { NoDataFoundPage } from "./NoDataFoundPage"
 import { StatusBadge } from "@components/StatusBadge"

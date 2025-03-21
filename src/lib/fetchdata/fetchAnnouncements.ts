@@ -1,4 +1,4 @@
-import { Announcement } from "@ks/types";
+import type { Announcement } from "@ks/types";
 import { keystoneContext } from '@ks/context';
 
 const now = new Date()

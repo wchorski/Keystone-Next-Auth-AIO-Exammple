@@ -1,5 +1,5 @@
 "use client"
-// import { form } from "@styles/menus/form.module.scss"
+import { form } from "@styles/menus/form.module.scss"
 
 import { useFormState, useFormStatus } from "react-dom"
 import { useRef } from "react"
@@ -70,7 +70,7 @@ export function PasswordResetForm({ token, email }: Props) {
 		<>
 			<form
 				action={action}
-				// className={form}
+				className={form}
 			>
 				<fieldset disabled={state.success ? true : false}>
 					<legend> Choose a new Password </legend>

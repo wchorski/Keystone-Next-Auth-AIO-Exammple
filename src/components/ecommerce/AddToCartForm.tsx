@@ -8,7 +8,7 @@ import {
 import { InputField } from "@components/InputField"
 import { delay } from "@lib/utils"
 import { ReactNode, useState } from "react"
-import { AddonCheckboxOptions, CartItem } from "@ks/types"
+import type {  AddonCheckboxOptions, CartItem  } from "@ks/types"
 import {
 	IconCheckMark,
 	IconExclamationCircle,

@@ -13,7 +13,7 @@ import {
 } from "@lib/actions/postStripeSession"
 import { envs } from "@/envs"
 import { useCart } from "@components/hooks/CartStateContext"
-import { User } from "@ks/types"
+import type {  User  } from "@ks/types"
 import { LoadingAnim } from "@components/elements/LoadingAnim"
 if (!envs.STRIPE_PUBLIC_KEY)
 	throw new Error("!!! envs.STRIPE_PUBLIC_KEY not set")

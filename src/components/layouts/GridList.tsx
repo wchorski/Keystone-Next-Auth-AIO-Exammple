@@ -1,6 +1,6 @@
 // import styles from "@styles/blog/blog.module.scss";
 import styles from "@styles/articles.module.css"
-import { Post, WidthLayoutSize, WidthLayoutSize2 } from "@ks/types"
+import type {  Post, WidthLayoutSize, WidthLayoutSize2  } from "@ks/types"
 import { CSSProperties, ReactElement, ReactNode } from "react"
 import { grid, auto } from "@styles/layout.module.css"
 export const revalidate = 5

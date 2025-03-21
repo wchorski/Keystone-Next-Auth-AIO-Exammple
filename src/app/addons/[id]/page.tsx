@@ -8,7 +8,7 @@ import ErrorPage from "@components/layouts/ErrorPage"
 import Flex from "@components/layouts/Flex"
 import { Grid } from "@components/layouts/Grid"
 import { PageTHeaderMain } from "@components/layouts/PageTemplates"
-import { Addon } from "@ks/types"
+import type {  Addon  } from "@ks/types"
 import fetchAddon from "@lib/fetchdata/fetchAddon"
 import {
 	layout_breakout,

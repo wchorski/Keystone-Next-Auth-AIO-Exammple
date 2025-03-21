@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { cgql, useFetchGraphQL } from "../useFetchGraphql"
+import { cgql, useFetchGraphQL } from "@hooks/useFetchGraphql"
 
 type Data = {
 	posts: {

@@ -1,10 +1,8 @@
 import { envs } from "@/envs"
-import { PageTHeaderMain } from "@components/layouts/PageTemplates"
-import fetchServicesAndAddons from "@lib/fetchdata/fetchServicesAndAddons"
+
 import { Metadata } from "next"
-import NoDataFoundError404 from "../not-found"
+
 import ErrorMessage from "@components/ErrorMessage"
-import { Addon } from "@ks/types"
 import { List } from "@components/elements/List"
 import Link from "next/link"
 import { getServerSession } from "next-auth"

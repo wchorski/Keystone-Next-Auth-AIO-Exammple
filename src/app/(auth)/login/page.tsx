@@ -7,13 +7,14 @@ import { Metadata } from "next"
 import { getServerSession } from "next-auth"
 import { getProviders } from "next-auth/react"
 import Link from "next/link"
-// import {
-// 	layout_full,
-// 	layout_site,
-// 	layout_wide,
-// 	page_content,
-// 	page_layout,
-// } from "@styles/layout.module.css"
+import {
+	layout_full,
+	layout_site,
+	layout_wide,
+	page_content,
+	page_layout,
+} from "@styles/layout.module.css"
+import { Callout } from "@components/blocks/Callout"
 
 export const metadata: Metadata = {
 	title: "Login | " + envs.SITE_TITLE,
@@ -36,25 +37,21 @@ export default async function LoginPage({ searchParams }: Props) {
 	const providers = await getProviders()
 
 	return (
-		<main
-		// className={page_layout}
-		>
+		<main className={page_layout}>
 			<DialogPopup buttonLabel="">
 				<p> Forgot your password? </p>
 				<PasswordRequestForm />
 			</DialogPopup>
 
-			<header>
+			<header className={layout_wide}>
 				<h1> Login </h1>
 				{callbackUrl && (
-					<div className={"warn"}>
+					<Callout intent={"warning"}>
 						<p>You will return back to the previous page after login</p>
-					</div>
+					</Callout>
 				)}
 			</header>
-			<div
-			// className={[page_content, layout_wide].join(" ")}
-			>
+			<div className={[page_content, layout_wide].join(" ")}>
 				<div className={"flex"}>
 					<div>
 						<LoginForm providers={providers} callbackUrl={callbackUrl} />
@@ -62,14 +59,14 @@ export default async function LoginPage({ searchParams }: Props) {
 
 					<div>
 						{session?.user.email && (
-							<div className={"info"}>
+							<Callout intent={"info"} style={{maxWidth: '17rem'}}>
 								<p>
 									{" "}
 									currently logged in with email{" "}
 									<strong> {session.user.email} </strong>. Go to your{" "}
 									<Link href={`/`}> Account </Link>
 								</p>
-							</div>
+							</Callout>
 						)}
 
 						{error && (

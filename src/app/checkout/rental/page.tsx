@@ -1,12 +1,9 @@
 import { nextAuthOptions } from "@/session"
 import { CartItemsList } from "@components/ecommerce/CartItemsList"
-import { CartTotal } from "@components/ecommerce/CartTotal"
 import { RentalForm } from "@components/ecommerce/RentalForm"
-import Flex from "@components/layouts/Flex"
 import { Grid } from "@components/layouts/Grid"
 import { keystoneContext } from "@ks/context"
-import CartItem from "@components/ecommerce/CartItem"
-import { User } from "@ks/types"
+import type {  User  } from "@ks/types"
 import {
 	layout_site,
 	page_content,

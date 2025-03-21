@@ -1,10 +1,11 @@
 import { envs } from "@/envs"
 import { Metadata } from "next"
-// import {
-// 	layout_content,
-// 	page_content,
-// 	page_layout,
-// } from "@styles/layout.module.css"
+import {
+  layout_breakout,
+	layout_content,
+	page_content,
+	page_layout,
+} from "@styles/layout.module.css"
 import { ActionRegsiterForm } from "@components/forms/ActionRegisterForm"
 
 export const metadata: Metadata = {
@@ -20,14 +21,14 @@ type Props = {
 export default async function RegisterPage({ params, searchParams }: Props) {
 	return (
 		<main
-		// className={page_layout}
+		className={page_layout}
 		>
-			<header>
+			<header className={layout_breakout} >
 				<h1> Register an Account </h1>
 			</header>
 
 			<div
-			// className={[page_content, layout_content].join(" ")}
+			className={[page_content, layout_content].join(" ")}
 			>
 				{/* <RegsiterForm /> */}
 				<ActionRegsiterForm />

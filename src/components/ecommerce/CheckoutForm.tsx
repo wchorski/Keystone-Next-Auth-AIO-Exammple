@@ -5,7 +5,7 @@ import {
   // @ts-ignore
   experimental_useFormStatus as useFormStatus 
 } from "react-dom"
-import {  CartItem as CartItemType, Order, OrderItem, Rental } from "@ks/types"
+import type {   CartItem as CartItemType, Order, OrderItem, Rental  } from "@ks/types"
 import CartItem from "./CartItem"
 import { useEffect, useReducer, useRef, useState } from "react"
 import { PriceTag } from "./PriceTag"

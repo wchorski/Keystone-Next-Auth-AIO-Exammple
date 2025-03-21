@@ -37,7 +37,7 @@ import {
 	layout_wide,
 } from "@styles/layout.module.css"
 import { Grid } from "@components/layouts/Grid"
-import { GridLayout } from "@ks/types"
+import type {  GridLayout  } from "@ks/types"
 import { getColorTheme } from "@lib/styleHelpers"
 
 // By default the DocumentRenderer will render unstyled html elements.

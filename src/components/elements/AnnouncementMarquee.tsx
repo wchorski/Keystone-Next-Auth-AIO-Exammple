@@ -4,7 +4,7 @@ import { ReactNode, useState } from "react"
 import { MdClose } from "react-icons/md"
 import { FiExternalLink } from "react-icons/fi"
 import { BlockRender } from "@components/blocks/BlockRender"
-import { Announcement } from "@ks/types"
+import type {  Announcement  } from "@ks/types"
 import {
 	sAnnouncement,
 	sOpened,

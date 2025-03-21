@@ -7,6 +7,7 @@ import {
 import { InputField } from "@components/InputField"
 import Link from "next/link"
 import { SubmitButton } from "@components/forms/SubmitButton"
+import { form } from "@styles/menus/form.module.scss"
 
 const initState: PasswordRequestState = {
 	values: {
@@ -24,7 +25,7 @@ export function PasswordRequestForm() {
 
 	return (
 		<>
-			<form action={action}>
+			<form action={action} className={form} >
 				<fieldset disabled={state.success ? true : false}>
 					<legend> Request a password reset </legend>
 

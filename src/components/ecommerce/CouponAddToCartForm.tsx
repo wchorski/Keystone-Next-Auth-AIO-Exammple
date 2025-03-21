@@ -52,7 +52,7 @@ export function CouponAddToCartForm({ code }: Props) {
 
 	return (
 		<form className={form} action={action}>
-			<Flex>
+			<Flex alignItems={'center'}>
 				<InputField
 					type="hidden"
 					name={"type"}

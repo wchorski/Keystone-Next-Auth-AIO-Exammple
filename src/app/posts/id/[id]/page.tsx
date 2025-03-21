@@ -1,7 +1,7 @@
 import { envs } from "@/envs"
 import ErrorPage from "@components/layouts/ErrorPage"
 import { NoDataFoundPage } from "@components/layouts/NoDataFoundPage"
-import { Post } from "@ks/types"
+import type {  Post  } from "@ks/types"
 import { layout_content, page_layout } from "@styles/layout.module.css"
 import Link from "next/link"
 import { notFound } from "next/navigation"

@@ -1,8 +1,7 @@
 import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
-import ErrorMessage from "@components/ErrorMessage"
 import { ImageDynamic } from "@components/elements/ImageDynamic"
-import { User } from "@ks/types"
+import type {  User  } from "@ks/types"
 import {
 	datePrettyLocal,
 	datePrettyLocalDay,
@@ -254,7 +253,7 @@ export default async function EventByID({ params }: Props) {
 
 							<IconLink
 								icon={"edit"}
-								href={envs.BACKEND_URL + `/events/${id}`}
+								href={envs.CMS_URL + `/events/${id}`}
 								className="button medium"
 							>
 								<span>Edit Event Details</span>

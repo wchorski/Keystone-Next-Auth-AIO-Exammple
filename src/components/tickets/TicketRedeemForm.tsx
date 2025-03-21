@@ -1,5 +1,5 @@
 "use client"
-import { Ticket } from "@ks/types"
+import type {  Ticket  } from "@ks/types"
 import { useForm } from "@hooks/useForm"
 import { SubmitButton } from "@components/forms/SubmitButton"
 import {

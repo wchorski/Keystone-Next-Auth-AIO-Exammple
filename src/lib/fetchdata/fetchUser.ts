@@ -1,5 +1,5 @@
 import { keystoneContext } from "@ks/context"
-import { User } from "@ks/types"
+import type {  User  } from "@ks/types"
 import { Session } from "next-auth"
 
 // ? query from yoga client

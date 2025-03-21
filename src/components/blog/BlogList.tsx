@@ -1,5 +1,5 @@
 import { BlogListItem } from "./BlogListItem"
-import { Post } from "@ks/types"
+import type {  Post  } from "@ks/types"
 import { ReactElement } from "react"
 import {grid, auto} from '@styles/layout.module.css'
 import { GridList } from "@components/layouts/GridList"

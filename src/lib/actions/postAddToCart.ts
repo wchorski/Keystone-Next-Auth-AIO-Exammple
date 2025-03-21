@@ -2,7 +2,7 @@
 import { envs } from "@/envs"
 import { nextAuthOptions } from "@/session"
 import { keystoneContext } from "@ks/context"
-import { CartItem } from "@ks/types"
+import type {  CartItem  } from "@ks/types"
 import { delay, plainObj } from "@lib/utils"
 import { getServerSession } from "next-auth"
 

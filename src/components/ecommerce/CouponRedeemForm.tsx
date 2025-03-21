@@ -3,7 +3,7 @@ import { SubmitButton } from "@components/forms/SubmitButton"
 import { InputField } from "@components/InputField"
 import Flex from "@components/layouts/Flex"
 import { useForm } from "@hooks/useForm"
-import { Coupon } from "@ks/types"
+import type {  Coupon  } from "@ks/types"
 import {
 	postRedeemCoupon,
 	RedeemCouponState,

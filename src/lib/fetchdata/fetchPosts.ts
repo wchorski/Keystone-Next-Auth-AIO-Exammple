@@ -1,6 +1,6 @@
 import { envs } from "@/envs"
 import { keystoneContext } from "@ks/context"
-import { Post } from "@ks/types"
+import type {  Post  } from "@ks/types"
 
 const perPage = envs.PERPAGE
 

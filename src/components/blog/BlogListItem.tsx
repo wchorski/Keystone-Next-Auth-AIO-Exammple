@@ -4,7 +4,7 @@ import { datePrettyLocal } from "@lib/dateFormatter"
 import { FiCalendar } from "react-icons/fi"
 import { CgProfile } from "react-icons/cg"
 import { ImageDynamic } from "../elements/ImageDynamic"
-import { Post, User } from "@ks/types"
+import type {  Post, User  } from "@ks/types"
 // import styles from "@styles/blog/blog.module.scss";
 import styles from "@styles/articles.module.css"
 import { YouTubeVideo } from "@components/blocks/YouTubeVideo"

@@ -1,5 +1,5 @@
 import { PageTHeaderMain } from "@components/layouts/PageTemplates"
-import { Location } from "@ks/types"
+import type {  Location  } from "@ks/types"
 import fetchLocation from "@lib/fetchdata/fetchLocation"
 import styles from "@styles/location.module.css"
 import Map from "@components/blocks/Map"

@@ -1,4 +1,4 @@
-import { Addon, SubscriptionPlan } from "@ks/types"
+import type {  Addon, SubscriptionPlan  } from "@ks/types"
 import { keystoneContext } from "@ks/context"
 import { Session } from "next-auth"
 

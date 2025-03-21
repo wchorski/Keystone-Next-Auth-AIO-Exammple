@@ -11,7 +11,7 @@ import {
 	virtual,
 } from "@keystone-6/core/fields"
 import { isLoggedIn, permissions, rules } from "../access"
-import { Event, Order } from "@ks/types"
+import type {  Event, Order  } from "@ks/types"
 import { datePrettyLocalDay } from "../../lib/dateFormatter"
 import type { KeystoneContextFromListTypeInfo } from "@keystone-6/core/types"
 

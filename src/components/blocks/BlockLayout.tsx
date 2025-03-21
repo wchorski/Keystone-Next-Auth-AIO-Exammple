@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 // import { Section } from "@components/blocks/Section"
-import { ColorsTheme, GridLayout, WidthLayoutSize2 } from "@ks/types"
+import type {  ColorsTheme, GridLayout, WidthLayoutSize2  } from "@ks/types"
 import { BlockLayout as BlkLayout } from "../../components/layouts/BlockLayout"
 import { getColorTheme } from "@lib/styleHelpers"
 import { number } from "fp-ts"

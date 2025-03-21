@@ -7,7 +7,7 @@ import {
 	actionRegisterAnAccount,
 	type RegisterAnAccountState,
 } from "@lib/actions/actionRegisterAnAccount"
-// import { form } from "@styles/menus/form.module.scss"
+import { form } from "@styles/menus/form.module.scss"
 import { signIn } from "next-auth/react"
 import { SubmitButton } from "./SubmitButton"
 
@@ -45,7 +45,7 @@ export function ActionRegsiterForm() {
 	return (
 		<form
 			action={action}
-			// className={form}
+			className={form}
 			// debugKey={resetKey}
 			// key={resetKey}
 			// resetForm={resetForm}
