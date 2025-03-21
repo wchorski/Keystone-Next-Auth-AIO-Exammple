@@ -277,6 +277,7 @@ const seedSchemaItems = async (
 // 	})
 // }
 
+// remove empty relational items like `categories` or `tags` and not conflict with list items that don't have matching ones
 export function removeTopLevelEmptyArrays(
 	obj: Record<string, any>
 ): Record<string, any> {
